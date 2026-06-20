@@ -24,6 +24,8 @@
 		0251C0BCABAB46188F9A5C60 /* RelapseEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16086F4CC1B14A6AA77AA74C /* RelapseEvent.swift */; };
 		1436A02C217D4763BBE03CC2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F98EA67FA4B35BE1E8C01 /* OnboardingView.swift */; };
 		32ED5B23D71D40DF892F2B3C /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D9CF9A9914473B8B36A38B /* OnboardingViewModel.swift */; };
+		7A1B3C4D5E6F47A8B9C0D1E2 /* LastPouchStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E3D4C5B6A47988776655F /* LastPouchStepView.swift */; };
+		3B4C5D6E7F8049A0B1C2D3E4 /* DailyGoalStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2F3A4B5C6D4798897A6B5C /* DailyGoalStepView.swift */; };
 		452A15B7745D4487BC2D154A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01832447FD049CA8F55F3E6 /* HomeView.swift */; };
 		FE109CB019014D38BC743EEF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F21BB9E67E4CCA80B1E0A7 /* HomeViewModel.swift */; };
 		DC57CDF4209244DC8798621A /* HealthTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E86F6A1BC644E3A360DCAE /* HealthTimelineView.swift */; };
@@ -63,6 +65,8 @@
 		16086F4CC1B14A6AA77AA74C /* RelapseEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelapseEvent.swift; sourceTree = "<group>"; };
 		041F98EA67FA4B35BE1E8C01 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		06D9CF9A9914473B8B36A38B /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		9F2E3D4C5B6A47988776655F /* LastPouchStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPouchStepView.swift; sourceTree = "<group>"; };
+		1E2F3A4B5C6D4798897A6B5C /* DailyGoalStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalStepView.swift; sourceTree = "<group>"; };
 		D01832447FD049CA8F55F3E6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E5F21BB9E67E4CCA80B1E0A7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E3E86F6A1BC644E3A360DCAE /* HealthTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTimelineView.swift; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 			children = (
 				041F98EA67FA4B35BE1E8C01 /* OnboardingView.swift */,
 				06D9CF9A9914473B8B36A38B /* OnboardingViewModel.swift */,
+				9F2E3D4C5B6A47988776655F /* LastPouchStepView.swift */,
+				1E2F3A4B5C6D4798897A6B5C /* DailyGoalStepView.swift */,
 			);
 			path = Onboarding; sourceTree = "<group>";
 		};
@@ -366,6 +372,8 @@
 				0251C0BCABAB46188F9A5C60 /* RelapseEvent.swift in Sources */,
 				1436A02C217D4763BBE03CC2 /* OnboardingView.swift in Sources */,
 				32ED5B23D71D40DF892F2B3C /* OnboardingViewModel.swift in Sources */,
+				7A1B3C4D5E6F47A8B9C0D1E2 /* LastPouchStepView.swift in Sources */,
+				3B4C5D6E7F8049A0B1C2D3E4 /* DailyGoalStepView.swift in Sources */,
 				452A15B7745D4487BC2D154A /* HomeView.swift in Sources */,
 				FE109CB019014D38BC743EEF /* HomeViewModel.swift in Sources */,
 				DC57CDF4209244DC8798621A /* HealthTimelineView.swift in Sources */,

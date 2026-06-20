@@ -30,6 +30,11 @@ extension Color {
     static let accentShield = Color(light: "#F59E0B", dark: "#F59E0B")
     static let accentLock = Color(light: "#94A3B8", dark: "#94A3B8")
 
+    // Onboarding full-bleed gradient (design doc §10 stage-0 slate) — fixed regardless
+    // of system appearance, since onboarding precedes any user theme preference.
+    static let onboardingGradientTop = Color(light: "#6B7686", dark: "#6B7686")
+    static let onboardingGradientBottom = Color(light: "#3D4654", dark: "#3D4654")
+
     /// Helper: build a Color that resolves differently per light/dark mode from hex strings.
     init(light: String, dark: String) {
         self.init(uiColor: UIColor(dynamicProvider: { trait in
