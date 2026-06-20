@@ -48,9 +48,9 @@
 /* Begin PBXFileReference section */
 		195DCCF1BB3E4FD587FC3E04 /* SennelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SennelApp.swift; sourceTree = "<group>"; };
 		5FE9B906EBB14DEA952BDF43 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		794D6966FD9D4C7AB1B340C4 /* Color+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color+Sennel.swift; sourceTree = "<group>"; };
-		39FB34D6D5E9432A8695F0CA /* Font+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font+Sennel.swift; sourceTree = "<group>"; };
-		97D9FB4B2A8246D2A243F9C5 /* Spacing+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spacing+Sennel.swift; sourceTree = "<group>"; };
+		794D6966FD9D4C7AB1B340C4 /* Color+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Sennel.swift"; sourceTree = "<group>"; };
+		39FB34D6D5E9432A8695F0CA /* Font+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Sennel.swift"; sourceTree = "<group>"; };
+		97D9FB4B2A8246D2A243F9C5 /* Spacing+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spacing+Sennel.swift"; sourceTree = "<group>"; };
 		CFC488DF87974ADCB965239C /* StreakRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakRingView.swift; sourceTree = "<group>"; };
 		1CEE9F731C854A1795E231DD /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
 		DC9CDD82AA434D8ABE41F1AD /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 		E3E86F6A1BC644E3A360DCAE /* HealthTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTimelineView.swift; sourceTree = "<group>"; };
 		827A48440DAB49DE96B40C6F /* IntervalSchedulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSchedulerView.swift; sourceTree = "<group>"; };
 		22CAC1F44513495BAAF6B408 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
-		16B8C020BDEF4EB287176841 /* StoreKitService+Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitService+Products.swift; sourceTree = "<group>"; };
+		16B8C020BDEF4EB287176841 /* StoreKitService+Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoreKitService+Products.swift"; sourceTree = "<group>"; };
 		1AAF7309377B499EA5F0B58D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DED7E9648F0642178123EF43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C71D660B43444316833947F1 /* StreakCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCalculatorTests.swift; sourceTree = "<group>"; };
