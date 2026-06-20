@@ -36,3 +36,7 @@ struct PaywallView: View {
         .padding(Spacing.md)
     }
 }
+
+#Preview {
+    PaywallView()
+}

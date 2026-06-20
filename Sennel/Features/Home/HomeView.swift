@@ -43,3 +43,8 @@ struct HomeView: View {
         }
     }
 }
+
+#Preview {
+    HomeView(settings: UserSettings(quitStartDate: .now.addingTimeInterval(-86400 * 10), dailyGoal: 5))
+        .modelContainer(for: [UserSettings.self, PouchLog.self, RelapseEvent.self], inMemory: true)
+}

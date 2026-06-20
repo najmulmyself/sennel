@@ -11,3 +11,7 @@ struct IntervalSchedulerView: View {
         .padding(Spacing.md)
     }
 }
+
+#Preview {
+    IntervalSchedulerView()
+}

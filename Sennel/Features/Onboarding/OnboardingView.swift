@@ -27,3 +27,8 @@ struct OnboardingView: View {
         .padding(Spacing.md)
     }
 }
+
+#Preview {
+    OnboardingView()
+        .modelContainer(for: [UserSettings.self, PouchLog.self, RelapseEvent.self], inMemory: true)
+}

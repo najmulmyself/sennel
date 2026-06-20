@@ -10,3 +10,7 @@ struct HealthTimelineView: View {
         .navigationTitle("Health Timeline")
     }
 }
+
+#Preview {
+    HealthTimelineView()
+}
