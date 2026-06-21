@@ -7,34 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A5BCBCD48C644DCF903CCE62 /* SennelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195DCCF1BB3E4FD587FC3E04 /* SennelApp.swift */; };
-		DEB4CF04549447A29BF59E07 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9B906EBB14DEA952BDF43 /* RootView.swift */; };
-		9E8BB5D94B0A4E70962E61E1 /* Color+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D6966FD9D4C7AB1B340C4 /* Color+Sennel.swift */; };
-		545BAD83B43D4BA2A9416573 /* Font+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FB34D6D5E9432A8695F0CA /* Font+Sennel.swift */; };
-		553A3DF0E6BB4C969A98559E /* Spacing+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D9FB4B2A8246D2A243F9C5 /* Spacing+Sennel.swift */; };
-		A4A7DB1273754BD09555ED29 /* StreakRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC488DF87974ADCB965239C /* StreakRingView.swift */; };
-		1B0DD1C6F1E8450F8D25A40A /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE9F731C854A1795E231DD /* GlassCard.swift */; };
-		52A949046ACC4BE780B322AA /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9CDD82AA434D8ABE41F1AD /* PersistenceController.swift */; };
-		1C539981F1B446E185445E79 /* StreakCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92632A4F83804805B86B15D6 /* StreakCalculator.swift */; };
-		BB411042D0AD4186B6336B19 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE315A3B4E4F17AD6AC4F4 /* NotificationService.swift */; };
-		F28CAD4784A4414ABEEE7599 /* StoreKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADC8009B104E5FAC01A18D /* StoreKitService.swift */; };
-		F7A2588E92BF47E3BFB5CC05 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8E7B83C3F470C9FEF3ADF /* HapticService.swift */; };
-		96824FA57E22458DAB8C13C4 /* PouchLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65D1BB4398D46A7BB92C91E /* PouchLog.swift */; };
-		E192ABBFB6AC4ECDA55184CC /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232CB72333845D2A6716A72 /* UserSettings.swift */; };
 		0251C0BCABAB46188F9A5C60 /* RelapseEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16086F4CC1B14A6AA77AA74C /* RelapseEvent.swift */; };
 		1436A02C217D4763BBE03CC2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F98EA67FA4B35BE1E8C01 /* OnboardingView.swift */; };
+		1B0DD1C6F1E8450F8D25A40A /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE9F731C854A1795E231DD /* GlassCard.swift */; };
+		1C539981F1B446E185445E79 /* StreakCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92632A4F83804805B86B15D6 /* StreakCalculator.swift */; };
 		32ED5B23D71D40DF892F2B3C /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D9CF9A9914473B8B36A38B /* OnboardingViewModel.swift */; };
-		7A1B3C4D5E6F47A8B9C0D1E2 /* LastPouchStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E3D4C5B6A47988776655F /* LastPouchStepView.swift */; };
 		3B4C5D6E7F8049A0B1C2D3E4 /* DailyGoalStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2F3A4B5C6D4798897A6B5C /* DailyGoalStepView.swift */; };
-		452A15B7745D4487BC2D154A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01832447FD049CA8F55F3E6 /* HomeView.swift */; };
-		FE109CB019014D38BC743EEF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F21BB9E67E4CCA80B1E0A7 /* HomeViewModel.swift */; };
-		DC57CDF4209244DC8798621A /* HealthTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E86F6A1BC644E3A360DCAE /* HealthTimelineView.swift */; };
-		A58592D5B0E849899992AACA /* IntervalSchedulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A48440DAB49DE96B40C6F /* IntervalSchedulerView.swift */; };
-		F515F16E27D4420CBFCEEFA9 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CAC1F44513495BAAF6B408 /* PaywallView.swift */; };
-		D8C72FFAAC794FABB710F7EF /* StoreKitService+Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8C020BDEF4EB287176841 /* StoreKitService+Products.swift */; };
-		9F54CF06905D43C4AECFFE8F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7309377B499EA5F0B58D /* SettingsView.swift */; };
 		3F4C786750DF4770A6C17F68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED7E9648F0642178123EF43 /* Assets.xcassets */; };
+		452A15B7745D4487BC2D154A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01832447FD049CA8F55F3E6 /* HomeView.swift */; };
+		52A949046ACC4BE780B322AA /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9CDD82AA434D8ABE41F1AD /* PersistenceController.swift */; };
+		545BAD83B43D4BA2A9416573 /* Font+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FB34D6D5E9432A8695F0CA /* Font+Sennel.swift */; };
+		553A3DF0E6BB4C969A98559E /* Spacing+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D9FB4B2A8246D2A243F9C5 /* Spacing+Sennel.swift */; };
+		7A1B3C4D5E6F47A8B9C0D1E2 /* LastPouchStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E3D4C5B6A47988776655F /* LastPouchStepView.swift */; };
+		96824FA57E22458DAB8C13C4 /* PouchLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65D1BB4398D46A7BB92C91E /* PouchLog.swift */; };
+		9E8BB5D94B0A4E70962E61E1 /* Color+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D6966FD9D4C7AB1B340C4 /* Color+Sennel.swift */; };
+		9F54CF06905D43C4AECFFE8F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7309377B499EA5F0B58D /* SettingsView.swift */; };
+		A4A7DB1273754BD09555ED29 /* StreakRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC488DF87974ADCB965239C /* StreakRingView.swift */; };
+		A58592D5B0E849899992AACA /* IntervalSchedulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A48440DAB49DE96B40C6F /* IntervalSchedulerView.swift */; };
+		A5BCBCD48C644DCF903CCE62 /* SennelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195DCCF1BB3E4FD587FC3E04 /* SennelApp.swift */; };
+		BB411042D0AD4186B6336B19 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE315A3B4E4F17AD6AC4F4 /* NotificationService.swift */; };
 		BCA4961E36164A4F91996670 /* StreakCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71D660B43444316833947F1 /* StreakCalculatorTests.swift */; };
+		D8C72FFAAC794FABB710F7EF /* StoreKitService+Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8C020BDEF4EB287176841 /* StoreKitService+Products.swift */; };
+		DC57CDF4209244DC8798621A /* HealthTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E86F6A1BC644E3A360DCAE /* HealthTimelineView.swift */; };
+		DEB4CF04549447A29BF59E07 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9B906EBB14DEA952BDF43 /* RootView.swift */; };
+		E192ABBFB6AC4ECDA55184CC /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232CB72333845D2A6716A72 /* UserSettings.swift */; };
+		F28CAD4784A4414ABEEE7599 /* StoreKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADC8009B104E5FAC01A18D /* StoreKitService.swift */; };
+		F515F16E27D4420CBFCEEFA9 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CAC1F44513495BAAF6B408 /* PaywallView.swift */; };
+		F7A2588E92BF47E3BFB5CC05 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8E7B83C3F470C9FEF3ADF /* HapticService.swift */; };
+		FE109CB019014D38BC743EEF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F21BB9E67E4CCA80B1E0A7 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,36 +48,36 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		195DCCF1BB3E4FD587FC3E04 /* SennelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SennelApp.swift; sourceTree = "<group>"; };
-		5FE9B906EBB14DEA952BDF43 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		794D6966FD9D4C7AB1B340C4 /* Color+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Sennel.swift"; sourceTree = "<group>"; };
-		39FB34D6D5E9432A8695F0CA /* Font+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Sennel.swift"; sourceTree = "<group>"; };
-		97D9FB4B2A8246D2A243F9C5 /* Spacing+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spacing+Sennel.swift"; sourceTree = "<group>"; };
-		CFC488DF87974ADCB965239C /* StreakRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakRingView.swift; sourceTree = "<group>"; };
-		1CEE9F731C854A1795E231DD /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
-		DC9CDD82AA434D8ABE41F1AD /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		92632A4F83804805B86B15D6 /* StreakCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCalculator.swift; sourceTree = "<group>"; };
-		3EFE315A3B4E4F17AD6AC4F4 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		2FADC8009B104E5FAC01A18D /* StoreKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitService.swift; sourceTree = "<group>"; };
-		65C8E7B83C3F470C9FEF3ADF /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
-		C65D1BB4398D46A7BB92C91E /* PouchLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchLog.swift; sourceTree = "<group>"; };
-		8232CB72333845D2A6716A72 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
-		16086F4CC1B14A6AA77AA74C /* RelapseEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelapseEvent.swift; sourceTree = "<group>"; };
 		041F98EA67FA4B35BE1E8C01 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		06D9CF9A9914473B8B36A38B /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		9F2E3D4C5B6A47988776655F /* LastPouchStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPouchStepView.swift; sourceTree = "<group>"; };
-		1E2F3A4B5C6D4798897A6B5C /* DailyGoalStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalStepView.swift; sourceTree = "<group>"; };
-		D01832447FD049CA8F55F3E6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		E5F21BB9E67E4CCA80B1E0A7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		E3E86F6A1BC644E3A360DCAE /* HealthTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTimelineView.swift; sourceTree = "<group>"; };
-		827A48440DAB49DE96B40C6F /* IntervalSchedulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSchedulerView.swift; sourceTree = "<group>"; };
-		22CAC1F44513495BAAF6B408 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		16086F4CC1B14A6AA77AA74C /* RelapseEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelapseEvent.swift; sourceTree = "<group>"; };
 		16B8C020BDEF4EB287176841 /* StoreKitService+Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoreKitService+Products.swift"; sourceTree = "<group>"; };
+		195DCCF1BB3E4FD587FC3E04 /* SennelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SennelApp.swift; sourceTree = "<group>"; };
 		1AAF7309377B499EA5F0B58D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		DED7E9648F0642178123EF43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C71D660B43444316833947F1 /* StreakCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCalculatorTests.swift; sourceTree = "<group>"; };
-		DFF18FB9E89E4F89A787F307 /* Sennel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sennel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CEE9F731C854A1795E231DD /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
+		1E2F3A4B5C6D4798897A6B5C /* DailyGoalStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalStepView.swift; sourceTree = "<group>"; };
+		22CAC1F44513495BAAF6B408 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		2FADC8009B104E5FAC01A18D /* StoreKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitService.swift; sourceTree = "<group>"; };
+		39FB34D6D5E9432A8695F0CA /* Font+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Sennel.swift"; sourceTree = "<group>"; };
+		3EFE315A3B4E4F17AD6AC4F4 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		5FE9B906EBB14DEA952BDF43 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		65C8E7B83C3F470C9FEF3ADF /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
+		794D6966FD9D4C7AB1B340C4 /* Color+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Sennel.swift"; sourceTree = "<group>"; };
+		8232CB72333845D2A6716A72 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		827A48440DAB49DE96B40C6F /* IntervalSchedulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSchedulerView.swift; sourceTree = "<group>"; };
 		874742DCA7E848758244C03A /* SennelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SennelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		92632A4F83804805B86B15D6 /* StreakCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCalculator.swift; sourceTree = "<group>"; };
+		97D9FB4B2A8246D2A243F9C5 /* Spacing+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spacing+Sennel.swift"; sourceTree = "<group>"; };
+		9F2E3D4C5B6A47988776655F /* LastPouchStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPouchStepView.swift; sourceTree = "<group>"; };
+		C65D1BB4398D46A7BB92C91E /* PouchLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchLog.swift; sourceTree = "<group>"; };
+		C71D660B43444316833947F1 /* StreakCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCalculatorTests.swift; sourceTree = "<group>"; };
+		CFC488DF87974ADCB965239C /* StreakRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakRingView.swift; sourceTree = "<group>"; };
+		D01832447FD049CA8F55F3E6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		DC9CDD82AA434D8ABE41F1AD /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		DED7E9648F0642178123EF43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DFF18FB9E89E4F89A787F307 /* Sennel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sennel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3E86F6A1BC644E3A360DCAE /* HealthTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTimelineView.swift; sourceTree = "<group>"; };
+		E5F21BB9E67E4CCA80B1E0A7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,50 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		31CF0B3CC7524E5DBE85B615 /* App */ = {
+		0757BFEBE2664BFE9943B2DB = {
 			isa = PBXGroup;
 			children = (
-				195DCCF1BB3E4FD587FC3E04 /* SennelApp.swift */,
-				5FE9B906EBB14DEA952BDF43 /* RootView.swift */,
+				D4478EF72FC148C29232AC8F /* Sennel */,
+				7870BAED2E684AE698281124 /* SennelTests */,
+				F085997A4BAF4C408A51E367 /* Products */,
 			);
-			path = App; sourceTree = "<group>";
-		};
-		74D3105693EA4614A6FF65F7 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				FFDAD11B887B49358801DEDE /* DesignSystem */,
-				4194609BDAB043F1903C0616 /* Persistence */,
-				F11BAA0D4275435C8F4904F5 /* Services */,
-			);
-			path = Core; sourceTree = "<group>";
-		};
-		FFDAD11B887B49358801DEDE /* DesignSystem */ = {
-			isa = PBXGroup;
-			children = (
-				794D6966FD9D4C7AB1B340C4 /* Color+Sennel.swift */,
-				39FB34D6D5E9432A8695F0CA /* Font+Sennel.swift */,
-				97D9FB4B2A8246D2A243F9C5 /* Spacing+Sennel.swift */,
-				CFC488DF87974ADCB965239C /* StreakRingView.swift */,
-				1CEE9F731C854A1795E231DD /* GlassCard.swift */,
-			);
-			path = DesignSystem; sourceTree = "<group>";
-		};
-		4194609BDAB043F1903C0616 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				DC9CDD82AA434D8ABE41F1AD /* PersistenceController.swift */,
-			);
-			path = Persistence; sourceTree = "<group>";
-		};
-		F11BAA0D4275435C8F4904F5 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				92632A4F83804805B86B15D6 /* StreakCalculator.swift */,
-				3EFE315A3B4E4F17AD6AC4F4 /* NotificationService.swift */,
-				2FADC8009B104E5FAC01A18D /* StoreKitService.swift */,
-				65C8E7B83C3F470C9FEF3ADF /* HapticService.swift */,
-			);
-			path = Services; sourceTree = "<group>";
+			sourceTree = "<group>";
 		};
 		144F3DC6421C46D2AC4DE173 /* Models */ = {
 			isa = PBXGroup;
@@ -150,19 +114,85 @@
 				8232CB72333845D2A6716A72 /* UserSettings.swift */,
 				16086F4CC1B14A6AA77AA74C /* RelapseEvent.swift */,
 			);
-			path = Models; sourceTree = "<group>";
+			path = Models;
+			sourceTree = "<group>";
 		};
-		FEBC53332C8049388869346F /* Features */ = {
+		2D6BD825F4724E74A2610FF0 /* HealthTimeline */ = {
 			isa = PBXGroup;
 			children = (
-				D031D55818B641C8BF1011A6 /* Onboarding */,
-				CA9875C0BB514D8097F69F2F /* Home */,
-				2D6BD825F4724E74A2610FF0 /* HealthTimeline */,
-				F59537528F9C423AB9789ECF /* IntervalScheduler */,
-				58505B2F59774FD6843C4A07 /* Paywall */,
-				6F8632DDEF2B4F9FB7C467BE /* Settings */,
+				E3E86F6A1BC644E3A360DCAE /* HealthTimelineView.swift */,
 			);
-			path = Features; sourceTree = "<group>";
+			path = HealthTimeline;
+			sourceTree = "<group>";
+		};
+		31CF0B3CC7524E5DBE85B615 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				195DCCF1BB3E4FD587FC3E04 /* SennelApp.swift */,
+				5FE9B906EBB14DEA952BDF43 /* RootView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		4194609BDAB043F1903C0616 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				DC9CDD82AA434D8ABE41F1AD /* PersistenceController.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		53DC6447C28245878B468A24 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DED7E9648F0642178123EF43 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		58505B2F59774FD6843C4A07 /* Paywall */ = {
+			isa = PBXGroup;
+			children = (
+				22CAC1F44513495BAAF6B408 /* PaywallView.swift */,
+				16B8C020BDEF4EB287176841 /* StoreKitService+Products.swift */,
+			);
+			path = Paywall;
+			sourceTree = "<group>";
+		};
+		6F8632DDEF2B4F9FB7C467BE /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1AAF7309377B499EA5F0B58D /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		74D3105693EA4614A6FF65F7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FFDAD11B887B49358801DEDE /* DesignSystem */,
+				4194609BDAB043F1903C0616 /* Persistence */,
+				F11BAA0D4275435C8F4904F5 /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		7870BAED2E684AE698281124 /* SennelTests */ = {
+			isa = PBXGroup;
+			children = (
+				C71D660B43444316833947F1 /* StreakCalculatorTests.swift */,
+			);
+			path = SennelTests;
+			sourceTree = "<group>";
+		};
+		CA9875C0BB514D8097F69F2F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				D01832447FD049CA8F55F3E6 /* HomeView.swift */,
+				E5F21BB9E67E4CCA80B1E0A7 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
 		};
 		D031D55818B641C8BF1011A6 /* Onboarding */ = {
 			isa = PBXGroup;
@@ -172,59 +202,7 @@
 				9F2E3D4C5B6A47988776655F /* LastPouchStepView.swift */,
 				1E2F3A4B5C6D4798897A6B5C /* DailyGoalStepView.swift */,
 			);
-			path = Onboarding; sourceTree = "<group>";
-		};
-		CA9875C0BB514D8097F69F2F /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				D01832447FD049CA8F55F3E6 /* HomeView.swift */,
-				E5F21BB9E67E4CCA80B1E0A7 /* HomeViewModel.swift */,
-			);
-			path = Home; sourceTree = "<group>";
-		};
-		2D6BD825F4724E74A2610FF0 /* HealthTimeline */ = {
-			isa = PBXGroup;
-			children = (
-				E3E86F6A1BC644E3A360DCAE /* HealthTimelineView.swift */,
-			);
-			path = HealthTimeline; sourceTree = "<group>";
-		};
-		F59537528F9C423AB9789ECF /* IntervalScheduler */ = {
-			isa = PBXGroup;
-			children = (
-				827A48440DAB49DE96B40C6F /* IntervalSchedulerView.swift */,
-			);
-			path = IntervalScheduler; sourceTree = "<group>";
-		};
-		58505B2F59774FD6843C4A07 /* Paywall */ = {
-			isa = PBXGroup;
-			children = (
-				22CAC1F44513495BAAF6B408 /* PaywallView.swift */,
-				16B8C020BDEF4EB287176841 /* StoreKitService+Products.swift */,
-			);
-			path = Paywall; sourceTree = "<group>";
-		};
-		6F8632DDEF2B4F9FB7C467BE /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				1AAF7309377B499EA5F0B58D /* SettingsView.swift */,
-			);
-			path = Settings; sourceTree = "<group>";
-		};
-		53DC6447C28245878B468A24 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				DED7E9648F0642178123EF43 /* Assets.xcassets */,
-			);
-			path = Resources; sourceTree = "<group>";
-		};
-		F085997A4BAF4C408A51E367 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DFF18FB9E89E4F89A787F307 /* Sennel.app */,
-				874742DCA7E848758244C03A /* SennelTests.xctest */,
-			);
-			name = Products;
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		D4478EF72FC148C29232AC8F /* Sennel */ = {
@@ -239,43 +217,62 @@
 			path = Sennel;
 			sourceTree = "<group>";
 		};
-		7870BAED2E684AE698281124 /* SennelTests */ = {
+		F085997A4BAF4C408A51E367 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C71D660B43444316833947F1 /* StreakCalculatorTests.swift */,
+				DFF18FB9E89E4F89A787F307 /* Sennel.app */,
+				874742DCA7E848758244C03A /* SennelTests.xctest */,
 			);
-			path = SennelTests;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		0757BFEBE2664BFE9943B2DB = {
+		F11BAA0D4275435C8F4904F5 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				D4478EF72FC148C29232AC8F /* Sennel */,
-				7870BAED2E684AE698281124 /* SennelTests */,
-				F085997A4BAF4C408A51E367 /* Products */,
+				92632A4F83804805B86B15D6 /* StreakCalculator.swift */,
+				3EFE315A3B4E4F17AD6AC4F4 /* NotificationService.swift */,
+				2FADC8009B104E5FAC01A18D /* StoreKitService.swift */,
+				65C8E7B83C3F470C9FEF3ADF /* HapticService.swift */,
 			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F59537528F9C423AB9789ECF /* IntervalScheduler */ = {
+			isa = PBXGroup;
+			children = (
+				827A48440DAB49DE96B40C6F /* IntervalSchedulerView.swift */,
+			);
+			path = IntervalScheduler;
+			sourceTree = "<group>";
+		};
+		FEBC53332C8049388869346F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				D031D55818B641C8BF1011A6 /* Onboarding */,
+				CA9875C0BB514D8097F69F2F /* Home */,
+				2D6BD825F4724E74A2610FF0 /* HealthTimeline */,
+				F59537528F9C423AB9789ECF /* IntervalScheduler */,
+				58505B2F59774FD6843C4A07 /* Paywall */,
+				6F8632DDEF2B4F9FB7C467BE /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		FFDAD11B887B49358801DEDE /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				794D6966FD9D4C7AB1B340C4 /* Color+Sennel.swift */,
+				39FB34D6D5E9432A8695F0CA /* Font+Sennel.swift */,
+				97D9FB4B2A8246D2A243F9C5 /* Spacing+Sennel.swift */,
+				CFC488DF87974ADCB965239C /* StreakRingView.swift */,
+				1CEE9F731C854A1795E231DD /* GlassCard.swift */,
+			);
+			path = DesignSystem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		400754809E214843A120F5A0 /* Sennel */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BE9C9296C44B426CA72C8DB8 /* Build configuration list for PBXNativeTarget "Sennel" */;
-			buildPhases = (
-				789C34EC462F457298F5ADFF /* Sources */,
-				BA27D5676AC349A6B748EC11 /* Frameworks */,
-				59E4B37597CF474EB8AC5C6E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Sennel;
-			productName = Sennel;
-			productReference = DFF18FB9E89E4F89A787F307 /* Sennel.app */;
-			productType = "com.apple.product-type.application";
-		};
 		23CBACFF376A40E7AA62802B /* SennelTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 685EA5CC64D944B78142C59C /* Build configuration list for PBXNativeTarget "SennelTests" */;
@@ -294,6 +291,23 @@
 			productReference = 874742DCA7E848758244C03A /* SennelTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		400754809E214843A120F5A0 /* Sennel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BE9C9296C44B426CA72C8DB8 /* Build configuration list for PBXNativeTarget "Sennel" */;
+			buildPhases = (
+				789C34EC462F457298F5ADFF /* Sources */,
+				BA27D5676AC349A6B748EC11 /* Frameworks */,
+				59E4B37597CF474EB8AC5C6E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sennel;
+			productName = Sennel;
+			productReference = DFF18FB9E89E4F89A787F307 /* Sennel.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -304,12 +318,12 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					400754809E214843A120F5A0 = {
-						CreatedOnToolsVersion = 16.2;
-					};
 					23CBACFF376A40E7AA62802B = {
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = 400754809E214843A120F5A0;
+					};
+					400754809E214843A120F5A0 = {
+						CreatedOnToolsVersion = 16.2;
 					};
 				};
 			};
@@ -351,6 +365,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6D98B11C2B46485CAAD99B42 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCA4961E36164A4F91996670 /* StreakCalculatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		789C34EC462F457298F5ADFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -384,14 +406,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6D98B11C2B46485CAAD99B42 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BCA4961E36164A4F91996670 /* StreakCalculatorTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -403,83 +417,25 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		FC56707757E14FCEB972F711 /* Debug */ = {
+		4BD3CBA92AC14994AB0A63B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.najmulmyself.sennel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-			};
-			name = Debug;
-		};
-		CBCA5CDFE0A84686810D0CE7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.najmulmyself.sennel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-			};
-			name = Release;
-		};
-		BD0CE52651A2471783CC46AF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.najmulmyself.sennel.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sennel.app/Sennel";
-			};
-			name = Debug;
-		};
-		8FF7D51D5330427A9B603A08 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.najmulmyself.sennel.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sennel.app/Sennel";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -511,36 +467,96 @@
 			};
 			name = Debug;
 		};
-		4BD3CBA92AC14994AB0A63B7 /* Release */ = {
+		8FF7D51D5330427A9B603A08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_NO_COMMON_BLOCKS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				VALIDATE_PRODUCT = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.najmulmyself.sennel.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sennel.app/Sennel";
 			};
 			name = Release;
+		};
+		BD0CE52651A2471783CC46AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.najmulmyself.sennel.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sennel.app/Sennel";
+			};
+			name = Debug;
+		};
+		CBCA5CDFE0A84686810D0CE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9UL73N34UU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.najmulmyself.sennel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		FC56707757E14FCEB972F711 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9UL73N34UU;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.najmulmyself.sennel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BE9C9296C44B426CA72C8DB8 /* Build configuration list for PBXNativeTarget "Sennel" */ = {
+		257CF811F2DE489B80D214EB /* Build configuration list for PBXProject "Sennel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC56707757E14FCEB972F711 /* Debug */,
-				CBCA5CDFE0A84686810D0CE7 /* Release */,
+				4C6D3CA1AF9B438092E8980F /* Debug */,
+				4BD3CBA92AC14994AB0A63B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -554,11 +570,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		257CF811F2DE489B80D214EB /* Build configuration list for PBXProject "Sennel" */ = {
+		BE9C9296C44B426CA72C8DB8 /* Build configuration list for PBXNativeTarget "Sennel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4C6D3CA1AF9B438092E8980F /* Debug */,
-				4BD3CBA92AC14994AB0A63B7 /* Release */,
+				FC56707757E14FCEB972F711 /* Debug */,
+				CBCA5CDFE0A84686810D0CE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
