@@ -20,7 +20,7 @@ struct DailyGoalStepView: View {
 
                 VStack(spacing: Spacing.xs) {
                     Text("\(viewModel.dailyGoal)")
-                        .font(.heroNumber(size: 64))
+                        .font(.heroNumber(size: 84))
                         .foregroundStyle(.white)
                     Text("pouches / day")
                         .font(.subheadline)
