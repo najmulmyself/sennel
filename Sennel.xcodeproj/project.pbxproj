@@ -39,8 +39,8 @@
 		000000000000000000000009 /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
 		00000000000000000000000B /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		00000000000000000000000D /* StreakRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakRing.swift; sourceTree = "<group>"; };
-		00000000000000000000000F /* Color+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color+Sennel.swift; sourceTree = "<group>"; };
-		000000000000000000000011 /* Typography+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography+Sennel.swift; sourceTree = "<group>"; };
+		00000000000000000000000F /* Color+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Sennel.swift"; sourceTree = "<group>"; };
+		000000000000000000000011 /* Typography+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typography+Sennel.swift"; sourceTree = "<group>"; };
 		000000000000000000000013 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
 		000000000000000000000015 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		000000000000000000000017 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
