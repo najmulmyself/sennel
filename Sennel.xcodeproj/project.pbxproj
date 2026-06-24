@@ -29,6 +29,11 @@
 		00000000000000000000003C /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000003B /* InsightsView.swift */; };
 		00000000000000000000003E /* RelapseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000003D /* RelapseView.swift */; };
 		000000000000000000000040 /* SymptomLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000003F /* SymptomLogView.swift */; };
+		000000000000000000000042 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000041 /* UserProfile.swift */; };
+		000000000000000000000044 /* CravingEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000043 /* CravingEntryModel.swift */; };
+		000000000000000000000046 /* SymptomSeverityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000045 /* SymptomSeverityModel.swift */; };
+		000000000000000000000048 /* PouchCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000047 /* PouchCountModel.swift */; };
+		00000000000000000000004A /* ModelContainer+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000049 /* ModelContainer+Sennel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +60,11 @@
 		00000000000000000000003B /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
 		00000000000000000000003D /* RelapseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelapseView.swift; sourceTree = "<group>"; };
 		00000000000000000000003F /* SymptomLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomLogView.swift; sourceTree = "<group>"; };
+		000000000000000000000041 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		000000000000000000000043 /* CravingEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CravingEntryModel.swift; sourceTree = "<group>"; };
+		000000000000000000000045 /* SymptomSeverityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomSeverityModel.swift; sourceTree = "<group>"; };
+		000000000000000000000047 /* PouchCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchCountModel.swift; sourceTree = "<group>"; };
+		000000000000000000000049 /* ModelContainer+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelContainer+Sennel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +116,18 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		00000000000000000000004B /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000043 /* CravingEntryModel.swift */,
+				000000000000000000000049 /* ModelContainer+Sennel.swift */,
+				000000000000000000000047 /* PouchCountModel.swift */,
+				000000000000000000000045 /* SymptomSeverityModel.swift */,
+				000000000000000000000041 /* UserProfile.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		000000000000000000000023 /* Sennel */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +138,7 @@
 				00000000000000000000001F /* Assets.xcassets */,
 				000000000000000000000024 /* Components */,
 				000000000000000000000025 /* DesignSystem */,
+				00000000000000000000004B /* Persistence */,
 				000000000000000000000026 /* Screens */,
 			);
 			path = Sennel;
@@ -226,6 +249,11 @@
 				00000000000000000000001C /* ScheduleView.swift in Sources */,
 				00000000000000000000001E /* SettingsView.swift in Sources */,
 				000000000000000000000040 /* SymptomLogView.swift in Sources */,
+				000000000000000000000042 /* UserProfile.swift in Sources */,
+				000000000000000000000044 /* CravingEntryModel.swift in Sources */,
+				000000000000000000000046 /* SymptomSeverityModel.swift in Sources */,
+				000000000000000000000048 /* PouchCountModel.swift in Sources */,
+				00000000000000000000004A /* ModelContainer+Sennel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,32 +1,84 @@
 import SwiftUI
+import SwiftData
 
-/// In-memory app state shared across every screen. Phase 1 scope is UI fidelity
-/// only — no SwiftData/StoreKit yet, so nothing here persists across launches.
+/// App state shared across every screen, backed by SwiftData. `AppState` stays
+/// the `@Observable` façade every view binds to via `@Environment(AppState.self)`;
+/// underneath, scalar fields live in a single `UserProfile` row and the growing
+/// collections (cravings/symptoms/pouch counts) live in their own models, but
+/// every existing call site and pure `at(date:)` function is unchanged.
 @Observable
 final class AppState {
-    var hasOnboarded = false
+    private let modelContext: ModelContext
+    private var profile: UserProfile
+
+    var hasOnboarded: Bool { didSet { saveProfile() } }
 
     /// The moment the streak started — "last pouch" from onboarding step 1.
-    var startDate = Date()
+    var startDate: Date { didSet { saveProfile() } }
 
-    var dailyLimit = 8
-    var dailySpend = 11.4
-    var usedToday = 0
+    var dailyLimit: Int { didSet { saveProfile() } }
+    var dailySpend: Double { didSet { saveProfile() } }
+    var usedToday: Int { didSet { saveProfile() } }
 
     /// Manual override toggled from Settings — re-themes the whole app, the same
     /// way SennelApp's prototype dark-mode switch worked (not tied to system appearance).
-    var isDarkMode = false
+    var isDarkMode: Bool { didSet { saveProfile() } }
 
     // MARK: Phase 2 — lifetime stats (survive a restart, unlike `startDate`)
 
     /// Days/money banked from streaks that ended before this one — added to the
     /// current streak's numbers so a restart never erases earned badges or "this
     /// stays yours" totals (sennel_design.md Section 14: no shame-coded relapse UI).
-    private(set) var priorStreakDays = 0
-    private(set) var priorMoneySaved: Double = 0
-    private(set) var streakShieldsRemaining = 2
-    private(set) var streakShieldsTotal = 3
-    private(set) var breathingSessionsCompleted = 0
+    private(set) var priorStreakDays: Int { didSet { saveProfile() } }
+    private(set) var priorMoneySaved: Double { didSet { saveProfile() } }
+    private(set) var streakShieldsRemaining: Int { didSet { saveProfile() } }
+    private(set) var streakShieldsTotal: Int { didSet { saveProfile() } }
+    private(set) var breathingSessionsCompleted: Int { didSet { saveProfile() } }
+
+    init(modelContext: ModelContext = ModelContext(SennelPersistence.makeInMemoryContainer())) {
+        self.modelContext = modelContext
+        let profile = AppState.fetchOrCreateProfile(in: modelContext)
+        self.profile = profile
+        self.hasOnboarded = profile.hasOnboarded
+        self.startDate = profile.startDate
+        self.dailyLimit = profile.dailyLimit
+        self.dailySpend = profile.dailySpend
+        self.usedToday = profile.usedToday
+        self.isDarkMode = profile.isDarkMode
+        self.priorStreakDays = profile.priorStreakDays
+        self.priorMoneySaved = profile.priorMoneySaved
+        self.streakShieldsRemaining = profile.streakShieldsRemaining
+        self.streakShieldsTotal = profile.streakShieldsTotal
+        self.breathingSessionsCompleted = profile.breathingSessionsCompleted
+        self.cravingEntries = AppState.fetchCravingEntries(in: modelContext)
+        self.symptomDays = AppState.fetchSymptomDays(in: modelContext)
+        self.dailyPouchCounts = AppState.fetchDailyPouchCounts(in: modelContext)
+    }
+
+    private func saveProfile() {
+        profile.hasOnboarded = hasOnboarded
+        profile.startDate = startDate
+        profile.dailyLimit = dailyLimit
+        profile.dailySpend = dailySpend
+        profile.usedToday = usedToday
+        profile.isDarkMode = isDarkMode
+        profile.priorStreakDays = priorStreakDays
+        profile.priorMoneySaved = priorMoneySaved
+        profile.streakShieldsRemaining = streakShieldsRemaining
+        profile.streakShieldsTotal = streakShieldsTotal
+        profile.breathingSessionsCompleted = breathingSessionsCompleted
+        try? modelContext.save()
+    }
+
+    private static func fetchOrCreateProfile(in context: ModelContext) -> UserProfile {
+        if let existing = try? context.fetch(FetchDescriptor<UserProfile>()).first {
+            return existing
+        }
+        let profile = UserProfile()
+        context.insert(profile)
+        try? context.save()
+        return profile
+    }
 
     func lifetimeDaysClean(at date: Date) -> Int { priorStreakDays + daysClean(at: date) }
     func lifetimeMoneySaved(at date: Date) -> Double { priorMoneySaved + moneySaved(at: date) }
@@ -129,33 +181,25 @@ final class AppState {
         var intensity: Int // 1...5
         var trigger: String
         var outcome: Outcome
-        enum Outcome { case rodeItOut, used }
+        enum Outcome: String { case rodeItOut, used }
     }
 
     static let cravingTriggers = ["After meals", "Coffee", "Stress", "Boredom", "Driving", "Social", "Alcohol", "Phone"]
 
-    var cravingEntries: [CravingEntry] = AppState.seedCravingEntries()
+    var cravingEntries: [CravingEntry] = []
 
     func logCraving(intensity: Int, trigger: String, outcome: CravingEntry.Outcome) {
-        cravingEntries.append(CravingEntry(date: .now, intensity: intensity, trigger: trigger, outcome: outcome))
+        let entry = CravingEntry(date: .now, intensity: intensity, trigger: trigger, outcome: outcome)
+        cravingEntries.append(entry)
+        modelContext.insert(CravingEntryModel(date: entry.date, intensity: entry.intensity, trigger: entry.trigger, outcomeRaw: outcome.rawValue))
+        try? modelContext.save()
     }
 
-    /// 30 days of sample entries weighted toward afternoon/after-meal cravings, so
-    /// Insights has something real to chart on first launch (no SwiftData yet).
-    private static func seedCravingEntries() -> [CravingEntry] {
-        let calendar = Calendar.current
-        let now = Date()
-        let weighted: [(String, Int)] = [
-            ("After meals", 13), ("After meals", 14), ("Coffee", 9), ("Coffee", 15),
-            ("Stress", 10), ("Boredom", 21), ("Driving", 17), ("Social", 20),
-            ("After meals", 8), ("Alcohol", 19), ("Phone", 22), ("After meals", 13),
-        ]
-        return (0..<30).map { dayOffset in
-            let (trigger, hour) = weighted[dayOffset % weighted.count]
-            let day = calendar.date(byAdding: .day, value: -dayOffset, to: now) ?? now
-            let date = calendar.date(bySettingHour: hour, minute: (dayOffset * 7) % 60, second: 0, of: day) ?? day
-            let intensity = max(1, 5 - dayOffset / 10 + (dayOffset % 3 == 0 ? 1 : 0))
-            return CravingEntry(date: date, intensity: min(5, intensity), trigger: trigger, outcome: dayOffset % 4 == 0 ? .used : .rodeItOut)
+    private static func fetchCravingEntries(in context: ModelContext) -> [CravingEntry] {
+        let models = (try? context.fetch(FetchDescriptor<CravingEntryModel>(sortBy: [SortDescriptor(\.date)]))) ?? []
+        return models.compactMap { model in
+            guard let outcome = CravingEntry.Outcome(rawValue: model.outcomeRaw) else { return nil }
+            return CravingEntry(date: model.date, intensity: model.intensity, trigger: model.trigger, outcome: outcome)
         }
     }
 
@@ -182,27 +226,18 @@ final class AppState {
         var severities: [Symptom: Int] // 0 none, 1 mild, 2 strong
     }
 
-    var symptomDays: [SymptomDay] = AppState.seedSymptomDays()
+    var symptomDays: [SymptomDay] = []
 
-    private static func seedSymptomDays() -> [SymptomDay] {
+    private static func fetchSymptomDays(in context: ModelContext) -> [SymptomDay] {
+        let models = (try? context.fetch(FetchDescriptor<SymptomSeverityModel>())) ?? []
         let calendar = Calendar.current
-        let today = calendar.startOfDay(for: .now)
-        // Generally trending down across the last 7 days, matching the prototype.
-        let matrix: [Symptom: [Int]] = [
-            .irritability: [2, 2, 2, 1, 1, 1, 0],
-            .brainFog: [2, 2, 1, 1, 1, 0, 1],
-            .insomnia: [1, 2, 1, 1, 0, 0, 0],
-            .anxiety: [2, 1, 1, 1, 1, 0, 0],
-            .cravings: [2, 2, 2, 1, 1, 1, 1],
-        ]
-        return (0..<7).reversed().map { offset in
-            let day = calendar.date(byAdding: .day, value: -offset, to: today) ?? today
-            var severities = [Symptom: Int]()
-            for (symptom, values) in matrix {
-                severities[symptom] = values[6 - offset]
-            }
-            return SymptomDay(day: day, severities: severities)
+        var byDay = [Date: SymptomDay]()
+        for model in models {
+            guard let symptom = Symptom(rawValue: model.symptomRaw) else { continue }
+            let day = calendar.startOfDay(for: model.day)
+            byDay[day, default: SymptomDay(day: day, severities: [:])].severities[symptom] = model.severity
         }
+        return byDay.values.sorted { $0.day < $1.day }
     }
 
     func severity(for symptom: Symptom, on date: Date, calendar: Calendar = .current) -> Int? {
@@ -217,6 +252,14 @@ final class AppState {
         } else {
             symptomDays.append(SymptomDay(day: day, severities: [symptom: severity]))
         }
+
+        let existingRows = (try? modelContext.fetch(FetchDescriptor<SymptomSeverityModel>())) ?? []
+        if let row = existingRows.first(where: { $0.symptomRaw == symptom.rawValue && calendar.isDate($0.day, inSameDayAs: day) }) {
+            row.severity = severity
+        } else {
+            modelContext.insert(SymptomSeverityModel(day: day, symptomRaw: symptom.rawValue, severity: severity))
+        }
+        try? modelContext.save()
     }
 
     /// Last 7 days, oldest first, padding in empty days so the grid always has 7 columns.
@@ -282,27 +325,55 @@ final class AppState {
 
     // MARK: Badges (SennelBadges.dc.html)
 
+    enum BadgeKind: String, CaseIterable, Identifiable, Sendable {
+        case firstDay, threeDays, oneWeek, twoWeeks, oneMonth, fiftyDays
+        case savedFifty, savedHundred, savedTwoFifty
+        case tenResisted, underLimit, breatheTenTimes
+        var id: String { rawValue }
+    }
+
     struct Badge: Identifiable, Sendable {
+        let kind: BadgeKind
         let title: String
         let detail: String
-        let isEarned: @Sendable (AppState, Date) -> Bool
         var id: String { title }
+
+        func isEarned(_ state: AppState, _ date: Date) -> Bool {
+            AppState.isEarned(kind, state: state, at: date)
+        }
     }
 
     static let badgeCatalog: [Badge] = [
-        Badge(title: "First Day", detail: "Made it through day one.") { s, d in s.lifetimeDaysClean(at: d) >= 1 },
-        Badge(title: "3 Days", detail: "The hardest stretch, behind you.") { s, d in s.lifetimeDaysClean(at: d) >= 3 },
-        Badge(title: "One Week", detail: "Seven days clean.") { s, d in s.lifetimeDaysClean(at: d) >= 7 },
-        Badge(title: "Two Weeks", detail: "14 days clean. The hardest part is behind you.") { s, d in s.lifetimeDaysClean(at: d) >= 14 },
-        Badge(title: "One Month", detail: "A full month clean.") { s, d in s.lifetimeDaysClean(at: d) >= 30 },
-        Badge(title: "50 Days", detail: "Fifty days clean.") { s, d in s.lifetimeDaysClean(at: d) >= 50 },
-        Badge(title: "$50 Saved", detail: "Fifty dollars back in your pocket.") { s, d in s.lifetimeMoneySaved(at: d) >= 50 },
-        Badge(title: "$100 Saved", detail: "A hundred dollars saved.") { s, d in s.lifetimeMoneySaved(at: d) >= 100 },
-        Badge(title: "$250 Saved", detail: "Two-fifty saved and counting.") { s, d in s.lifetimeMoneySaved(at: d) >= 250 },
-        Badge(title: "10 Resisted", detail: "Ten cravings you rode out.") { s, _ in s.cravingEntries.filter { $0.outcome == .rodeItOut }.count >= 10 },
-        Badge(title: "Under Limit", detail: "Stayed under today's limit.") { s, _ in s.usedToday < s.dailyLimit },
-        Badge(title: "Breathe 10x", detail: "Ten guided breathing sessions.") { s, _ in s.breathingSessionsCompleted >= 10 },
+        Badge(kind: .firstDay, title: "First Day", detail: "Made it through day one."),
+        Badge(kind: .threeDays, title: "3 Days", detail: "The hardest stretch, behind you."),
+        Badge(kind: .oneWeek, title: "One Week", detail: "Seven days clean."),
+        Badge(kind: .twoWeeks, title: "Two Weeks", detail: "14 days clean. The hardest part is behind you."),
+        Badge(kind: .oneMonth, title: "One Month", detail: "A full month clean."),
+        Badge(kind: .fiftyDays, title: "50 Days", detail: "Fifty days clean."),
+        Badge(kind: .savedFifty, title: "$50 Saved", detail: "Fifty dollars back in your pocket."),
+        Badge(kind: .savedHundred, title: "$100 Saved", detail: "A hundred dollars saved."),
+        Badge(kind: .savedTwoFifty, title: "$250 Saved", detail: "Two-fifty saved and counting."),
+        Badge(kind: .tenResisted, title: "10 Resisted", detail: "Ten cravings you rode out."),
+        Badge(kind: .underLimit, title: "Under Limit", detail: "Stayed under today's limit."),
+        Badge(kind: .breatheTenTimes, title: "Breathe 10x", detail: "Ten guided breathing sessions."),
     ]
+
+    private static func isEarned(_ kind: BadgeKind, state: AppState, at date: Date) -> Bool {
+        switch kind {
+        case .firstDay: return state.lifetimeDaysClean(at: date) >= 1
+        case .threeDays: return state.lifetimeDaysClean(at: date) >= 3
+        case .oneWeek: return state.lifetimeDaysClean(at: date) >= 7
+        case .twoWeeks: return state.lifetimeDaysClean(at: date) >= 14
+        case .oneMonth: return state.lifetimeDaysClean(at: date) >= 30
+        case .fiftyDays: return state.lifetimeDaysClean(at: date) >= 50
+        case .savedFifty: return state.lifetimeMoneySaved(at: date) >= 50
+        case .savedHundred: return state.lifetimeMoneySaved(at: date) >= 100
+        case .savedTwoFifty: return state.lifetimeMoneySaved(at: date) >= 250
+        case .tenResisted: return state.cravingEntries.filter { $0.outcome == .rodeItOut }.count >= 10
+        case .underLimit: return state.usedToday < state.dailyLimit
+        case .breatheTenTimes: return state.breathingSessionsCompleted >= 10
+        }
+    }
 
     func earnedBadges(at date: Date) -> [Badge] {
         AppState.badgeCatalog.filter { $0.isEarned(self, date) }
@@ -315,18 +386,13 @@ final class AppState {
 
     // MARK: Actions
 
-    private(set) var dailyPouchCounts: [Date: Int] = AppState.seedDailyPouchCounts()
+    private(set) var dailyPouchCounts: [Date: Int] = [:]
 
-    private static func seedDailyPouchCounts() -> [Date: Int] {
-        let calendar = Calendar.current
-        let today = calendar.startOfDay(for: .now)
-        // 13 days before today, trending down — matches the Insights prototype's sample.
-        let counts = [8, 8, 7, 8, 7, 6, 7, 6, 5, 5, 4, 5, 3]
+    private static func fetchDailyPouchCounts(in context: ModelContext) -> [Date: Int] {
+        let models = (try? context.fetch(FetchDescriptor<PouchCountModel>())) ?? []
         var result = [Date: Int]()
-        for (offset, count) in counts.reversed().enumerated() {
-            if let day = calendar.date(byAdding: .day, value: -(offset + 1), to: today) {
-                result[day] = count
-            }
+        for model in models {
+            result[Calendar.current.startOfDay(for: model.day)] = model.count
         }
         return result
     }
@@ -335,5 +401,13 @@ final class AppState {
         usedToday += 1
         let day = Calendar.current.startOfDay(for: .now)
         dailyPouchCounts[day] = usedToday
+
+        let existingRows = (try? modelContext.fetch(FetchDescriptor<PouchCountModel>())) ?? []
+        if let row = existingRows.first(where: { Calendar.current.isDate($0.day, inSameDayAs: day) }) {
+            row.count = usedToday
+        } else {
+            modelContext.insert(PouchCountModel(day: day, count: usedToday))
+        }
+        try? modelContext.save()
     }
 }
