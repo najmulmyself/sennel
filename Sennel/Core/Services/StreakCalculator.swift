@@ -50,4 +50,14 @@ struct StreakCalculator {
 
 enum StreakStage {
     case stage0, stage1, stage2, stage3
+
+    /// Eyebrow label shown on Home, per design doc §2's "Feel" column for each stage.
+    var eyebrowLabel: String {
+        switch self {
+        case .stage0: return "A FRESH START"
+        case .stage1: return "WARMING UP"
+        case .stage2: return "BUILDING"
+        case .stage3: return "ARRIVED"
+        }
+    }
 }

@@ -14,7 +14,7 @@ struct HomeView: View {
         ScrollView {
             VStack(spacing: Spacing.lg) {
                 if let viewModel {
-                    HomeHeaderBar(onSettingsTap: { showSettings = true })
+                    HomeHeaderBar(stage: viewModel.streakStage, onSettingsTap: { showSettings = true })
 
                     GlassEffectContainer {
                         HomeStreakCard(viewModel: viewModel)
@@ -31,7 +31,7 @@ struct HomeView: View {
                                 + Text(viewModel.nextEligibleTime.formatted(date: .omitted, time: .shortened)).bold()
                         }
                         .font(.subheadline)
-                        .foregroundStyle(Color.textSecondary)
+                        .foregroundStyle(Color.color(for: viewModel.streakStage))
                     }
                     .buttonStyle(.plain)
                     .sensoryFeedback(.impact(weight: .light), trigger: viewModel.schedulerUnlockTrigger)
@@ -58,15 +58,16 @@ struct HomeView: View {
 
 /// Eyebrow + headline + settings entry point, top of the Home chrome.
 private struct HomeHeaderBar: View {
+    let stage: StreakStage
     let onSettingsTap: () -> Void
 
     var body: some View {
         HStack(alignment: .top) {
             VStack(alignment: .leading, spacing: Spacing.xs) {
-                Text("A FRESH START")
+                Text(stage.eyebrowLabel)
                     .font(.caption.weight(.semibold))
                     .tracking(1.2)
-                    .foregroundStyle(Color.textSecondary)
+                    .foregroundStyle(Color.color(for: stage))
                 Text("Keep going.")
                     .font(.title2)
                     .foregroundStyle(Color.textPrimary)
@@ -105,7 +106,7 @@ private struct HomeStreakCard: View {
                 VStack(spacing: Spacing.xs) {
                     Text("\(viewModel.currentStreakDays)")
                         .font(.heroNumber(size: 64))
-                        .foregroundStyle(Color.textPrimary)
+                        .foregroundStyle(Color.color(for: viewModel.streakStage))
                     Text("DAYS CLEAN")
                         .font(.caption.weight(.semibold))
                         .tracking(1.0)
@@ -145,7 +146,7 @@ private struct HomeStreakCard: View {
 
                     ProgressView(value: Double(viewModel.todayPouchCount), total: Double(max(viewModel.dailyGoal, 1)))
                         .frame(width: 140)
-                        .tint(Color.textSecondary)
+                        .tint(Color.color(for: viewModel.streakStage))
                 }
             }
         }
@@ -196,7 +197,17 @@ private struct PouchLogButtonStyle: ButtonStyle {
     }
 }
 
-#Preview {
-    HomeView(settings: UserSettings(quitStartDate: .now.addingTimeInterval(-86400 * 10), dailyGoal: 5))
+#Preview("Day 0 · Slate") {
+    HomeView(settings: UserSettings(quitStartDate: .now, dailyGoal: 8))
+        .modelContainer(for: [UserSettings.self, PouchLog.self, RelapseEvent.self], inMemory: true)
+}
+
+#Preview("Day 12 · Teal") {
+    HomeView(settings: UserSettings(quitStartDate: .now.addingTimeInterval(-86400 * 12), dailyGoal: 8))
+        .modelContainer(for: [UserSettings.self, PouchLog.self, RelapseEvent.self], inMemory: true)
+}
+
+#Preview("Day 34 · Emerald") {
+    HomeView(settings: UserSettings(quitStartDate: .now.addingTimeInterval(-86400 * 34), dailyGoal: 8))
         .modelContainer(for: [UserSettings.self, PouchLog.self, RelapseEvent.self], inMemory: true)
 }
