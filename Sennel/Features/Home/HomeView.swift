@@ -21,7 +21,7 @@ struct HomeView: View {
                         PouchLogButton(viewModel: viewModel)
                     }
                     .sensoryFeedback(trigger: viewModel.logTrigger) { _, _ in
-                        viewModel.lastLogWasShielded ? .impact(weight: .medium) : .impact(weight: .soft)
+                        viewModel.lastLogWasShielded ? .impact(weight: .medium) : .impact(weight: .light)
                     }
 
                     Button(action: { showScheduler = true }) {
