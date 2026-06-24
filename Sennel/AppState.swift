@@ -282,10 +282,10 @@ final class AppState {
 
     // MARK: Badges (SennelBadges.dc.html)
 
-    struct Badge: Identifiable {
+    struct Badge: Identifiable, Sendable {
         let title: String
         let detail: String
-        let isEarned: (AppState, Date) -> Bool
+        let isEarned: @Sendable (AppState, Date) -> Bool
         var id: String { title }
     }
 

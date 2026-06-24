@@ -67,7 +67,7 @@ struct RelapseView: View {
             .padding(.bottom, SennelSpace.md)
         }
         .sensoryFeedback(.impact(weight: .medium), trigger: shieldUsedTrigger)
-        .sensoryFeedback(.impact(weight: .soft), trigger: restartTrigger)
+        .sensoryFeedback(.impact(weight: .light), trigger: restartTrigger)
     }
 
     // MARK: Heading
