@@ -7,6 +7,7 @@ import SwiftUI
 struct StreakRingView: View {
     var progress: Double // 0...1, progress toward next milestone
     var stage: StreakStage
+    var days: Int = 0
     var lineWidth: CGFloat = 12
 
     private let sweepFraction: Double = 0.75 // ~270°
@@ -24,6 +25,6 @@ struct StreakRingView: View {
         }
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Streak progress")
-        .accessibilityValue("\(Int(progress * 100)) percent to next milestone")
+        .accessibilityValue("Day \(days), \(Int(progress * 100)) percent to next milestone")
     }
 }

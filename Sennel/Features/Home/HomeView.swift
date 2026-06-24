@@ -77,7 +77,7 @@ private struct HomeHeaderBar: View {
             Spacer()
 
             Button(action: onSettingsTap) {
-                Image(systemName: "gearshape")
+                Image(systemName: "gearshape.fill")
                     .foregroundStyle(Color.textSecondary)
                     .frame(width: 44, height: 44)
                     .background(Circle().fill(Color.surfaceCard))
@@ -94,7 +94,7 @@ private struct HomeStreakCard: View {
     var body: some View {
         VStack(spacing: Spacing.lg) {
             ZStack {
-                StreakRingView(progress: viewModel.ringProgress, stage: viewModel.streakStage, lineWidth: 14)
+                StreakRingView(progress: viewModel.ringProgress, stage: viewModel.streakStage, days: viewModel.currentStreakDays, lineWidth: 14)
                     .frame(width: 220, height: 220)
 
                 VStack(spacing: Spacing.xs) {

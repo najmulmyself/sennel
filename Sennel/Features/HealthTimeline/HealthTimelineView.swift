@@ -9,7 +9,7 @@ struct HealthTimelineView: View {
     var body: some View {
         List(Self.milestones) { milestone in
             HStack(alignment: .top, spacing: Spacing.sm) {
-                Image(systemName: isReached(milestone) ? "checkmark.circle.fill" : "circle")
+                Image(systemName: "leaf.fill")
                     .foregroundStyle(isReached(milestone) ? Color.color(for: .stage2) : Color.textSecondary)
                 VStack(alignment: .leading, spacing: Spacing.xs) {
                     Text(milestone.title)
@@ -42,14 +42,12 @@ struct HealthTimelineView: View {
 
     static let milestones: [Milestone] = [
         Milestone(thresholdHours: 1.0 / 3, title: "Heart rate begins to drop", detail: "Within 20 minutes, your heart rate and blood pressure start returning to normal."),
-        Milestone(thresholdHours: 8, title: "Nicotine levels drop sharply", detail: "Nicotine in your bloodstream has dropped by over 90%."),
+        Milestone(thresholdHours: 1, title: "Nicotine levels drop", detail: "One hour in, nicotine has already started clearing from your bloodstream."),
         Milestone(thresholdHours: 24, title: "Oxygen levels normalize", detail: "Oxygen levels in your blood have returned to a healthy range."),
         Milestone(thresholdHours: 72, title: "Nicotine fully cleared", detail: "All nicotine has left your system — withdrawal symptoms typically peak around now."),
         Milestone(thresholdHours: 168, title: "Cravings start to ease", detail: "One week in, cravings become noticeably less frequent and intense."),
-        Milestone(thresholdHours: 336, title: "Circulation improves", detail: "Two weeks clean — blood flow and gum tissue continue healing."),
         Milestone(thresholdHours: 720, title: "Mood stabilizes", detail: "One month clean — sleep quality and mood swings continue to improve."),
-        Milestone(thresholdHours: 2160, title: "Healing continues", detail: "Three months clean — oral tissue healing is well underway."),
-        Milestone(thresholdHours: 8760, title: "Long-term risk drops", detail: "One year clean — your risk of nicotine-related health issues has dropped significantly.")
+        Milestone(thresholdHours: 2160, title: "Healing continues", detail: "Three months clean — oral tissue healing is well underway.")
     ]
 }
 
