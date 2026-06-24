@@ -12,6 +12,14 @@ final class StreakCalculatorTests: XCTestCase {
         XCTAssertEqual(StreakCalculator.streakStage(forDays: 30), .stage3)
     }
 
+    func testProgressTowardNextStage() {
+        XCTAssertEqual(StreakCalculator.progressTowardNextStage(forDays: 0), 0, accuracy: 0.0001)
+        XCTAssertEqual(StreakCalculator.progressTowardNextStage(forDays: 1), 1.0 / 3, accuracy: 0.0001)
+        XCTAssertEqual(StreakCalculator.progressTowardNextStage(forDays: 3), 0, accuracy: 0.0001)
+        XCTAssertEqual(StreakCalculator.progressTowardNextStage(forDays: 30), 1, accuracy: 0.0001)
+        XCTAssertEqual(StreakCalculator.progressTowardNextStage(forDays: 365), 1, accuracy: 0.0001)
+    }
+
     func testMoneySaved() {
         let result = StreakCalculator.moneySaved(daysClean: 10, pouchesPerDay: 12, costPerPouch: 0.35)
         XCTAssertEqual(result, 42.0, accuracy: 0.0001)

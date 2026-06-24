@@ -23,6 +23,17 @@ struct StreakCalculator {
         Double(daysClean) * Double(pouchesPerDay) * costPerPouch
     }
 
+    /// 0...1 progress from the current stage's lower bound toward the next stage's threshold.
+    /// Drives the streak ring fill — caps at 1 once stage3 (no further stage to progress toward).
+    static func progressTowardNextStage(forDays days: Int) -> Double {
+        let bounds = [0, 3, 8, 30]
+        guard let index = bounds.lastIndex(where: { $0 <= days }) else { return 0 }
+        guard index < bounds.count - 1 else { return 1 }
+        let lower = bounds[index]
+        let upper = bounds[index + 1]
+        return Double(days - lower) / Double(upper - lower)
+    }
+
     /// Interval scheduler: evenly distributes dailyGoal across a waking-hours window.
     static func nextEligibleTime(
         lastLogTime: Date,

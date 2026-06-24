@@ -35,6 +35,7 @@ struct OnboardingView: View {
                         viewModel.advance()
                     } else {
                         viewModel.completeOnboarding(modelContext: modelContext)
+                        Task { await NotificationService.shared.requestPermissionIfNeeded() }
                     }
                 }
             }
