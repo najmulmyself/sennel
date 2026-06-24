@@ -41,7 +41,7 @@ final class HomeViewModel {
     func refresh() {
         currentStreakDays = StreakCalculator.currentStreakDays(from: settings.quitStartDate)
         streakStage = StreakCalculator.streakStage(forDays: currentStreakDays)
-        ringProgress = StreakCalculator.progressTowardNextStage(forDays: currentStreakDays)
+        ringProgress = StreakCalculator.ringFillProgress(forDays: currentStreakDays)
         moneySaved = StreakCalculator.moneySaved(
             daysClean: currentStreakDays,
             pouchesPerDay: settings.baselinePouchesPerDay,

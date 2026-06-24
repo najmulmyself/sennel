@@ -30,6 +30,10 @@ extension Color {
     static let accentShield = Color(light: "#F59E0B", dark: "#F59E0B")
     static let accentLock = Color(light: "#94A3B8", dark: "#94A3B8")
 
+    // Streak ring's unfilled track — deliberately neutral, not a tint of the stage color,
+    // so the colored fill reads clearly against it at every stage.
+    static let ringTrack = Color(light: "#E5E7EB", dark: "#26312D")
+
     // Onboarding full-bleed gradient (design doc §10 stage-0 slate) — fixed regardless
     // of system appearance, since onboarding precedes any user theme preference.
     static let onboardingGradientTop = Color(light: "#6B7686", dark: "#6B7686")

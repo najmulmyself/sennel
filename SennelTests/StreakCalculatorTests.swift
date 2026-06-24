@@ -12,12 +12,24 @@ final class StreakCalculatorTests: XCTestCase {
         XCTAssertEqual(StreakCalculator.streakStage(forDays: 30), .stage3)
     }
 
-    func testProgressTowardNextStage() {
-        XCTAssertEqual(StreakCalculator.progressTowardNextStage(forDays: 0), 0, accuracy: 0.0001)
-        XCTAssertEqual(StreakCalculator.progressTowardNextStage(forDays: 1), 1.0 / 3, accuracy: 0.0001)
-        XCTAssertEqual(StreakCalculator.progressTowardNextStage(forDays: 3), 0, accuracy: 0.0001)
-        XCTAssertEqual(StreakCalculator.progressTowardNextStage(forDays: 30), 1, accuracy: 0.0001)
-        XCTAssertEqual(StreakCalculator.progressTowardNextStage(forDays: 365), 1, accuracy: 0.0001)
+    func testRingFillProgressGrowsContinuouslyAndNeverFullyCloses() {
+        // Floor nub on day 0 — "a fresh start," not a literally empty ring.
+        XCTAssertEqual(StreakCalculator.ringFillProgress(forDays: 0), 0.04, accuracy: 0.0001)
+        // Must NOT reset at the stage0->stage1 boundary (day 3) — should keep climbing.
+        XCTAssertGreaterThan(
+            StreakCalculator.ringFillProgress(forDays: 3),
+            StreakCalculator.ringFillProgress(forDays: 2)
+        )
+        // Must NOT reset at the stage1->stage2 boundary (day 8) either.
+        XCTAssertGreaterThan(
+            StreakCalculator.ringFillProgress(forDays: 8),
+            StreakCalculator.ringFillProgress(forDays: 7)
+        )
+        // Roughly matches the reference design at day 12 (~0.57) and day 34 (~0.91).
+        XCTAssertEqual(StreakCalculator.ringFillProgress(forDays: 12), 0.575, accuracy: 0.01)
+        XCTAssertEqual(StreakCalculator.ringFillProgress(forDays: 34), 0.912, accuracy: 0.01)
+        // Asymptotic — approaches but never reaches 1, even far out.
+        XCTAssertLessThan(StreakCalculator.ringFillProgress(forDays: 365), 1.0)
     }
 
     func testMoneySaved() {
