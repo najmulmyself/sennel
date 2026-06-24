@@ -13,17 +13,28 @@ struct StreakRingView: View {
     private let sweepFraction: Double = 0.75 // ~270°
     private let rotationDegrees: Double = 135 // moves the start point to ~7:30/8 o'clock
 
+    private var clampedProgress: Double {
+        min(max(progress, 0), 1)
+    }
+
+    /// Same start (3 o'clock, 0°) + rotation + sweep-so-far as the trimmed arc below,
+    /// so the dot always sits exactly on the fill's leading edge.
+    private var dotAngleRadians: Double {
+        let degrees = rotationDegrees + 360 * sweepFraction * clampedProgress
+        return Angle.degrees(degrees).radians
+    }
+
+    private func dotCenter(in size: CGSize) -> CGPoint {
+        let radius: CGFloat = min(size.width, size.height) / 2 - lineWidth / 2
+        let dx: CGFloat = radius * CGFloat(cos(dotAngleRadians))
+        let dy: CGFloat = radius * CGFloat(sin(dotAngleRadians))
+        return CGPoint(x: size.width / 2 + dx, y: size.height / 2 + dy)
+    }
+
     var body: some View {
         GeometryReader { geo in
-            let radius = min(geo.size.width, geo.size.height) / 2 - lineWidth / 2
-            let clamped = min(max(progress, 0), 1)
-            // Same start (3 o'clock, 0°) + rotation + sweep-so-far as the trimmed arc below,
-            // so the dot always sits exactly on the fill's leading edge.
-            let angle = Angle.degrees(rotationDegrees + 360 * sweepFraction * clamped)
-            let dotCenter = CGPoint(
-                x: geo.size.width / 2 + radius * cos(angle.radians),
-                y: geo.size.height / 2 + radius * sin(angle.radians)
-            )
+            let clamped = clampedProgress
+            let dotPosition = dotCenter(in: geo.size)
 
             ZStack {
                 // Unfilled track — deliberately neutral, never tinted with the stage color,
@@ -43,11 +54,11 @@ struct StreakRingView: View {
                     .fill(Color.color(for: stage).opacity(0.35))
                     .frame(width: lineWidth * 2.6, height: lineWidth * 2.6)
                     .blur(radius: lineWidth * 0.35)
-                    .position(dotCenter)
+                    .position(dotPosition)
                 Circle()
                     .fill(Color.white)
                     .frame(width: lineWidth * 1.1, height: lineWidth * 1.1)
-                    .position(dotCenter)
+                    .position(dotPosition)
             }
         }
         .animation(reduceMotion ? nil : .spring(response: 0.4, dampingFraction: 0.8), value: progress)
