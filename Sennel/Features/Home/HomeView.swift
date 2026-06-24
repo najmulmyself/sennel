@@ -16,15 +16,12 @@ struct HomeView: View {
                 if let viewModel {
                     HomeHeaderBar(onSettingsTap: { showSettings = true })
 
-                    HomeStreakCard(viewModel: viewModel)
-
-                    Button(action: viewModel.logPouch) {
-                        Text("I just used a pouch")
-                            .font(.body.weight(.semibold))
-                            .foregroundStyle(.white)
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, Spacing.md)
-                            .background(Color.streakStage0, in: RoundedRectangle(cornerRadius: Radius.button))
+                    GlassEffectContainer {
+                        HomeStreakCard(viewModel: viewModel)
+                        PouchLogButton(viewModel: viewModel)
+                    }
+                    .sensoryFeedback(trigger: viewModel.logTrigger) { _, _ in
+                        viewModel.lastLogWasShielded ? .impact(weight: .medium) : .impact(weight: .soft)
                     }
 
                     Button(action: { showScheduler = true }) {
@@ -37,6 +34,7 @@ struct HomeView: View {
                         .foregroundStyle(Color.textSecondary)
                     }
                     .buttonStyle(.plain)
+                    .sensoryFeedback(.impact(weight: .light), trigger: viewModel.schedulerUnlockTrigger)
                 }
             }
             .padding(Spacing.md)
@@ -88,10 +86,17 @@ private struct HomeHeaderBar: View {
 }
 
 /// The hero card: streak ring, elapsed-time readout, money saved, today's usage vs. goal.
+/// Glass-tinted with the current progressive streak color, per design doc §5.
 private struct HomeStreakCard: View {
     let viewModel: HomeViewModel
 
     var body: some View {
+        GlassCard(tint: Color.color(for: viewModel.streakStage)) {
+            cardContent
+        }
+    }
+
+    private var cardContent: some View {
         VStack(spacing: Spacing.lg) {
             ZStack {
                 StreakRingView(progress: viewModel.ringProgress, stage: viewModel.streakStage, days: viewModel.currentStreakDays, lineWidth: 14)
@@ -145,7 +150,49 @@ private struct HomeStreakCard: View {
             }
         }
         .padding(Spacing.lg)
-        .background(Color.surfaceCard, in: RoundedRectangle(cornerRadius: Radius.card))
+    }
+}
+
+/// "I just used a pouch" — the one primary action on the screen. Glass-tinted per
+/// design doc §5, scale+spring on tap, brief glow pulse on log (design doc §7).
+private struct PouchLogButton: View {
+    let viewModel: HomeViewModel
+
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @State private var isGlowing = false
+
+    var body: some View {
+        Button {
+            viewModel.logPouch()
+            withAnimation(reduceMotion ? nil : .easeOut(duration: 0.2)) { isGlowing = true }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                withAnimation(reduceMotion ? nil : .easeOut(duration: 0.2)) { isGlowing = false }
+            }
+        } label: {
+            Text("I just used a pouch")
+                .font(.body.weight(.semibold))
+                .foregroundStyle(.white)
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, Spacing.md)
+        }
+        .buttonStyle(PouchLogButtonStyle(reduceMotion: reduceMotion))
+        .glassEffect(.regular.tint(Color.color(for: viewModel.streakStage)).interactive(), in: RoundedRectangle(cornerRadius: Radius.button))
+        .overlay(
+            RoundedRectangle(cornerRadius: Radius.button)
+                .stroke(Color.color(for: viewModel.streakStage), lineWidth: 3)
+                .opacity(isGlowing ? 0.8 : 0)
+        )
+    }
+}
+
+/// Scales to 0.96 and springs back on press, per design doc §7 — skipped under Reduce Motion.
+private struct PouchLogButtonStyle: ButtonStyle {
+    let reduceMotion: Bool
+
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed && !reduceMotion ? 0.96 : 1.0)
+            .animation(reduceMotion ? nil : .spring(response: 0.4, dampingFraction: 0.8), value: configuration.isPressed)
     }
 }
 

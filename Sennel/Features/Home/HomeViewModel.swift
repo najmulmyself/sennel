@@ -13,9 +13,17 @@ final class HomeViewModel {
     var dailyGoal: Int = 0
     var nextEligibleTime: Date = .now
 
+    /// Bump on every log so a view can attach `.sensoryFeedback(trigger:)`; the haptic
+    /// itself lives in the view layer per design doc §8, not fired imperatively here.
+    var logTrigger: Int = 0
+    var lastLogWasShielded: Bool = false
+    /// Bumps the moment "next pouch eligible" time is crossed while the screen is open.
+    var schedulerUnlockTrigger: Int = 0
+
     private var modelContext: ModelContext
     private var settings: UserSettings
     private var timer: Timer?
+    private var wasSchedulerEligible = true
 
     init(modelContext: ModelContext, settings: UserSettings) {
         self.modelContext = modelContext
@@ -45,6 +53,7 @@ final class HomeViewModel {
             lastLogTime: fetchLastPouchLog()?.timestamp ?? settings.quitStartDate,
             dailyGoal: settings.dailyGoal
         )
+        wasSchedulerEligible = Date.now >= nextEligibleTime
         tick()
     }
 
@@ -67,7 +76,8 @@ final class HomeViewModel {
         }
 
         try? modelContext.save()
-        HapticService.fire(shieldAvailable ? .shieldUsed : .relapseLogged)
+        lastLogWasShielded = shieldAvailable
+        logTrigger += 1
         NotificationService.shared.scheduleNextEligibleNotification(from: log.timestamp, dailyGoal: settings.dailyGoal)
         refresh()
     }
@@ -79,6 +89,12 @@ final class HomeViewModel {
         let minutes = (totalSeconds % 3600) / 60
         let seconds = totalSeconds % 60
         elapsedCleanLabel = String(format: "%dd %dh %02dm %02ds clean", days, hours, minutes, seconds)
+
+        let isEligibleNow = Date.now >= nextEligibleTime
+        if isEligibleNow && !wasSchedulerEligible {
+            schedulerUnlockTrigger += 1
+        }
+        wasSchedulerEligible = isEligibleNow
     }
 
     private func fetchTodayPouchCount() -> Int {

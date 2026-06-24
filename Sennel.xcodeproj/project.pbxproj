@@ -33,7 +33,6 @@
 		E192ABBFB6AC4ECDA55184CC /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232CB72333845D2A6716A72 /* UserSettings.swift */; };
 		F28CAD4784A4414ABEEE7599 /* StoreKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADC8009B104E5FAC01A18D /* StoreKitService.swift */; };
 		F515F16E27D4420CBFCEEFA9 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CAC1F44513495BAAF6B408 /* PaywallView.swift */; };
-		F7A2588E92BF47E3BFB5CC05 /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C8E7B83C3F470C9FEF3ADF /* HapticService.swift */; };
 		FE109CB019014D38BC743EEF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F21BB9E67E4CCA80B1E0A7 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +60,6 @@
 		39FB34D6D5E9432A8695F0CA /* Font+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Sennel.swift"; sourceTree = "<group>"; };
 		3EFE315A3B4E4F17AD6AC4F4 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		5FE9B906EBB14DEA952BDF43 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		65C8E7B83C3F470C9FEF3ADF /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
 		794D6966FD9D4C7AB1B340C4 /* Color+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Sennel.swift"; sourceTree = "<group>"; };
 		8232CB72333845D2A6716A72 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
 		827A48440DAB49DE96B40C6F /* IntervalSchedulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSchedulerView.swift; sourceTree = "<group>"; };
@@ -232,7 +230,6 @@
 				92632A4F83804805B86B15D6 /* StreakCalculator.swift */,
 				3EFE315A3B4E4F17AD6AC4F4 /* NotificationService.swift */,
 				2FADC8009B104E5FAC01A18D /* StoreKitService.swift */,
-				65C8E7B83C3F470C9FEF3ADF /* HapticService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -388,7 +385,6 @@
 				1C539981F1B446E185445E79 /* StreakCalculator.swift in Sources */,
 				BB411042D0AD4186B6336B19 /* NotificationService.swift in Sources */,
 				F28CAD4784A4414ABEEE7599 /* StoreKitService.swift in Sources */,
-				F7A2588E92BF47E3BFB5CC05 /* HapticService.swift in Sources */,
 				96824FA57E22458DAB8C13C4 /* PouchLog.swift in Sources */,
 				E192ABBFB6AC4ECDA55184CC /* UserSettings.swift in Sources */,
 				0251C0BCABAB46188F9A5C60 /* RelapseEvent.swift in Sources */,

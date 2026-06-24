@@ -10,6 +10,8 @@ struct StreakRingView: View {
     var days: Int = 0
     var lineWidth: CGFloat = 12
 
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+
     private let sweepFraction: Double = 0.75 // ~270°
 
     var body: some View {
@@ -23,6 +25,8 @@ struct StreakRingView: View {
                 .stroke(Color.color(for: stage), style: StrokeStyle(lineWidth: lineWidth, lineCap: .round))
                 .rotationEffect(.degrees(135))
         }
+        .animation(reduceMotion ? nil : .spring(response: 0.4, dampingFraction: 0.8), value: progress)
+        .animation(reduceMotion ? nil : .easeInOut(duration: 1.2), value: stage)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Streak progress")
         .accessibilityValue("Day \(days), \(Int(progress * 100)) percent to next milestone")
