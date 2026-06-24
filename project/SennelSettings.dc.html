@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<x-import component="IOSDevice" from="./ios-frame.jsx" dark="{{ dark }}" hint-size="402px,874px">
+  <div style="--bg:{{ bg }}; --card:{{ card }}; --stage:{{ stage }}; --tp:{{ tp }}; --ts:{{ ts }}; --hair:{{ hair }}; --sep:{{ sep }}; --ter:{{ ter }}; height:100%; box-sizing:border-box; background:var(--bg); padding:58px 0 30px; display:flex; flex-direction:column; gap:18px; font-family:-apple-system,system-ui,sans-serif; overflow:hidden;">
+
+    <div style="padding:0 22px;">
+      <div style="font-size:34px; font-weight:700; letter-spacing:-.01em; color:var(--tp);">Settings</div>
+    </div>
+
+    <div style="margin:0 16px; border-radius:20px; background:var(--card); border:1px solid var(--hair); padding:14px 16px; display:flex; align-items:center; gap:14px; box-shadow:0 2px 8px rgba(0,0,0,.04);">
+      <div style="position:relative; width:48px; height:48px; flex-shrink:0;">
+        <svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="19" fill="none" stroke="var(--hair)" stroke-width="5"/><circle cx="24" cy="24" r="19" fill="none" stroke="var(--stage)" stroke-width="5" stroke-linecap="round" stroke-dasharray="80 120" transform="rotate(135 24 24)"/></svg>
+      </div>
+      <div style="flex:1;">
+        <div style="font-size:17px; font-weight:600; color:var(--tp);">12 days clean</div>
+        <div style="font-size:14px; color:var(--ts);">$136.84 saved · Building</div>
+      </div>
+      <svg width="8" height="14" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" stroke="var(--ter)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+
+    <div style="flex:1; overflow:hidden; display:flex; flex-direction:column; gap:20px;">
+
+      <div>
+        <div style="font-size:13px; text-transform:uppercase; letter-spacing:.02em; color:var(--ts); padding:0 36px 7px;">Goal &amp; habits</div>
+        <div style="margin:0 16px; background:var(--card); border-radius:18px; overflow:hidden; border:1px solid var(--hair);">
+          <div style="display:flex; align-items:center; gap:12px; padding:0 16px; height:50px;">
+            <div style="width:29px; height:29px; border-radius:8px; background:#0D9488; flex-shrink:0; display:flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#fff" stroke-width="2"/><path d="M12 9v3l2 2" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div style="flex:1; font-size:17px; color:var(--tp);">Daily limit</div>
+            <span style="font-size:17px; color:var(--ts); margin-right:6px;">8 pouches</span>
+            <svg width="8" height="14" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" stroke="var(--ter)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <div style="position:absolute;"></div>
+          </div>
+          <div style="height:1px; background:var(--sep); margin-left:57px;"></div>
+          <div style="display:flex; align-items:center; gap:12px; padding:0 16px; height:50px;">
+            <div style="width:29px; height:29px; border-radius:8px; background:#14B8A6; flex-shrink:0; display:flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M16 7c0-2-1.8-3-4-3s-4 1-4 3 1.8 2.6 4 3 4 1 4 3-1.8 3-4 3-4-1-4-3" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div style="flex:1; font-size:17px; color:var(--tp);">Daily spend</div>
+            <span style="font-size:17px; color:var(--ts); margin-right:6px;">$11.40</span>
+            <svg width="8" height="14" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" stroke="var(--ter)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div style="height:1px; background:var(--sep); margin-left:57px;"></div>
+          <div style="display:flex; align-items:center; gap:12px; padding:0 16px; height:50px;">
+            <div style="width:29px; height:29px; border-radius:8px; background:#0EA5A0; flex-shrink:0; display:flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 18L9 13l3 3 8-8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div style="flex:1; font-size:17px; color:var(--tp);">Plan</div>
+            <span style="font-size:17px; color:var(--ts); margin-right:6px;">Taper</span>
+            <svg width="8" height="14" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" stroke="var(--ter)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:13px; text-transform:uppercase; letter-spacing:.02em; color:var(--ts); padding:0 36px 7px;">Reminders &amp; appearance</div>
+        <div style="margin:0 16px; background:var(--card); border-radius:18px; overflow:hidden; border:1px solid var(--hair);">
+          <div style="display:flex; align-items:center; gap:12px; padding:0 16px; height:50px;">
+            <div style="width:29px; height:29px; border-radius:8px; background:#F59E0B; flex-shrink:0; display:flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9a6 6 0 0112 0c0 5 2 6 2 6H4s2-1 2-6z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M10 20a2 2 0 004 0" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></div>
+            <div style="flex:1; font-size:17px; color:var(--tp);">Interval reminders</div>
+            <div style="width:51px; height:31px; border-radius:99px; background:var(--stage); position:relative;"><div style="position:absolute; top:2px; left:22px; width:27px; height:27px; border-radius:50%; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.2);"></div></div>
+          </div>
+          <div style="height:1px; background:var(--sep); margin-left:57px;"></div>
+          <div style="display:flex; align-items:center; gap:12px; padding:0 16px; height:50px;">
+            <div style="width:29px; height:29px; border-radius:8px; background:#64748B; flex-shrink:0; display:flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3a6 6 0 00-6 6c0 7-3 7 9 7s9 0 9-7a6 6 0 00-6-6" stroke="#fff" stroke-width="0" fill="#fff" opacity="0"/><path d="M21 12.8A8 8 0 1111.2 3 6 6 0 0021 12.8z" stroke="#fff" stroke-width="2" stroke-linejoin="round"/></svg></div>
+            <div style="flex:1; font-size:17px; color:var(--tp);">Dark mode</div>
+            <div style="width:51px; height:31px; border-radius:99px; background:{{ darkToggleBg }}; position:relative;"><div style="position:absolute; top:2px; left:{{ darkKnob }}; width:27px; height:27px; border-radius:50%; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.2); transition:left .2s;"></div></div>
+          </div>
+          <div style="height:1px; background:var(--sep); margin-left:57px;"></div>
+          <div style="display:flex; align-items:center; gap:12px; padding:0 16px; height:50px;">
+            <div style="width:29px; height:29px; border-radius:8px; background:#0D9488; flex-shrink:0; display:flex; align-items:center; justify-content:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="5" stroke="#fff" stroke-width="2"/></svg></div>
+            <div style="flex:1; font-size:17px; color:var(--tp);">App icon</div>
+            <span style="font-size:17px; color:var(--ts); margin-right:6px;">Default</span>
+            <svg width="8" height="14" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" stroke="var(--ter)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin:0 16px; border-radius:18px; padding:16px 18px; display:flex; align-items:center; gap:14px; background:{{ premiumBg }}; border:1px solid {{ premiumBorder }};">
+        <div style="width:38px; height:38px; border-radius:11px; background:var(--stage); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="#fff" stroke-width="1.6" opacity=".55"/><path d="M12 5a7 7 0 015.5 11" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><circle cx="17.5" cy="7.5" r="2" fill="#fff"/></svg></div>
+        <div style="flex:1;"><div style="font-size:17px; font-weight:600; color:var(--tp);">Sennel Premium</div><div style="font-size:14px; color:var(--ts);">Full analytics, widgets & more</div></div>
+        <svg width="8" height="14" viewBox="0 0 8 14"><path d="M1 1l6 6-6 6" stroke="var(--ter)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+
+      <div style="text-align:center; font-size:13px; color:var(--ter);">Sennel · v1.0</div>
+    </div>
+  </div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:402,&quot;height&quot;:874},&quot;dark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const dark = !!this.props.dark;
+    const stage = dark ? '#2DD4BF' : '#0D9488';
+    return {
+      dark, stage,
+      bg: dark ? '#0B1410' : '#F2F1EE',
+      card: dark ? '#13201C' : '#FFFFFF',
+      tp: dark ? '#ECFDF5' : '#0F172A',
+      ts: dark ? '#9CA8A4' : '#64748B',
+      ter: dark ? 'rgba(235,235,245,0.3)' : 'rgba(60,60,67,0.3)',
+      hair: dark ? 'rgba(255,255,255,0.08)' : 'rgba(15,23,42,0.06)',
+      sep: dark ? 'rgba(255,255,255,0.08)' : 'rgba(60,60,67,0.12)',
+      darkToggleBg: dark ? stage : 'rgba(120,120,128,0.3)',
+      darkKnob: dark ? '22px' : '2px',
+      premiumBg: dark ? 'rgba(45,212,191,0.10)' : 'rgba(13,148,136,0.07)',
+      premiumBorder: dark ? 'rgba(45,212,191,0.25)' : 'rgba(13,148,136,0.18)',
+    };
+  }
+}
+</script>
+</body>
+</html>

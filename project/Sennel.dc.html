@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    @keyframes sennelBreathe { 0%,100%{ opacity:1; } 50%{ opacity:.5; } }
+    body { margin:0; }
+  </style>
+</helmet>
+
+<div style="min-width:100%; min-height:100vh; box-sizing:border-box; width:max-content; padding:52px; background:#E7E5DF; font-family:-apple-system,system-ui,sans-serif;">
+
+  <div style="display:flex; align-items:center; gap:18px; margin-bottom:8px;">
+    <div style="width:60px; height:60px; border-radius:15px; background:linear-gradient(150deg, #2DD4BF, #047857); position:relative; box-shadow:0 8px 20px rgba(4,120,87,.28); flex-shrink:0;">
+      <svg width="60" height="60" viewBox="0 0 60 60" style="position:absolute; inset:0;"><circle cx="30" cy="30" r="19" fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-dasharray="90 160" transform="rotate(135 30 30)"/><circle cx="16.6" cy="43.4" r="6.2" fill="#fff"/><circle cx="42" cy="15.5" r="3.6" fill="#fff"/></svg>
+    </div>
+    <div>
+      <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:32px; color:#0F172A; letter-spacing:-.01em;">Sennel</div>
+      <div style="font-size:15px; color:#64748B;">Nicotine pouch cessation · iOS 26 · Phase 1 + Phase 2</div>
+    </div>
+  </div>
+  <div style="font-size:14px; color:#8A8780; max-width:680px; margin:14px 0 40px; line-height:1.5;">Clean-Recovery, not clinical. Color tells the story — slate at the start, warming to emerald as the streak grows. Tap <b style="color:#0F172A;">"I just used a pouch"</b> on any Home screen; the live timer and money saved tick by the second.</div>
+
+  <div style="font:600 12px/1 ui-monospace,monospace; letter-spacing:.16em; text-transform:uppercase; color:#9C988E; margin-bottom:16px;">Onboarding · 2 questions, then straight to value</div>
+  <div style="display:flex; gap:44px; align-items:flex-start; margin-bottom:64px;">
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Last pouch</div>
+      <dc-import name="SennelOnboard" step="1" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Daily goal</div>
+      <dc-import name="SennelOnboard" step="2" hint-size="402px,874px"></dc-import>
+    </div>
+  </div>
+
+  <div style="font:600 12px/1 ui-monospace,monospace; letter-spacing:.16em; text-transform:uppercase; color:#9C988E; margin-bottom:16px;">Home · the proof-of-value screen, in light mode — color progresses with the streak</div>
+  <div style="display:flex; gap:44px; align-items:flex-start; margin-bottom:64px;">
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Day 0 · Slate · a fresh start</div>
+      <dc-import name="SennelHome" dark="{{ false }}" days="0" start-ago-sec="18720" progress="0.1" stage="slate" used="2" limit="8" daily-spend="11.4" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Day 12 · Teal · building</div>
+      <dc-import name="SennelHome" dark="{{ false }}" days="12" start-ago-sec="1052280" progress="0.55" stage="teal4" used="3" limit="8" daily-spend="11.4" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Day 34 · Emerald · arrived</div>
+      <dc-import name="SennelHome" dark="{{ false }}" days="34" start-ago-sec="2970000" progress="0.9" stage="emerald" used="1" limit="6" daily-spend="11.4" hint-size="402px,874px"></dc-import>
+    </div>
+  </div>
+
+  <div style="font:600 12px/1 ui-monospace,monospace; letter-spacing:.16em; text-transform:uppercase; color:#9C988E; margin-bottom:16px;">Home · dark mode — a deliberate second theme, not an inversion</div>
+  <div style="display:flex; gap:44px; align-items:flex-start; margin-bottom:64px;">
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Day 12 · Teal · dark</div>
+      <dc-import name="SennelHome" dark="{{ true }}" days="12" start-ago-sec="1052280" progress="0.55" stage="teal4" used="3" limit="8" daily-spend="11.4" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Day 34 · Emerald · dark</div>
+      <dc-import name="SennelHome" dark="{{ true }}" days="34" start-ago-sec="2970000" progress="0.9" stage="emerald" used="1" limit="6" daily-spend="11.4" hint-size="402px,874px"></dc-import>
+    </div>
+  </div>
+
+  <div style="font:600 12px/1 ui-monospace,monospace; letter-spacing:.16em; text-transform:uppercase; color:#9C988E; margin-bottom:16px;">Health timeline &amp; interval scheduler · light + dark</div>
+  <div style="display:flex; gap:44px; align-items:flex-start; margin-bottom:64px;">
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Health · light</div>
+      <dc-import name="SennelTimeline" dark="{{ false }}" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Health · dark</div>
+      <dc-import name="SennelTimeline" dark="{{ true }}" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Schedule · light</div>
+      <dc-import name="SennelScheduler" dark="{{ false }}" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Schedule · dark</div>
+      <dc-import name="SennelScheduler" dark="{{ true }}" hint-size="402px,874px"></dc-import>
+    </div>
+  </div>
+
+  <div style="font:600 12px/1 ui-monospace,monospace; letter-spacing:.16em; text-transform:uppercase; color:#9C988E; margin-bottom:16px;">Soft paywall &amp; settings · light + dark</div>
+  <div style="display:flex; gap:44px; align-items:flex-start; margin-bottom:24px;">
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Paywall · light</div>
+      <dc-import name="SennelPaywall" dark="{{ false }}" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Paywall · dark</div>
+      <dc-import name="SennelPaywall" dark="{{ true }}" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Settings · light</div>
+      <dc-import name="SennelSettings" dark="{{ false }}" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Settings · dark</div>
+      <dc-import name="SennelSettings" dark="{{ true }}" hint-size="402px,874px"></dc-import>
+    </div>
+  </div>
+
+  <div style="height:2px; background:linear-gradient(90deg, #C9C6BD, transparent); margin:80px 0 16px; max-width:640px;"></div>
+  <div style="display:flex; align-items:center; gap:14px; margin-bottom:6px;">
+    <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:26px; color:#0F172A;">Phase 2</div>
+    <div style="padding:5px 12px; border-radius:99px; background:rgba(13,148,136,.10); color:#0D9488; font-size:13px; font-weight:600;">Parity + native-exclusive polish</div>
+  </div>
+  <div style="font-size:14px; color:#8A8780; max-width:680px; margin:0 0 40px; line-height:1.5;">The depth layer: craving &amp; symptom tracking, real analytics behind the paywall, badges, guided breathing, compassionate relapse handling, and the native-only Live Activity / widgets that nobody in the category ships.</div>
+
+  <div style="font:600 12px/1 ui-monospace,monospace; letter-spacing:.16em; text-transform:uppercase; color:#9C988E; margin-bottom:16px;">Craving logger &amp; withdrawal symptom matrix · light + dark</div>
+  <div style="display:flex; gap:44px; align-items:flex-start; margin-bottom:64px;">
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Craving · light</div>
+      <dc-import name="SennelCraving" dark="{{ false }}" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Craving · dark</div>
+      <dc-import name="SennelCraving" dark="{{ true }}" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Symptoms · light</div>
+      <dc-import name="SennelSymptoms" dark="{{ false }}" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Symptoms · dark</div>
+      <dc-import name="SennelSymptoms" dark="{{ true }}" hint-size="402px,874px"></dc-import>
+    </div>
+  </div>
+
+  <div style="font:600 12px/1 ui-monospace,monospace; letter-spacing:.16em; text-transform:uppercase; color:#9C988E; margin-bottom:16px;">Insights (Swift Charts) &amp; achievement badges · light + dark</div>
+  <div style="display:flex; gap:44px; align-items:flex-start; margin-bottom:64px;">
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Insights · light</div>
+      <dc-import name="SennelInsights" dark="{{ false }}" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Insights · dark</div>
+      <dc-import name="SennelInsights" dark="{{ true }}" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Badges · light</div>
+      <dc-import name="SennelBadges" dark="{{ false }}" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Badges · dark</div>
+      <dc-import name="SennelBadges" dark="{{ true }}" hint-size="402px,874px"></dc-import>
+    </div>
+  </div>
+
+  <div style="font:600 12px/1 ui-monospace,monospace; letter-spacing:.16em; text-transform:uppercase; color:#9C988E; margin-bottom:16px;">Guided breathing (live) &amp; relapse forgiveness</div>
+  <div style="display:flex; gap:44px; align-items:flex-start; margin-bottom:64px;">
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Breathing · animated, tap to pause</div>
+      <dc-import name="SennelBreathing" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Relapse · light</div>
+      <dc-import name="SennelRelapse" dark="{{ false }}" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Relapse · dark</div>
+      <dc-import name="SennelRelapse" dark="{{ true }}" hint-size="402px,874px"></dc-import>
+    </div>
+  </div>
+
+  <div style="font:600 12px/1 ui-monospace,monospace; letter-spacing:.16em; text-transform:uppercase; color:#9C988E; margin-bottom:16px;">Native edge · Lock Screen widgets, Live Activity &amp; Home Screen widgets</div>
+  <div style="display:flex; gap:44px; align-items:flex-start; margin-bottom:24px;">
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Lock Screen · widgets + Live Activity</div>
+      <dc-import name="SennelWidgets" view="lock" hint-size="402px,874px"></dc-import>
+    </div>
+    <div style="flex:none; display:flex; flex-direction:column; gap:12px;">
+      <div style="font-size:13px; font-weight:600; color:#3F3B33;">Home Screen · widgets + Dynamic Island</div>
+      <dc-import name="SennelWidgets" view="home" hint-size="402px,874px"></dc-import>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
