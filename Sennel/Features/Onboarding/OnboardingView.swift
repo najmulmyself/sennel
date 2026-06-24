@@ -11,7 +11,7 @@ struct OnboardingView: View {
         ZStack {
             OnboardingBackground()
 
-            VStack(spacing: Spacing.xl) {
+            VStack(spacing: Spacing.xs) {
                 OnboardingHeaderBar(
                     currentStep: viewModel.step,
                     totalSteps: viewModel.totalSteps,
