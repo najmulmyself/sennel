@@ -7,6 +7,7 @@ struct MainTabView: View {
     private enum Tab { case home, schedule, insights, health, settings }
 
     @State private var selection: Tab = .home
+    @State private var showingPaywall = false
 
     var body: some View {
         TabView(selection: $selection) {
@@ -26,9 +27,12 @@ struct MainTabView: View {
                 .tabItem { Label("Health", systemImage: "heart.fill") }
                 .tag(Tab.health)
 
-            SettingsView(onPremiumTap: { selection = .insights })
+            SettingsView(onPremiumTap: { showingPaywall = true })
                 .tabItem { Label("Settings", systemImage: "gearshape.fill") }
                 .tag(Tab.settings)
+        }
+        .sheet(isPresented: $showingPaywall) {
+            PaywallView()
         }
     }
 }
@@ -36,4 +40,5 @@ struct MainTabView: View {
 #Preview {
     MainTabView()
         .environment(AppState())
+        .environment(StoreManager(onEntitlementChange: { _ in }))
 }

@@ -1,8 +1,8 @@
 import SwiftUI
 
 /// The Insights tab (SennelInsights.dc.html) — real charts driven by AppState's
-/// craving/pouch history, replacing Phase 1's blurred paywall teaser. StoreKit2 and
-/// a real paywall gate are out of Phase 2 scope, so this is just the full picture.
+/// craving/pouch history. Premium-gated per Phase 2: Home/Schedule/logging stay
+/// free forever, but the full analytics picture here is subscriber-only.
 struct InsightsView: View {
     @Environment(AppState.self) private var appState
     @Environment(\.colorScheme) private var colorScheme
@@ -12,6 +12,7 @@ struct InsightsView: View {
     }
 
     @State private var range: Range = .thirtyDay
+    @State private var showingPaywall = false
 
     var body: some View {
         TimelineView(.periodic(from: .now, by: 60)) { context in
@@ -27,25 +28,58 @@ struct InsightsView: View {
         return ZStack {
             theme.background.ignoresSafeArea()
 
-            ScrollView {
-                VStack(alignment: .leading, spacing: SennelSpace.md) {
-                    header(theme: theme, accent: accent)
-                    pouchChart(theme: theme, accent: accent, trend: trend)
-                    statRow(theme: theme, accent: accent, date: date)
-                    timeOfDayCard(theme: theme, accent: accent, date: date)
+            if appState.isPremium {
+                ScrollView {
+                    VStack(alignment: .leading, spacing: SennelSpace.md) {
+                        header(theme: theme, accent: accent)
+                        pouchChart(theme: theme, accent: accent, trend: trend)
+                        statRow(theme: theme, accent: accent, date: date)
+                        timeOfDayCard(theme: theme, accent: accent, date: date)
 
-                    Text(footerText(theme: theme, accent: accent, date: date))
-                        .font(.subheadline)
-                        .foregroundStyle(theme.textSecondary)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .multilineTextAlignment(.center)
-                        .padding(.top, SennelSpace.xs)
+                        Text(footerText(theme: theme, accent: accent, date: date))
+                            .font(.subheadline)
+                            .foregroundStyle(theme.textSecondary)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .multilineTextAlignment(.center)
+                            .padding(.top, SennelSpace.xs)
+                    }
+                    .padding(.horizontal, SennelSpace.lg)
+                    .padding(.top, SennelSpace.lg)
+                    .padding(.bottom, SennelSpace.lg)
                 }
-                .padding(.horizontal, SennelSpace.lg)
-                .padding(.top, SennelSpace.lg)
-                .padding(.bottom, SennelSpace.lg)
+            } else {
+                paywallTeaser(theme: theme, accent: accent)
             }
         }
+        .sheet(isPresented: $showingPaywall) {
+            PaywallView()
+        }
+    }
+
+    // MARK: Paywall teaser
+
+    private func paywallTeaser(theme: SennelTheme, accent: Color) -> some View {
+        VStack(spacing: SennelSpace.lg) {
+            Spacer()
+            Image(systemName: "chart.bar.fill")
+                .font(.system(size: 44))
+                .foregroundStyle(accent)
+            VStack(spacing: 6) {
+                Text("Unlock Insights")
+                    .font(.title2.weight(.bold))
+                    .foregroundStyle(theme.textPrimary)
+                Text("See your pouch trend, top triggers, and craving patterns with Sennel Premium.")
+                    .font(.subheadline)
+                    .foregroundStyle(theme.textSecondary)
+                    .multilineTextAlignment(.center)
+            }
+            PrimaryButton(title: "Unlock Premium", theme: theme) {
+                showingPaywall = true
+            }
+            .frame(maxWidth: 240)
+            Spacer()
+        }
+        .padding(.horizontal, SennelSpace.xl)
     }
 
     // MARK: Header
@@ -228,4 +262,5 @@ struct InsightsView: View {
 #Preview {
     InsightsView()
         .environment(AppState())
+        .environment(StoreManager(onEntitlementChange: { _ in }))
 }

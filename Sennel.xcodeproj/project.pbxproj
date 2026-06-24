@@ -34,6 +34,9 @@
 		000000000000000000000046 /* SymptomSeverityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000045 /* SymptomSeverityModel.swift */; };
 		000000000000000000000048 /* PouchCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000047 /* PouchCountModel.swift */; };
 		00000000000000000000004A /* ModelContainer+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000049 /* ModelContainer+Sennel.swift */; };
+		00000000000000000000004D /* ProductIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000004C /* ProductIDs.swift */; };
+		00000000000000000000004F /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000004E /* StoreManager.swift */; };
+		000000000000000000000051 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000050 /* PaywallView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,10 @@
 		000000000000000000000045 /* SymptomSeverityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomSeverityModel.swift; sourceTree = "<group>"; };
 		000000000000000000000047 /* PouchCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchCountModel.swift; sourceTree = "<group>"; };
 		000000000000000000000049 /* ModelContainer+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelContainer+Sennel.swift"; sourceTree = "<group>"; };
+		00000000000000000000004C /* ProductIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIDs.swift; sourceTree = "<group>"; };
+		00000000000000000000004E /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		000000000000000000000050 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		000000000000000000000053 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,12 +115,22 @@
 				000000000000000000000015 /* HomeView.swift */,
 				00000000000000000000003B /* InsightsView.swift */,
 				000000000000000000000017 /* OnboardingView.swift */,
+				000000000000000000000050 /* PaywallView.swift */,
 				00000000000000000000003D /* RelapseView.swift */,
 				00000000000000000000001B /* ScheduleView.swift */,
 				00000000000000000000001D /* SettingsView.swift */,
 				00000000000000000000003F /* SymptomLogView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		000000000000000000000052 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				00000000000000000000004C /* ProductIDs.swift */,
+				00000000000000000000004E /* StoreManager.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 		00000000000000000000004B /* Persistence */ = {
@@ -140,6 +157,7 @@
 				000000000000000000000025 /* DesignSystem */,
 				00000000000000000000004B /* Persistence */,
 				000000000000000000000026 /* Screens */,
+				000000000000000000000052 /* Store */,
 			);
 			path = Sennel;
 			sourceTree = "<group>";
@@ -156,6 +174,7 @@
 			children = (
 				000000000000000000000023 /* Sennel */,
 				000000000000000000000027 /* Products */,
+				000000000000000000000053 /* Products.storekit */,
 			);
 			sourceTree = "<group>";
 		};
@@ -254,6 +273,9 @@
 				000000000000000000000046 /* SymptomSeverityModel.swift in Sources */,
 				000000000000000000000048 /* PouchCountModel.swift in Sources */,
 				00000000000000000000004A /* ModelContainer+Sennel.swift in Sources */,
+				00000000000000000000004D /* ProductIDs.swift in Sources */,
+				00000000000000000000004F /* StoreManager.swift in Sources */,
+				000000000000000000000051 /* PaywallView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

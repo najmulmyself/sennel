@@ -183,15 +183,15 @@ struct SettingsView: View {
                     .fill(theme.stageColor)
                     .frame(width: 38, height: 38)
                     .overlay(
-                        Image(systemName: "sparkles")
+                        Image(systemName: appState.isPremium ? "checkmark.seal.fill" : "sparkles")
                             .font(.system(size: 16, weight: .semibold))
                             .foregroundStyle(.white)
                     )
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("Sennel Premium")
+                    Text(appState.isPremium ? "Manage subscription" : "Unlock Premium")
                         .font(.body.weight(.semibold))
                         .foregroundStyle(theme.textPrimary)
-                    Text("Full analytics, widgets & more")
+                    Text(appState.isPremium ? "Sennel Premium is active" : "Full analytics, widgets & more")
                         .font(.subheadline)
                         .foregroundStyle(theme.textSecondary)
                 }
