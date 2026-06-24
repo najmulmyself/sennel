@@ -13,7 +13,7 @@ final class OnboardingViewModel {
 
     var lastPouchTime: Date = .now
     var selection: LastPouchSelection = .specificTime
-    var dailyGoal: Int = 5
+    var dailyGoal: Int = 8
     var step: Int = 0
 
     var totalSteps: Int { 2 }
@@ -51,7 +51,7 @@ final class OnboardingViewModel {
             selection = .specificTime
             lastPouchTime = .now
         default:
-            dailyGoal = 5
+            dailyGoal = 8
         }
     }
 

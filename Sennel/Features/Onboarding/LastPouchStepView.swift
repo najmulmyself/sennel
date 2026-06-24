@@ -7,20 +7,29 @@ struct LastPouchStepView: View {
     @State private var showEarlierPicker = false
 
     var body: some View {
-        VStack(spacing: Spacing.xl) {
+        VStack(spacing: 0) {
             OnboardingStepHeading(
                 eyebrow: "Step 1 of 2",
-                headline: "When was your last pouch?",
-                subtitle: "We'll use this to start your streak clock."
+                headline: "When did you last use a pouch?",
+                subtitle: "Your streak starts from this moment."
             )
 
-            Text(timeLabel)
-                .font(.heroNumber(size: 48))
-                .foregroundStyle(.white)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, Spacing.lg)
-                .minimumScaleFactor(0.6)
-                .lineLimit(1)
+            Spacer(minLength: Spacing.xl)
+
+            HStack(alignment: .firstTextBaseline, spacing: Spacing.sm) {
+                Text(heroTime.number)
+                    .font(.heroNumber(size: 96))
+                    .foregroundStyle(.white)
+                if !heroTime.suffix.isEmpty {
+                    Text(heroTime.suffix)
+                        .font(.system(size: 34, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.white)
+                }
+            }
+            .lineLimit(1)
+            .minimumScaleFactor(0.6)
+
+            Spacer(minLength: Spacing.lg)
 
             HStack(spacing: Spacing.sm) {
                 OnboardingChip(title: "Just now", isSelected: viewModel.selection == .justNow) {
@@ -33,7 +42,10 @@ struct LastPouchStepView: View {
                     showEarlierPicker = true
                 }
             }
+
+            Spacer(minLength: Spacing.xl)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
         .sheet(isPresented: $showTimePicker) {
             OnboardingDatePickerSheet(date: viewModel.lastPouchTime, components: [.hourAndMinute]) { date in
                 viewModel.selectSpecificTime(date)
@@ -46,15 +58,15 @@ struct LastPouchStepView: View {
         }
     }
 
-    private var timeLabel: String {
-        switch viewModel.selection {
-        case .justNow:
-            return "Just now"
-        case .specificTime:
-            return viewModel.lastPouchTime.formatted(date: .omitted, time: .shortened)
-        case .earlier:
-            return viewModel.lastPouchTime.formatted(date: .abbreviated, time: .shortened)
+    /// The hero clock — the time-of-day number ("2:30") split from its meridiem ("PM"),
+    /// so the suffix can render smaller and baseline-aligned per the design.
+    private var heroTime: (number: String, suffix: String) {
+        let formatted = viewModel.lastPouchTime.formatted(date: .omitted, time: .shortened)
+        let parts = formatted.split(separator: " ", maxSplits: 1).map(String.init)
+        if parts.count == 2 {
+            return (parts[0], parts[1])
         }
+        return (formatted, "")
     }
 
     private var specificTimeLabel: String {
@@ -63,6 +75,7 @@ struct LastPouchStepView: View {
 }
 
 /// Capsule quick-select control — solid white when selected, translucent otherwise.
+/// Hugs its content (no stretch), so the row centers as a group beneath the hero.
 private struct OnboardingChip: View {
     let title: String
     let isSelected: Bool
@@ -74,15 +87,13 @@ private struct OnboardingChip: View {
                 .font(.subheadline.weight(.medium))
                 .foregroundStyle(isSelected ? Color.black : Color.white)
                 .lineLimit(1)
-                .minimumScaleFactor(0.8)
                 .padding(.horizontal, Spacing.md)
                 .padding(.vertical, Spacing.sm)
-                .frame(maxWidth: .infinity)
                 .background(
                     Capsule().fill(isSelected ? Color.white : Color.white.opacity(0.15))
                 )
                 .overlay(
-                    Capsule().strokeBorder(Color.white.opacity(isSelected ? 0 : 0.3), lineWidth: 1)
+                    Capsule().strokeBorder(Color.white.opacity(isSelected ? 0 : 0.25), lineWidth: 1)
                 )
         }
     }

@@ -5,35 +5,42 @@ struct DailyGoalStepView: View {
     @Bindable var viewModel: OnboardingViewModel
 
     var body: some View {
-        VStack(spacing: Spacing.xl) {
+        VStack(spacing: 0) {
             OnboardingStepHeading(
                 eyebrow: "Step 2 of 2",
-                headline: "What's your daily goal?",
-                subtitle: "Set a target to taper down to."
+                headline: "What's your daily goal to start?",
+                subtitle: "Reduce gradually — you can change this anytime."
             )
 
-            HStack(spacing: Spacing.xl) {
-                OnboardingStepperButton(symbolName: "minus", isProminent: false) {
-                    viewModel.decrementDailyGoal()
-                }
-                .accessibilityLabel("Decrease daily goal")
+            Spacer(minLength: Spacing.xl)
 
-                VStack(spacing: Spacing.xs) {
+            VStack(spacing: Spacing.md) {
+                HStack(spacing: Spacing.lg) {
+                    OnboardingStepperButton(symbolName: "minus", isProminent: false) {
+                        viewModel.decrementDailyGoal()
+                    }
+                    .accessibilityLabel("Decrease daily goal")
+
                     Text("\(viewModel.dailyGoal)")
                         .font(.heroNumber(size: 84))
                         .foregroundStyle(.white)
-                    Text("pouches / day")
-                        .font(.subheadline)
-                        .foregroundStyle(.white.opacity(0.7))
-                }
-                .frame(minWidth: 120)
+                        .frame(minWidth: 100)
+                        .lineLimit(1)
 
-                OnboardingStepperButton(symbolName: "plus", isProminent: true) {
-                    viewModel.incrementDailyGoal()
+                    OnboardingStepperButton(symbolName: "plus", isProminent: true) {
+                        viewModel.incrementDailyGoal()
+                    }
+                    .accessibilityLabel("Increase daily goal")
                 }
-                .accessibilityLabel("Increase daily goal")
+
+                Text("pouches per day")
+                    .font(.subheadline)
+                    .foregroundStyle(.white.opacity(0.7))
             }
+
+            Spacer(minLength: Spacing.xl)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
     }
 }
 
@@ -48,7 +55,7 @@ private struct OnboardingStepperButton: View {
             Image(systemName: symbolName)
                 .font(.title2.weight(.semibold))
                 .foregroundStyle(isProminent ? Color.black : Color.white)
-                .frame(width: 56, height: 56)
+                .frame(width: 64, height: 64)
                 .background(
                     Circle().fill(isProminent ? Color.white : Color.white.opacity(0.15))
                 )

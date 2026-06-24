@@ -11,12 +11,13 @@ struct OnboardingView: View {
         ZStack {
             OnboardingBackground()
 
-            VStack(spacing: Spacing.xs) {
+            VStack(spacing: 0) {
                 OnboardingHeaderBar(
                     currentStep: viewModel.step,
                     totalSteps: viewModel.totalSteps,
                     onReset: { viewModel.resetCurrentStep() }
                 )
+                .padding(.bottom, Spacing.xl)
 
                 Group {
                     if viewModel.step == 0 {
@@ -27,8 +28,7 @@ struct OnboardingView: View {
                 }
                 .id(viewModel.step)
                 .transition(stepTransition)
-
-                Spacer()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
 
                 OnboardingPrimaryButton(title: viewModel.step == 0 ? "Continue" : "Start my streak") {
                     if viewModel.step == 0 {
@@ -38,6 +38,7 @@ struct OnboardingView: View {
                         Task { await NotificationService.shared.requestPermissionIfNeeded() }
                     }
                 }
+                .padding(.top, Spacing.lg)
             }
             .padding(Spacing.md)
             .animation(reduceMotion ? nil : .easeInOut(duration: 0.3), value: viewModel.step)
@@ -74,9 +75,9 @@ private struct OnboardingHeaderBar: View {
         HStack {
             HStack(spacing: Spacing.xs) {
                 ForEach(0..<totalSteps, id: \.self) { index in
-                    Capsule()
-                        .fill(index == currentStep ? Color.white : Color.white.opacity(0.3))
-                        .frame(width: index == currentStep ? 24 : 8, height: 8)
+                    Circle()
+                        .fill(index <= currentStep ? Color.white : Color.white.opacity(0.3))
+                        .frame(width: 8, height: 8)
                 }
             }
 
