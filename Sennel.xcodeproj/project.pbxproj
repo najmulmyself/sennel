@@ -19,10 +19,16 @@
 		000000000000000000000014 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000013 /* HealthView.swift */; };
 		000000000000000000000016 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000015 /* HomeView.swift */; };
 		000000000000000000000018 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000017 /* OnboardingView.swift */; };
-		00000000000000000000001A /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000019 /* PaywallView.swift */; };
 		00000000000000000000001C /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000001B /* ScheduleView.swift */; };
 		00000000000000000000001E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000001D /* SettingsView.swift */; };
 		000000000000000000000020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000001F /* Assets.xcassets */; };
+		000000000000000000000034 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000033 /* FlowLayout.swift */; };
+		000000000000000000000036 /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000035 /* BadgesView.swift */; };
+		000000000000000000000038 /* BreathingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000037 /* BreathingView.swift */; };
+		00000000000000000000003A /* CravingLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000039 /* CravingLogView.swift */; };
+		00000000000000000000003C /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000003B /* InsightsView.swift */; };
+		00000000000000000000003E /* RelapseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000003D /* RelapseView.swift */; };
+		000000000000000000000040 /* SymptomLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000003F /* SymptomLogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,11 +44,17 @@
 		000000000000000000000013 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
 		000000000000000000000015 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		000000000000000000000017 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		000000000000000000000019 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		00000000000000000000001B /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		00000000000000000000001D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		00000000000000000000001F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		000000000000000000000021 /* Sennel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sennel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000000000000000033 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
+		000000000000000000000035 /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
+		000000000000000000000037 /* BreathingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingView.swift; sourceTree = "<group>"; };
+		000000000000000000000039 /* CravingLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CravingLogView.swift; sourceTree = "<group>"; };
+		00000000000000000000003B /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		00000000000000000000003D /* RelapseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelapseView.swift; sourceTree = "<group>"; };
+		00000000000000000000003F /* SymptomLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomLogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,7 @@
 		000000000000000000000024 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				000000000000000000000033 /* FlowLayout.swift */,
 				000000000000000000000009 /* GlassCard.swift */,
 				00000000000000000000000B /* PrimaryButton.swift */,
 				00000000000000000000000D /* StreakRing.swift */,
@@ -78,12 +91,17 @@
 		000000000000000000000026 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				000000000000000000000035 /* BadgesView.swift */,
+				000000000000000000000037 /* BreathingView.swift */,
+				000000000000000000000039 /* CravingLogView.swift */,
 				000000000000000000000013 /* HealthView.swift */,
 				000000000000000000000015 /* HomeView.swift */,
+				00000000000000000000003B /* InsightsView.swift */,
 				000000000000000000000017 /* OnboardingView.swift */,
-				000000000000000000000019 /* PaywallView.swift */,
+				00000000000000000000003D /* RelapseView.swift */,
 				00000000000000000000001B /* ScheduleView.swift */,
 				00000000000000000000001D /* SettingsView.swift */,
+				00000000000000000000003F /* SymptomLogView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -191,17 +209,23 @@
 				000000000000000000000004 /* RootView.swift in Sources */,
 				000000000000000000000006 /* MainTabView.swift in Sources */,
 				000000000000000000000008 /* AppState.swift in Sources */,
+				000000000000000000000034 /* FlowLayout.swift in Sources */,
 				00000000000000000000000A /* GlassCard.swift in Sources */,
 				00000000000000000000000C /* PrimaryButton.swift in Sources */,
 				00000000000000000000000E /* StreakRing.swift in Sources */,
 				000000000000000000000010 /* Color+Sennel.swift in Sources */,
 				000000000000000000000012 /* Typography+Sennel.swift in Sources */,
+				000000000000000000000036 /* BadgesView.swift in Sources */,
+				000000000000000000000038 /* BreathingView.swift in Sources */,
+				00000000000000000000003A /* CravingLogView.swift in Sources */,
 				000000000000000000000014 /* HealthView.swift in Sources */,
 				000000000000000000000016 /* HomeView.swift in Sources */,
+				00000000000000000000003C /* InsightsView.swift in Sources */,
 				000000000000000000000018 /* OnboardingView.swift in Sources */,
-				00000000000000000000001A /* PaywallView.swift in Sources */,
+				00000000000000000000003E /* RelapseView.swift in Sources */,
 				00000000000000000000001C /* ScheduleView.swift in Sources */,
 				00000000000000000000001E /* SettingsView.swift in Sources */,
+				000000000000000000000040 /* SymptomLogView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,12 @@ struct HomeView: View {
 
     @State private var pulseGlow = false
     @State private var pulseTask: Task<Void, Never>?
+    @State private var activeSheet: ActiveSheet?
+
+    private enum ActiveSheet: Identifiable {
+        case craving, breathing, relapse, badges
+        var id: Self { self }
+    }
 
     var body: some View {
         TimelineView(.periodic(from: .now, by: 1)) { context in
@@ -29,11 +35,21 @@ struct HomeView: View {
                 header(theme: theme, stage: stage)
                 heroCard(theme: theme, date: date)
                 logButton(theme: theme)
+                quickActionsRow(theme: theme)
                 nextEligibleRow(theme: theme, date: date)
+                slipLink(theme: theme)
                 Spacer(minLength: 0)
             }
             .padding(.horizontal, SennelSpace.lg)
             .padding(.top, SennelSpace.lg)
+        }
+        .sheet(item: $activeSheet) { sheet in
+            switch sheet {
+            case .craving: CravingLogView()
+            case .breathing: BreathingView()
+            case .relapse: RelapseView()
+            case .badges: BadgesView()
+            }
         }
     }
 
@@ -51,6 +67,15 @@ struct HomeView: View {
                     .foregroundStyle(theme.textSecondary)
             }
             Spacer()
+            Button { activeSheet = .badges } label: {
+                Image(systemName: "rosette")
+                    .foregroundStyle(theme.textSecondary)
+                    .frame(width: 38, height: 38)
+                    .background(Circle().fill(theme.card))
+                    .overlay(Circle().strokeBorder(theme.hairline))
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel("Milestones")
             Button(action: onSettingsTap) {
                 Image(systemName: "gearshape.fill")
                     .foregroundStyle(theme.textSecondary)
@@ -60,6 +85,46 @@ struct HomeView: View {
             }
             .buttonStyle(.plain)
         }
+    }
+
+    // MARK: Quick actions
+
+    private func quickActionsRow(theme: SennelTheme) -> some View {
+        HStack(spacing: SennelSpace.sm) {
+            quickActionButton(icon: "waveform.path.ecg", title: "Log craving", theme: theme) {
+                activeSheet = .craving
+            }
+            quickActionButton(icon: "wind", title: "Breathe", theme: theme) {
+                activeSheet = .breathing
+            }
+        }
+    }
+
+    private func quickActionButton(icon: String, title: String, theme: SennelTheme, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            HStack(spacing: 8) {
+                Image(systemName: icon)
+                    .font(.system(size: 15, weight: .medium))
+                    .accessibilityHidden(true)
+                Text(title)
+                    .font(.subheadline.weight(.semibold))
+            }
+            .foregroundStyle(theme.textPrimary)
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 13)
+            .background(theme.card)
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(theme.hairline))
+            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+        }
+        .buttonStyle(.plain)
+    }
+
+    // MARK: Had a slip
+
+    private func slipLink(theme: SennelTheme) -> some View {
+        Button("Had a slip?") { activeSheet = .relapse }
+            .font(.subheadline.weight(.semibold))
+            .foregroundStyle(theme.textSecondary)
     }
 
     // MARK: Hero card

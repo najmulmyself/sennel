@@ -18,7 +18,7 @@ struct MainTabView: View {
                 .tabItem { Label("Schedule", systemImage: "clock.fill") }
                 .tag(Tab.schedule)
 
-            PaywallView()
+            InsightsView()
                 .tabItem { Label("Insights", systemImage: "chart.bar.fill") }
                 .tag(Tab.insights)
 

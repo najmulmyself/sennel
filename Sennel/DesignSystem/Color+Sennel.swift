@@ -76,6 +76,16 @@ struct SennelTheme {
     static let accentShield = Color(hex: "#F59E0B")
     static let accentLock = Color(hex: "#94A3B8")
 
+    /// Section 2 only lists `brand.tealLight` (#2DD4BF) as a single light-mode value, but
+    /// the Craving/Symptoms/Insights/Badges/Relapse prototypes all use a darker variant in
+    /// light mode for contrast against the off-white background. Matched pixel-for-pixel
+    /// here per the same fidelity-over-token-purity call made for Phase 1.
+    static func brandTeal(dark: Bool) -> Color { Color(hex: dark ? "#2DD4BF" : "#0D9488") }
+
+    /// Fixed dark-presentation accent used only by the guided breathing screen,
+    /// independent of stage/appearance.
+    static let breathingAccent = Color(hex: "#16B8A6")
+
     var stageColor: Color { stage.color(dark: dark) }
 
     var background: Color { Color(hex: dark ? "#0B1410" : "#FAFAF9") }

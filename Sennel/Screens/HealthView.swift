@@ -9,6 +9,7 @@ struct HealthView: View {
 
     @State private var celebratingIndex: Int?
     @State private var celebrateTask: Task<Void, Never>?
+    @State private var showSymptomLog = false
 
     private struct Milestone {
         let title: String
@@ -55,6 +56,10 @@ struct HealthView: View {
 
                 summaryCard(theme: theme, doneCount: doneCount)
                     .padding(.horizontal, SennelSpace.lg)
+                    .padding(.bottom, SennelSpace.sm)
+
+                symptomLogRow(theme: theme)
+                    .padding(.horizontal, SennelSpace.lg)
                     .padding(.bottom, SennelSpace.md)
 
                 ScrollView {
@@ -76,6 +81,35 @@ struct HealthView: View {
             celebrate(index: new - 1)
         }
         .sensoryFeedback(.success, trigger: doneCount) { old, new in new > old }
+        .sheet(isPresented: $showSymptomLog) {
+            SymptomLogView()
+        }
+    }
+
+    private func symptomLogRow(theme: SennelTheme) -> some View {
+        Button { showSymptomLog = true } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "list.bullet.clipboard.fill")
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundStyle(theme.stageColor)
+                    .frame(width: 29, height: 29)
+                    .background(theme.stageColor.opacity(theme.dark ? 0.18 : 0.12), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                    .accessibilityHidden(true)
+                Text("Log today's symptoms")
+                    .font(.body)
+                    .foregroundStyle(theme.textPrimary)
+                Spacer()
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(theme.textTertiary)
+            }
+            .padding(.horizontal, SennelSpace.md)
+            .frame(height: 50)
+            .background(theme.card)
+            .overlay(RoundedRectangle(cornerRadius: 18, style: .continuous).strokeBorder(theme.hairline))
+            .clipShape(RoundedRectangle(cornerRadius: 18, style: .continuous))
+        }
+        .buttonStyle(.plain)
     }
 
     private func celebrate(index: Int) {
