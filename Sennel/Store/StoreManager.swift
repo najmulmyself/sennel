@@ -10,7 +10,9 @@ final class StoreManager {
     var purchaseError: String?
 
     private let onEntitlementChange: (Bool) -> Void
-    private var updatesTask: Task<Void, Never>?
+    /// `nonisolated(unsafe)` so `deinit` (always nonisolated for classes) can cancel
+    /// it directly — safe because `Task.cancel()` is documented thread-safe.
+    private nonisolated(unsafe) var updatesTask: Task<Void, Never>?
 
     init(onEntitlementChange: @escaping (Bool) -> Void) {
         self.onEntitlementChange = onEntitlementChange
