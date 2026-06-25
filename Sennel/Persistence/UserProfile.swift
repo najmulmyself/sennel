@@ -13,6 +13,7 @@ final class UserProfile {
     var dailySpend: Double
     var usedToday: Int
     var isDarkMode: Bool
+    var remindersOn: Bool
 
     var priorStreakDays: Int
     var priorMoneySaved: Double
@@ -32,6 +33,7 @@ final class UserProfile {
         dailySpend: Double = 11.4,
         usedToday: Int = 0,
         isDarkMode: Bool = false,
+        remindersOn: Bool = true,
         priorStreakDays: Int = 0,
         priorMoneySaved: Double = 0,
         streakShieldsRemaining: Int = 2,
@@ -45,6 +47,7 @@ final class UserProfile {
         self.dailySpend = dailySpend
         self.usedToday = usedToday
         self.isDarkMode = isDarkMode
+        self.remindersOn = remindersOn
         self.priorStreakDays = priorStreakDays
         self.priorMoneySaved = priorMoneySaved
         self.streakShieldsRemaining = streakShieldsRemaining

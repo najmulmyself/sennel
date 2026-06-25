@@ -37,6 +37,7 @@
 		00000000000000000000004D /* ProductIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000004C /* ProductIDs.swift */; };
 		00000000000000000000004F /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000004E /* StoreManager.swift */; };
 		000000000000000000000051 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000050 /* PaywallView.swift */; };
+		000000000000000000000055 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000054 /* NotificationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +73,7 @@
 		00000000000000000000004E /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
 		000000000000000000000050 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 		000000000000000000000053 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		000000000000000000000054 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,14 @@
 			path = Store;
 			sourceTree = "<group>";
 		};
+		000000000000000000000056 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000054 /* NotificationManager.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		00000000000000000000004B /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +165,7 @@
 				00000000000000000000001F /* Assets.xcassets */,
 				000000000000000000000024 /* Components */,
 				000000000000000000000025 /* DesignSystem */,
+				000000000000000000000056 /* Notifications */,
 				00000000000000000000004B /* Persistence */,
 				000000000000000000000026 /* Screens */,
 				000000000000000000000052 /* Store */,
@@ -276,6 +287,7 @@
 				00000000000000000000004D /* ProductIDs.swift in Sources */,
 				00000000000000000000004F /* StoreManager.swift in Sources */,
 				000000000000000000000051 /* PaywallView.swift in Sources */,
+				000000000000000000000055 /* NotificationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
