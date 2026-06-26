@@ -18,9 +18,9 @@ final class AppState {
     /// The moment the streak started — "last pouch" from onboarding step 1.
     var startDate: Date { didSet { saveProfile() } }
 
-    var dailyLimit: Int { didSet { saveProfile() } }
+    nonisolated var dailyLimit: Int { didSet { saveProfile() } }
     var dailySpend: Double { didSet { saveProfile() } }
-    var usedToday: Int { didSet { saveProfile() } }
+    nonisolated var usedToday: Int { didSet { saveProfile() } }
 
     /// Manual override toggled from Settings — re-themes the whole app, the same
     /// way SennelApp's prototype dark-mode switch worked (not tied to system appearance).
@@ -44,7 +44,7 @@ final class AppState {
     private(set) var priorMoneySaved: Double { didSet { saveProfile() } }
     private(set) var streakShieldsRemaining: Int { didSet { saveProfile() } }
     private(set) var streakShieldsTotal: Int { didSet { saveProfile() } }
-    private(set) var breathingSessionsCompleted: Int { didSet { saveProfile() } }
+    private(set) nonisolated var breathingSessionsCompleted: Int { didSet { saveProfile() } }
 
     init(modelContext: ModelContext = ModelContext(SennelPersistence.makeInMemoryContainer())) {
         self.modelContext = modelContext
@@ -95,8 +95,8 @@ final class AppState {
         return profile
     }
 
-    func lifetimeDaysClean(at date: Date) -> Int { priorStreakDays + daysClean(at: date) }
-    func lifetimeMoneySaved(at date: Date) -> Double { priorMoneySaved + moneySaved(at: date) }
+    nonisolated func lifetimeDaysClean(at date: Date) -> Int { priorStreakDays + daysClean(at: date) }
+    nonisolated func lifetimeMoneySaved(at date: Date) -> Double { priorMoneySaved + moneySaved(at: date) }
 
     /// "Use a shield" — keeps the streak intact at the cost of one of this month's
     /// shields. "Restart, no judgment" — banks the current streak's days/money into
@@ -207,7 +207,7 @@ final class AppState {
 
     static let cravingTriggers = ["After meals", "Coffee", "Stress", "Boredom", "Driving", "Social", "Alcohol", "Phone"]
 
-    var cravingEntries: [CravingEntry] = []
+    nonisolated var cravingEntries: [CravingEntry] = []
 
     func logCraving(intensity: Int, trigger: String, outcome: CravingEntry.Outcome) {
         let entry = CravingEntry(date: .now, intensity: intensity, trigger: trigger, outcome: outcome)
