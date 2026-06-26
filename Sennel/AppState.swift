@@ -379,7 +379,7 @@ final class AppState {
         Badge(kind: .breatheTenTimes, title: "Breathe 10x", detail: "Ten guided breathing sessions."),
     ]
 
-    private static func isEarned(_ kind: BadgeKind, state: AppState, at date: Date) -> Bool {
+    private nonisolated static func isEarned(_ kind: BadgeKind, state: AppState, at date: Date) -> Bool {
         switch kind {
         case .firstDay: return state.lifetimeDaysClean(at: date) >= 1
         case .threeDays: return state.lifetimeDaysClean(at: date) >= 3
