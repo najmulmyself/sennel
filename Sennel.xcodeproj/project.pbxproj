@@ -45,9 +45,6 @@
 		874EA2392FEF2942003C5E1B /* PouchCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000047 /* PouchCountModel.swift */; };
 		874EA23A2FEF2948003C5E1B /* SymptomSeverityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000045 /* SymptomSeverityModel.swift */; };
 		874EA23B2FEF294E003C5E1B /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000041 /* UserProfile.swift */; };
-		87CC16132FEF2C1D00998196 /* SennelScheduleActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CC16092FEF2C1D00998196 /* SennelScheduleActivityAttributes.swift */; };
-		87CC16212FEF2CE100998196 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CC161F2FEF2CE100998196 /* NotificationManager.swift */; };
-		87CC16222FEF2CE100998196 /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CC161D2FEF2CE100998196 /* LiveActivityManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,9 +107,6 @@
 		872EAC4D2FEF1BAA00585670 /* SennelWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SennelWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		872EAC4F2FEF1BAA00585670 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		872EAC512FEF1BAA00585670 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		87CC16092FEF2C1D00998196 /* SennelScheduleActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SennelScheduleActivityAttributes.swift; sourceTree = "<group>"; };
-		87CC161D2FEF2CE100998196 /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
-		87CC161F2FEF2CE100998196 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -152,8 +146,6 @@
 		000000000000000000000022 = {
 			isa = PBXGroup;
 			children = (
-				87CC161E2FEF2CE100998196 /* LiveActivity */,
-				87CC16202FEF2CE100998196 /* Notifications */,
 				000000000000000000000023 /* Sennel */,
 				000000000000000000000027,
 				000000000000000000000053 /* Products.storekit */,
@@ -254,23 +246,6 @@
 				872EAC512FEF1BAA00585670 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		87CC161E2FEF2CE100998196 /* LiveActivity */ = {
-			isa = PBXGroup;
-			children = (
-				87CC161D2FEF2CE100998196 /* LiveActivityManager.swift */,
-				87CC16092FEF2C1D00998196 /* SennelScheduleActivityAttributes.swift */,
-			);
-			path = LiveActivity;
-			sourceTree = "<group>";
-		};
-		87CC16202FEF2CE100998196 /* Notifications */ = {
-			isa = PBXGroup;
-			children = (
-				87CC161F2FEF2CE100998196 /* NotificationManager.swift */,
-			);
-			path = Notifications;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,8 +370,6 @@
 				00000000000000000000003C /* InsightsView.swift in Sources */,
 				000000000000000000000018 /* OnboardingView.swift in Sources */,
 				00000000000000000000003E /* RelapseView.swift in Sources */,
-				87CC16212FEF2CE100998196 /* NotificationManager.swift in Sources */,
-				87CC16222FEF2CE100998196 /* LiveActivityManager.swift in Sources */,
 				00000000000000000000001C /* ScheduleView.swift in Sources */,
 				00000000000000000000001E /* SettingsView.swift in Sources */,
 				000000000000000000000040 /* SymptomLogView.swift in Sources */,
@@ -417,7 +390,6 @@
 			files = (
 				874EA2392FEF2942003C5E1B /* PouchCountModel.swift in Sources */,
 				874EA23B2FEF294E003C5E1B /* UserProfile.swift in Sources */,
-				87CC16132FEF2C1D00998196 /* SennelScheduleActivityAttributes.swift in Sources */,
 				874EA2372FEF2933003C5E1B /* CravingEntryModel.swift in Sources */,
 				874EA2382FEF293A003C5E1B /* ModelContainer+Sennel.swift in Sources */,
 				874EA23A2FEF2948003C5E1B /* SymptomSeverityModel.swift in Sources */,
