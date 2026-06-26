@@ -432,7 +432,7 @@ final class AppState {
 
         // Update Live Activity after persistence succeeds
         if let manager = liveActivityManager {
-            Task { @MainActor in
+            MainActor.assumeIsolated {
                 manager.updateActivity(for: self)
             }
         }
