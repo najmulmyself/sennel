@@ -7,6 +7,7 @@ import SwiftData
 /// collections (cravings/symptoms/pouch counts) live in their own models, but
 /// every existing call site and pure `at(date:)` function is unchanged.
 @Observable
+@MainActor
 final class AppState {
     private let modelContext: ModelContext
     private var profile: UserProfile
@@ -378,7 +379,7 @@ final class AppState {
         Badge(kind: .breatheTenTimes, title: "Breathe 10x", detail: "Ten guided breathing sessions."),
     ]
 
-    private static func isEarned(_ kind: BadgeKind, state: AppState, at date: Date) -> Bool {
+    private nonisolated static func isEarned(_ kind: BadgeKind, state: AppState, at date: Date) -> Bool {
         switch kind {
         case .firstDay: return state.lifetimeDaysClean(at: date) >= 1
         case .threeDays: return state.lifetimeDaysClean(at: date) >= 3
@@ -432,9 +433,7 @@ final class AppState {
 
         // Update Live Activity after persistence succeeds
         if let manager = liveActivityManager {
-            DispatchQueue.main.async {
-                manager.updateActivity(for: self)
-            }
+            manager.updateActivity(for: self)
         }
     }
 
