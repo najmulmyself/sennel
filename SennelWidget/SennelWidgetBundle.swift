@@ -12,7 +12,6 @@ import SwiftUI
 struct SennelWidgetBundle: WidgetBundle {
     var body: some Widget {
         SennelWidget()
-        SennelWidgetControl()
-        SennelWidgetLiveActivity()
+        SennelScheduleLiveActivity()
     }
 }
