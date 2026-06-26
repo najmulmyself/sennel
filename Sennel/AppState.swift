@@ -10,6 +10,7 @@ import SwiftData
 final class AppState {
     private let modelContext: ModelContext
     private var profile: UserProfile
+    private var liveActivityManager: LiveActivityManager?
 
     var hasOnboarded: Bool { didSet { saveProfile() } }
 
@@ -428,5 +429,17 @@ final class AppState {
             modelContext.insert(PouchCountModel(day: day, count: usedToday))
         }
         try? modelContext.save()
+
+        // Update Live Activity after persistence succeeds
+        if let manager = liveActivityManager {
+            Task { @MainActor in
+                manager.updateActivity(for: self)
+            }
+        }
+    }
+
+    /// Called at app startup by `SennelApp` to wire in the Live Activity manager.
+    func setLiveActivityManager(_ manager: LiveActivityManager) {
+        self.liveActivityManager = manager
     }
 }

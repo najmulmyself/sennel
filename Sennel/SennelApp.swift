@@ -9,6 +9,7 @@ struct SennelApp: App {
     @State private var appState: AppState
     @State private var storeManager: StoreManager
     @State private var notificationManager: NotificationManager
+    @State private var liveActivityManager: LiveActivityManager
 
     init() {
         let container = SennelPersistence.makeContainer()
@@ -20,6 +21,8 @@ struct SennelApp: App {
         }))
         _notificationManager = State(initialValue: NotificationManager())
         UNUserNotificationCenter.current().delegate = notificationManager
+        _liveActivityManager = State(initialValue: LiveActivityManager())
+        state.setLiveActivityManager(liveActivityManager)
     }
 
     var body: some Scene {
