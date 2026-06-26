@@ -213,6 +213,14 @@
 			);
 			sourceTree = "<group>";
 		};
+		000000000000000000000056 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000054 /* NotificationManager.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
 		00000000000000000000004B /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +384,7 @@
 				00000000000000000000004D /* ProductIDs.swift in Sources */,
 				00000000000000000000004F /* StoreManager.swift in Sources */,
 				000000000000000000000051 /* PaywallView.swift in Sources */,
+				000000000000000000000055 /* NotificationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

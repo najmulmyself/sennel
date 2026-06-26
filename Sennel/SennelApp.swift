@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import UserNotifications
 
 @main
 @MainActor
@@ -7,6 +8,7 @@ struct SennelApp: App {
     private let modelContainer: ModelContainer
     @State private var appState: AppState
     @State private var storeManager: StoreManager
+    @State private var notificationManager: NotificationManager
 
     init() {
         let container = SennelPersistence.makeContainer()
@@ -16,6 +18,8 @@ struct SennelApp: App {
         _storeManager = State(initialValue: StoreManager(onEntitlementChange: { isPremium in
             state.setPremium(isPremium)
         }))
+        _notificationManager = State(initialValue: NotificationManager())
+        UNUserNotificationCenter.current().delegate = notificationManager
     }
 
     var body: some Scene {
@@ -23,6 +27,7 @@ struct SennelApp: App {
             RootView()
                 .environment(appState)
                 .environment(storeManager)
+                .environment(notificationManager)
                 .preferredColorScheme(appState.isDarkMode ? .dark : .light)
                 .task { storeManager.start() }
         }

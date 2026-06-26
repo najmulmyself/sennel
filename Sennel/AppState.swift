@@ -24,6 +24,10 @@ final class AppState {
     /// way SennelApp's prototype dark-mode switch worked (not tied to system appearance).
     var isDarkMode: Bool { didSet { saveProfile() } }
 
+    /// Drives `NotificationManager.reschedule(for:)` — flipped from Settings,
+    /// gated there on the system permission actually being granted.
+    var remindersOn: Bool { didSet { saveProfile() } }
+
     /// Cached gate for premium screens (Insights, widgets, Live Activity). The
     /// source of truth is StoreKit's transaction stream — `StoreManager` reconciles
     /// this on launch and on every `Transaction.updates` event via `setPremium`.
@@ -50,6 +54,7 @@ final class AppState {
         self.dailySpend = profile.dailySpend
         self.usedToday = profile.usedToday
         self.isDarkMode = profile.isDarkMode
+        self.remindersOn = profile.remindersOn
         self.isPremium = profile.isPremium
         self.priorStreakDays = profile.priorStreakDays
         self.priorMoneySaved = profile.priorMoneySaved
@@ -68,6 +73,7 @@ final class AppState {
         profile.dailySpend = dailySpend
         profile.usedToday = usedToday
         profile.isDarkMode = isDarkMode
+        profile.remindersOn = remindersOn
         profile.isPremium = isPremium
         profile.priorStreakDays = priorStreakDays
         profile.priorMoneySaved = priorMoneySaved

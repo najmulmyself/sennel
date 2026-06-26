@@ -1,17 +1,20 @@
 import SwiftUI
+import UIKit
 
 /// Standard iOS list style, flat, no glass (sennel_design.md: "this is a utility
 /// screen, treat it like one"). Daily limit/spend rows are wired to AppState;
 /// Plan and App icon are visual-only since neither has a backing model in Phase 1.
 struct SettingsView: View {
     @Environment(AppState.self) private var appState
+    @Environment(NotificationManager.self) private var notificationManager
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.openURL) private var openURL
 
     var onPremiumTap: () -> Void = {}
 
-    @State private var remindersOn = true
     @State private var editingLimit = false
     @State private var editingSpend = false
+    @State private var showingDeniedAlert = false
 
     var body: some View {
         TimelineView(.periodic(from: .now, by: 30)) { context in
@@ -47,7 +50,7 @@ struct SettingsView: View {
                     }
 
                     section(title: "REMINDERS & APPEARANCE", theme: theme) {
-                        toggleRow(icon: "bell.fill", tint: SennelTheme.accentShield, title: "Interval reminders", isOn: $remindersOn, theme: theme)
+                        toggleRow(icon: "bell.fill", tint: SennelTheme.accentShield, title: "Interval reminders", isOn: remindersBinding, theme: theme)
                         divider(theme: theme)
                         toggleRow(icon: "moon.fill", tint: theme.textSecondary, title: "Dark mode", isOn: Binding(get: { appState.isDarkMode }, set: { appState.isDarkMode = $0 }), theme: theme)
                         divider(theme: theme)
@@ -71,6 +74,40 @@ struct SettingsView: View {
         .sheet(isPresented: $editingSpend) {
             SpendSheet(value: appState.dailySpend) { appState.dailySpend = $0 }
         }
+        .alert("Reminders are off", isPresented: $showingDeniedAlert) {
+            Button("Open Settings") {
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    openURL(url)
+                }
+            }
+            Button("Cancel", role: .cancel) {}
+        } message: {
+            Text("Enable notifications for Sennel in the Settings app to get interval reminders.")
+        }
+    }
+
+    // MARK: Reminders toggle
+
+    private var remindersBinding: Binding<Bool> {
+        Binding(
+            get: { appState.remindersOn },
+            set: { newValue in
+                if newValue {
+                    Task {
+                        let granted = await notificationManager.requestAuthorization()
+                        appState.remindersOn = granted
+                        if granted {
+                            notificationManager.reschedule(for: appState)
+                        } else {
+                            showingDeniedAlert = true
+                        }
+                    }
+                } else {
+                    appState.remindersOn = false
+                    notificationManager.cancelPending()
+                }
+            }
+        )
     }
 
     // MARK: Profile row
@@ -309,4 +346,5 @@ private struct SpendSheet: View {
 #Preview {
     SettingsView()
         .environment(AppState())
+        .environment(NotificationManager())
 }

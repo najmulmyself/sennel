@@ -6,6 +6,10 @@ import SwiftUI
 struct MainTabView: View {
     private enum Tab { case home, schedule, insights, health, settings }
 
+    @Environment(AppState.self) private var appState
+    @Environment(NotificationManager.self) private var notificationManager
+    @Environment(\.scenePhase) private var scenePhase
+
     @State private var selection: Tab = .home
     @State private var showingPaywall = false
 
@@ -34,6 +38,25 @@ struct MainTabView: View {
         .sheet(isPresented: $showingPaywall) {
             PaywallView()
         }
+        .task {
+            await notificationManager.refreshAuthorizationStatus()
+            notificationManager.reschedule(for: appState)
+        }
+        .onChange(of: scenePhase) { _, newPhase in
+            if newPhase == .active {
+                Task {
+                    await notificationManager.refreshAuthorizationStatus()
+                    notificationManager.reschedule(for: appState)
+                }
+            }
+        }
+        .onChange(of: appState.dailyLimit) { _, _ in notificationManager.reschedule(for: appState) }
+        .onChange(of: appState.usedToday) { _, _ in notificationManager.reschedule(for: appState) }
+        .onChange(of: notificationManager.pendingScheduleTap) { _, tapped in
+            guard tapped else { return }
+            selection = .schedule
+            notificationManager.pendingScheduleTap = false
+        }
     }
 }
 
@@ -41,4 +64,5 @@ struct MainTabView: View {
     MainTabView()
         .environment(AppState())
         .environment(StoreManager(onEntitlementChange: { _ in }))
+        .environment(NotificationManager())
 }
