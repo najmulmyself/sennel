@@ -432,7 +432,7 @@ final class AppState {
 
         // Update Live Activity after persistence succeeds
         if let manager = liveActivityManager {
-            MainActor.assumeIsolated {
+            DispatchQueue.main.async {
                 manager.updateActivity(for: self)
             }
         }
