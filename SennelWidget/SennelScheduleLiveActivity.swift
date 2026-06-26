@@ -1,6 +1,7 @@
 import ActivityKit
 import WidgetKit
 import SwiftUI
+import Foundation
 
 struct SennelScheduleLiveActivity: Widget {
     var body: some WidgetConfiguration {
@@ -13,7 +14,7 @@ struct SennelScheduleLiveActivity: Widget {
                         Text("Next slot in")
                             .font(.caption.weight(.semibold))
                             .foregroundStyle(.secondary)
-                        Text(timerInterval: context.state.nextEligibleSlot..., pauseTime: .distantFuture)
+                        Text(timerInterval: context.state.nextEligibleSlot...Date.distantFuture, pauseTime: .distantFuture)
                             .font(.system(.title3, design: .monospaced).weight(.bold))
                             .lineLimit(1)
                             .minimumScaleFactor(0.9)
@@ -34,12 +35,12 @@ struct SennelScheduleLiveActivity: Widget {
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
             } compactTrailing: {
-                Text(timerInterval: context.state.nextEligibleSlot..., pauseTime: .distantFuture)
+                Text(timerInterval: context.state.nextEligibleSlot...Date.distantFuture, pauseTime: .distantFuture)
                     .font(.system(.caption, design: .monospaced).weight(.bold))
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
             } minimal: {
-                Text(timerInterval: context.state.nextEligibleSlot..., pauseTime: .distantFuture)
+                Text(timerInterval: context.state.nextEligibleSlot...Date.distantFuture, pauseTime: .distantFuture)
                     .font(.caption.weight(.bold))
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)
@@ -56,7 +57,7 @@ struct SennelScheduleLiveActivity: Widget {
                     Text("Next slot countdown")
                         .font(.caption.weight(.semibold))
                         .foregroundStyle(.secondary)
-                    Text(timerInterval: context.state.nextEligibleSlot..., pauseTime: .distantFuture)
+                    Text(timerInterval: context.state.nextEligibleSlot...Date.distantFuture, pauseTime: .distantFuture)
                         .font(.system(.title2, design: .monospaced).weight(.bold))
                         .lineLimit(1)
                         .minimumScaleFactor(0.9)

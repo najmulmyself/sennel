@@ -1,5 +1,6 @@
 import SwiftUI
 import WidgetKit
+import Foundation
 
 struct SennelWidgetView: View {
     @Environment(\.widgetFamily) var family
@@ -74,7 +75,7 @@ struct SennelWidgetView: View {
                     Text("Next slot")
                         .font(.caption2)
                         .foregroundStyle(.secondary)
-                    Text(timerInterval: nextSlot..., pauseTime: .distantFuture)
+                    Text(timerInterval: nextSlot...Date.distantFuture, pauseTime: .distantFuture)
                         .font(.system(.body, design: .monospaced).weight(.semibold))
                         .minimumScaleFactor(0.8)
                         .lineLimit(1)
@@ -119,7 +120,7 @@ struct SennelWidgetView: View {
                 Text("Next slot")
                     .font(.caption2.weight(.semibold))
                     .foregroundStyle(.secondary)
-                Text(timerInterval: nextSlot..., pauseTime: .distantFuture)
+                Text(timerInterval: nextSlot...Date.distantFuture, pauseTime: .distantFuture)
                     .font(.system(.body, design: .monospaced).weight(.bold))
                     .lineLimit(1)
                     .minimumScaleFactor(0.8)

@@ -1,6 +1,7 @@
 import WidgetKit
 import SwiftUI
 import SwiftData
+import Foundation
 
 struct SennelWidgetTimelineProvider: TimelineProvider {
     func placeholder(in context: Context) -> SennelWidgetEntry {
@@ -12,7 +13,7 @@ struct SennelWidgetTimelineProvider: TimelineProvider {
         completion(entry)
     }
 
-    func getTimelines(in context: Context, completion: @escaping (Timeline<SennelWidgetEntry>) -> Void) {
+    func getTimeline(in context: Context, completion: @escaping (Timeline<SennelWidgetEntry>) -> Void) {
         let entry = loadEntry()
         let timeline = Timeline(entries: [entry], policy: .after(Date(timeIntervalSinceNow: 300)))
         completion(timeline)

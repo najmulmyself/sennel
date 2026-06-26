@@ -1,7 +1,8 @@
 import ActivityKit
+import Foundation
 
 struct SennelScheduleActivityAttributes: ActivityAttributes {
-    public struct ContentState: Codable, Hashable {
+    struct ContentState: Codable, Hashable {
         var nextEligibleSlot: Date
         var usedToday: Int
         var dailyLimit: Int
