@@ -7,6 +7,7 @@ import SwiftData
 /// collections (cravings/symptoms/pouch counts) live in their own models, but
 /// every existing call site and pure `at(date:)` function is unchanged.
 @Observable
+@MainActor
 final class AppState {
     private let modelContext: ModelContext
     private var profile: UserProfile

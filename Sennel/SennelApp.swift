@@ -19,10 +19,12 @@ struct SennelApp: App {
         _storeManager = State(initialValue: StoreManager(onEntitlementChange: { isPremium in
             state.setPremium(isPremium)
         }))
-        _notificationManager = State(initialValue: NotificationManager())
-        UNUserNotificationCenter.current().delegate = notificationManager
-        _liveActivityManager = State(initialValue: LiveActivityManager())
-        state.setLiveActivityManager(liveActivityManager)
+        let notificationMgr = NotificationManager()
+        _notificationManager = State(initialValue: notificationMgr)
+        UNUserNotificationCenter.current().delegate = notificationMgr
+        let liveActivityMgr = LiveActivityManager()
+        _liveActivityManager = State(initialValue: liveActivityMgr)
+        state.setLiveActivityManager(liveActivityMgr)
     }
 
     var body: some Scene {
