@@ -1,5 +1,6 @@
 import SwiftUI
 import SwiftData
+import WidgetKit
 
 /// App state shared across every screen, backed by SwiftData. `AppState` stays
 /// the `@Observable` façade every view binds to via `@Environment(AppState.self)`;
@@ -18,7 +19,7 @@ final class AppState {
     /// The moment the streak started — "last pouch" from onboarding step 1.
     var startDate: Date { didSet { saveProfile() } }
 
-    var dailyLimit: Int { didSet { saveProfile() } }
+    var dailyLimit: Int { didSet { saveProfile(); WidgetCenter.shared.reloadAllTimelines() } }
     var dailySpend: Double { didSet { saveProfile() } }
     var usedToday: Int { didSet { saveProfile() } }
 
@@ -110,6 +111,7 @@ final class AppState {
             startDate = .now
             usedToday = 0
         }
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     func completeBreathingSession() {
@@ -119,7 +121,13 @@ final class AppState {
     /// Called by `StoreManager` whenever it reconciles against StoreKit's
     /// transaction stream — never set directly from UI.
     func setPremium(_ value: Bool) {
+        let changed = isPremium != value
         isPremium = value
+        // Push the new entitlement to the widget so it flips off the
+        // "Unlock Premium" placeholder without waiting for a system refresh.
+        if changed {
+            WidgetCenter.shared.reloadAllTimelines()
+        }
     }
 
     // MARK: Time-dependent values
@@ -436,6 +444,8 @@ final class AppState {
         if let manager = liveActivityManager {
             manager.updateActivity(for: self)
         }
+
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     /// Called at app startup by `SennelApp` to wire in the Live Activity manager.
