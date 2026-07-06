@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    @keyframes sennelBreath {
+      0%   { transform:scale(.58); }
+      40%  { transform:scale(1); }
+      60%  { transform:scale(1); }
+      100% { transform:scale(.58); }
+    }
+    @keyframes sennelGlow {
+      0%,100% { opacity:.35; } 50% { opacity:.7; }
+    }
+  </style>
+</helmet>
+<x-import component="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+  <div style="--stage:{{ stage }}; height:100%; box-sizing:border-box; background:{{ bgGrad }}; padding:60px 26px 34px; display:flex; flex-direction:column; align-items:center; font-family:-apple-system,system-ui,sans-serif; color:#EAFBF5; overflow:hidden; position:relative;">
+
+    <div style="display:flex; align-items:center; justify-content:space-between; width:100%;">
+      <span style="font-size:16px; font-weight:600; opacity:.9;">Done</span>
+      <span style="font-size:15px; font-weight:600; opacity:.7;">Box breathing</span>
+      <span style="font-size:16px; opacity:.7;">4–2–4</span>
+    </div>
+
+    <div style="margin-top:30px; text-align:center;">
+      <div style="font-size:13px; font-weight:600; letter-spacing:.18em; text-transform:uppercase; opacity:.6;">Cycle {{ cycle }} of 6</div>
+    </div>
+
+    <div style="flex:1; display:flex; align-items:center; justify-content:center; width:100%; position:relative;">
+      <div style="position:absolute; width:300px; height:300px; border-radius:50%; background:radial-gradient(circle, {{ stage }}, transparent 68%); animation:sennelGlow 10s ease-in-out infinite; {{ playState }}"></div>
+      <div style="position:relative; width:230px; height:230px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:radial-gradient(circle at 38% 32%, rgba(255,255,255,0.35), {{ stage }} 72%); box-shadow:0 20px 60px {{ glow }}, inset 0 2px 12px rgba(255,255,255,0.3); animation:sennelBreath 10s ease-in-out infinite; {{ playState }}">
+        <div style="text-align:center;">
+          <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:30px; line-height:1; color:#fff; text-shadow:0 2px 8px rgba(0,0,0,.2);">{{ phase }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-bottom:6px;">
+      <div style="font-size:17px; opacity:.85; line-height:1.4; max-width:280px;">Follow the circle. In as it grows, out as it falls.</div>
+    </div>
+
+    <button onClick="{{ toggle }}" style="border:none; cursor:pointer; margin-top:18px; width:64px; height:64px; border-radius:50%; background:rgba(255,255,255,0.16); backdrop-filter:blur(10px); display:flex; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(0,0,0,.2);">
+      <sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="6" y="5" width="4" height="14" rx="1.5" fill="#fff"/><rect x="14" y="5" width="4" height="14" rx="1.5" fill="#fff"/></svg>
+      </sc-if>
+      <sc-if value="{{ paused }}" hint-placeholder-val="{{ false }}">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M8 5l11 7-11 7V5z" fill="#fff"/></svg>
+      </sc-if>
+    </button>
+  </div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:402,&quot;height&quot;:874}}">
+class Component extends DCLogic {
+  state = { playing: true, t: 0 };
+  componentDidMount() {
+    this._start = Date.now();
+    this._iv = setInterval(() => {
+      if (this.state.playing) this.setState({ t: (Date.now() - this._start) / 1000 });
+    }, 250);
+  }
+  componentWillUnmount() { clearInterval(this._iv); }
+  toggle() {
+    if (this.state.playing) {
+      this._pausedAt = Date.now();
+      this.setState({ playing: false });
+    } else {
+      this._start += Date.now() - (this._pausedAt || Date.now());
+      this.setState({ playing: true });
+    }
+  }
+  renderVals() {
+    const stage = '#16B8A6';
+    const t = this.state.t % 10;
+    let phase = 'Breathe in';
+    if (t >= 4 && t < 6) phase = 'Hold';
+    else if (t >= 6) phase = 'Breathe out';
+    const cycle = Math.min(6, Math.floor(this.state.t / 10) + 1);
+    return {
+      stage,
+      bgGrad: 'linear-gradient(180deg, #0C2420 0%, #0A1815 60%, #081210 100%)',
+      glow: 'rgba(22,184,166,0.45)',
+      phase, cycle: String(cycle),
+      playing: this.state.playing, paused: !this.state.playing,
+      playState: this.state.playing ? 'animation-play-state:running;' : 'animation-play-state:paused;',
+      toggle: () => this.toggle(),
+    };
+  }
+}
+</script>
+</body>
+</html>

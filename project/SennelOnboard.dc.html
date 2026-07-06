@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<x-import component="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+  <div style="height:100%; box-sizing:border-box; background:linear-gradient(168deg, #93A1B2 0%, #6B788B 52%, #566175 100%); padding:64px 26px 34px; display:flex; flex-direction:column; font-family:-apple-system,system-ui,sans-serif; color:#fff;">
+
+    <div style="display:flex; align-items:center; gap:10px;">
+      <div style="width:9px; height:9px; border-radius:50%; background:{{ dot1 }};"></div>
+      <div style="width:9px; height:9px; border-radius:50%; background:{{ dot2 }};"></div>
+      <div style="flex:1;"></div>
+      <svg width="30" height="30" viewBox="0 0 48 48" style="opacity:.9;"><circle cx="24" cy="24" r="16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-dasharray="75 130" transform="rotate(135 24 24)"/><circle cx="11.7" cy="35.3" r="5.5" fill="#fff"/><circle cx="33" cy="11" r="3.2" fill="#fff"/></svg>
+    </div>
+
+    <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
+      <div style="flex:1; display:flex; flex-direction:column;">
+        <div style="margin-top:48px;">
+          <div style="font-size:15px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; opacity:.75;">Step 1 of 2</div>
+          <div style="font-size:32px; font-weight:700; line-height:1.18; margin-top:12px; letter-spacing:-.01em; text-wrap:pretty;">When did you last<br>use a pouch?</div>
+          <div style="font-size:16px; opacity:.8; margin-top:10px;">Your streak starts from this moment.</div>
+        </div>
+
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:22px;">
+          <div style="display:flex; align-items:flex-end; gap:6px;">
+            <span style="font-family:'Nunito',sans-serif; font-weight:800; font-size:80px; line-height:.9;">2:30</span>
+            <span style="font-family:'Nunito',sans-serif; font-weight:700; font-size:30px; margin-bottom:12px; opacity:.85;">PM</span>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <div style="padding:10px 18px; border-radius:99px; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.35); font-size:15px; font-weight:600;">Just now</div>
+            <div style="padding:10px 18px; border-radius:99px; background:#FFFFFF; color:#566175; font-size:15px; font-weight:600;">2:30 PM</div>
+            <div style="padding:10px 18px; border-radius:99px; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.35); font-size:15px; font-weight:600;">Earlier</div>
+          </div>
+        </div>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
+      <div style="flex:1; display:flex; flex-direction:column;">
+        <div style="margin-top:48px;">
+          <div style="font-size:15px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; opacity:.75;">Step 2 of 2</div>
+          <div style="font-size:32px; font-weight:700; line-height:1.18; margin-top:12px; letter-spacing:-.01em; text-wrap:pretty;">What's your daily<br>goal to start?</div>
+          <div style="font-size:16px; opacity:.8; margin-top:10px;">Reduce gradually — you can change this anytime.</div>
+        </div>
+
+        <div style="flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;">
+          <div style="display:flex; align-items:center; gap:30px;">
+            <div style="width:54px; height:54px; border-radius:50%; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.35); display:flex; align-items:center; justify-content:center; font-size:30px; font-weight:300;">–</div>
+            <div style="display:flex; flex-direction:column; align-items:center;">
+              <span style="font-family:'Nunito',sans-serif; font-weight:800; font-size:96px; line-height:.9;">8</span>
+            </div>
+            <div style="width:54px; height:54px; border-radius:50%; background:#FFFFFF; color:#566175; display:flex; align-items:center; justify-content:center; font-size:30px; font-weight:300;">+</div>
+          </div>
+          <div style="font-size:17px; opacity:.85;">pouches per day</div>
+        </div>
+      </div>
+    </sc-if>
+
+    <button style="border:none; cursor:pointer; width:100%; border-radius:18px; padding:18px; background:#FFFFFF; color:#566175; font-family:inherit; font-size:17px; font-weight:700; box-shadow:0 10px 24px rgba(0,0,0,.14);">{{ cta }}</button>
+  </div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:402,&quot;height&quot;:874},&quot;step&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const step = Number(this.props.step ?? 1);
+    const isStep1 = step === 1;
+    return {
+      isStep1, isStep2: !isStep1,
+      dot1: '#FFFFFF',
+      dot2: isStep1 ? 'rgba(255,255,255,0.35)' : '#FFFFFF',
+      cta: isStep1 ? 'Continue' : 'Start my streak',
+    };
+  }
+}
+</script>
+</body>
+</html>

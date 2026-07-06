@@ -3,328 +3,324 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0251C0BCABAB46188F9A5C60 /* RelapseEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16086F4CC1B14A6AA77AA74C /* RelapseEvent.swift */; };
-		1436A02C217D4763BBE03CC2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041F98EA67FA4B35BE1E8C01 /* OnboardingView.swift */; };
-		1B0DD1C6F1E8450F8D25A40A /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CEE9F731C854A1795E231DD /* GlassCard.swift */; };
-		1C539981F1B446E185445E79 /* StreakCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92632A4F83804805B86B15D6 /* StreakCalculator.swift */; };
-		32ED5B23D71D40DF892F2B3C /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D9CF9A9914473B8B36A38B /* OnboardingViewModel.swift */; };
-		3B4C5D6E7F8049A0B1C2D3E4 /* DailyGoalStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2F3A4B5C6D4798897A6B5C /* DailyGoalStepView.swift */; };
-		3F4C786750DF4770A6C17F68 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DED7E9648F0642178123EF43 /* Assets.xcassets */; };
-		452A15B7745D4487BC2D154A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D01832447FD049CA8F55F3E6 /* HomeView.swift */; };
-		52A949046ACC4BE780B322AA /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9CDD82AA434D8ABE41F1AD /* PersistenceController.swift */; };
-		545BAD83B43D4BA2A9416573 /* Font+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39FB34D6D5E9432A8695F0CA /* Font+Sennel.swift */; };
-		553A3DF0E6BB4C969A98559E /* Spacing+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D9FB4B2A8246D2A243F9C5 /* Spacing+Sennel.swift */; };
-		7A1B3C4D5E6F47A8B9C0D1E2 /* LastPouchStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F2E3D4C5B6A47988776655F /* LastPouchStepView.swift */; };
-		96824FA57E22458DAB8C13C4 /* PouchLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C65D1BB4398D46A7BB92C91E /* PouchLog.swift */; };
-		9E8BB5D94B0A4E70962E61E1 /* Color+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D6966FD9D4C7AB1B340C4 /* Color+Sennel.swift */; };
-		9F54CF06905D43C4AECFFE8F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAF7309377B499EA5F0B58D /* SettingsView.swift */; };
-		A4A7DB1273754BD09555ED29 /* StreakRingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC488DF87974ADCB965239C /* StreakRingView.swift */; };
-		A58592D5B0E849899992AACA /* IntervalSchedulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A48440DAB49DE96B40C6F /* IntervalSchedulerView.swift */; };
-		A5BCBCD48C644DCF903CCE62 /* SennelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195DCCF1BB3E4FD587FC3E04 /* SennelApp.swift */; };
-		BB411042D0AD4186B6336B19 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFE315A3B4E4F17AD6AC4F4 /* NotificationService.swift */; };
-		BCA4961E36164A4F91996670 /* StreakCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71D660B43444316833947F1 /* StreakCalculatorTests.swift */; };
-		D8C72FFAAC794FABB710F7EF /* StoreKitService+Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8C020BDEF4EB287176841 /* StoreKitService+Products.swift */; };
-		DC57CDF4209244DC8798621A /* HealthTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E86F6A1BC644E3A360DCAE /* HealthTimelineView.swift */; };
-		DEB4CF04549447A29BF59E07 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE9B906EBB14DEA952BDF43 /* RootView.swift */; };
-		E192ABBFB6AC4ECDA55184CC /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8232CB72333845D2A6716A72 /* UserSettings.swift */; };
-		F28CAD4784A4414ABEEE7599 /* StoreKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FADC8009B104E5FAC01A18D /* StoreKitService.swift */; };
-		F515F16E27D4420CBFCEEFA9 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CAC1F44513495BAAF6B408 /* PaywallView.swift */; };
-		FE109CB019014D38BC743EEF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F21BB9E67E4CCA80B1E0A7 /* HomeViewModel.swift */; };
+		000000000000000000000002 /* SennelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000001 /* SennelApp.swift */; };
+		000000000000000000000004 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000003 /* RootView.swift */; };
+		000000000000000000000006 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000005 /* MainTabView.swift */; };
+		000000000000000000000008 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000007 /* AppState.swift */; };
+		00000000000000000000000A /* GlassCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000009 /* GlassCard.swift */; };
+		00000000000000000000000C /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000000B /* PrimaryButton.swift */; };
+		00000000000000000000000E /* StreakRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000000D /* StreakRing.swift */; };
+		000000000000000000000010 /* Color+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000000F /* Color+Sennel.swift */; };
+		000000000000000000000012 /* Typography+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000011 /* Typography+Sennel.swift */; };
+		000000000000000000000014 /* HealthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000013 /* HealthView.swift */; };
+		000000000000000000000016 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000015 /* HomeView.swift */; };
+		000000000000000000000018 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000017 /* OnboardingView.swift */; };
+		00000000000000000000001C /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000001B /* ScheduleView.swift */; };
+		00000000000000000000001E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000001D /* SettingsView.swift */; };
+		000000000000000000000020 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000001F /* Assets.xcassets */; };
+		000000000000000000000034 /* FlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000033 /* FlowLayout.swift */; };
+		000000000000000000000036 /* BadgesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000035 /* BadgesView.swift */; };
+		000000000000000000000038 /* BreathingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000037 /* BreathingView.swift */; };
+		00000000000000000000003A /* CravingLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000039 /* CravingLogView.swift */; };
+		00000000000000000000003C /* InsightsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000003B /* InsightsView.swift */; };
+		00000000000000000000003E /* RelapseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000003D /* RelapseView.swift */; };
+		000000000000000000000040 /* SymptomLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000003F /* SymptomLogView.swift */; };
+		000000000000000000000042 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000041 /* UserProfile.swift */; };
+		000000000000000000000044 /* CravingEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000043 /* CravingEntryModel.swift */; };
+		000000000000000000000046 /* SymptomSeverityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000045 /* SymptomSeverityModel.swift */; };
+		000000000000000000000048 /* PouchCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000047 /* PouchCountModel.swift */; };
+		00000000000000000000004A /* ModelContainer+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000049 /* ModelContainer+Sennel.swift */; };
+		00000000000000000000004D /* ProductIDs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000004C /* ProductIDs.swift */; };
+		00000000000000000000004F /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00000000000000000000004E /* StoreManager.swift */; };
+		000000000000000000000051 /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000050 /* PaywallView.swift */; };
+		872EAC502FEF1BAA00585670 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872EAC4F2FEF1BAA00585670 /* WidgetKit.framework */; };
+		872EAC522FEF1BAA00585670 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872EAC512FEF1BAA00585670 /* SwiftUI.framework */; };
+		872EAC632FEF1BAC00585670 /* SennelWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 872EAC4D2FEF1BAA00585670 /* SennelWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		874EA2372FEF2933003C5E1B /* CravingEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000043 /* CravingEntryModel.swift */; };
+		874EA2382FEF293A003C5E1B /* ModelContainer+Sennel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000049 /* ModelContainer+Sennel.swift */; };
+		874EA2392FEF2942003C5E1B /* PouchCountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000047 /* PouchCountModel.swift */; };
+		874EA23A2FEF2948003C5E1B /* SymptomSeverityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000045 /* SymptomSeverityModel.swift */; };
+		874EA23B2FEF294E003C5E1B /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000000000000000000000041 /* UserProfile.swift */; };
+		87AB44922FEF329C00848FA5 /* LiveActivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB44912FEF329C00848FA5 /* LiveActivityManager.swift */; };
+		87AB44942FEF32AB00848FA5 /* SennelScheduleActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB44932FEF32AB00848FA5 /* SennelScheduleActivityAttributes.swift */; };
+		87AB44962FEF32B800848FA5 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB44952FEF32B800848FA5 /* NotificationManager.swift */; };
+		87AB44972FEF334400848FA5 /* SennelScheduleActivityAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AB44932FEF32AB00848FA5 /* SennelScheduleActivityAttributes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		45A65F51A88C4410B363D966 /* PBXContainerItemProxy */ = {
+		872EAC612FEF1BAC00585670 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 3C327477A95845BEA643337F /* Project object */;
+			containerPortal = 000000000000000000000028 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 400754809E214843A120F5A0;
-			remoteInfo = Sennel;
+			remoteGlobalIDString = 872EAC4C2FEF1BAA00585670;
+			remoteInfo = SennelWidgetExtension;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		872EAC642FEF1BAC00585670 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				872EAC632FEF1BAC00585670 /* SennelWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		041F98EA67FA4B35BE1E8C01 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		06D9CF9A9914473B8B36A38B /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		16086F4CC1B14A6AA77AA74C /* RelapseEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelapseEvent.swift; sourceTree = "<group>"; };
-		16B8C020BDEF4EB287176841 /* StoreKitService+Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoreKitService+Products.swift"; sourceTree = "<group>"; };
-		195DCCF1BB3E4FD587FC3E04 /* SennelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SennelApp.swift; sourceTree = "<group>"; };
-		1AAF7309377B499EA5F0B58D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		1CEE9F731C854A1795E231DD /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
-		1E2F3A4B5C6D4798897A6B5C /* DailyGoalStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalStepView.swift; sourceTree = "<group>"; };
-		22CAC1F44513495BAAF6B408 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
-		2FADC8009B104E5FAC01A18D /* StoreKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitService.swift; sourceTree = "<group>"; };
-		39FB34D6D5E9432A8695F0CA /* Font+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Sennel.swift"; sourceTree = "<group>"; };
-		3EFE315A3B4E4F17AD6AC4F4 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		5FE9B906EBB14DEA952BDF43 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		794D6966FD9D4C7AB1B340C4 /* Color+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Sennel.swift"; sourceTree = "<group>"; };
-		8232CB72333845D2A6716A72 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
-		827A48440DAB49DE96B40C6F /* IntervalSchedulerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalSchedulerView.swift; sourceTree = "<group>"; };
-		874742DCA7E848758244C03A /* SennelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SennelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		92632A4F83804805B86B15D6 /* StreakCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCalculator.swift; sourceTree = "<group>"; };
-		97D9FB4B2A8246D2A243F9C5 /* Spacing+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Spacing+Sennel.swift"; sourceTree = "<group>"; };
-		9F2E3D4C5B6A47988776655F /* LastPouchStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastPouchStepView.swift; sourceTree = "<group>"; };
-		C65D1BB4398D46A7BB92C91E /* PouchLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchLog.swift; sourceTree = "<group>"; };
-		C71D660B43444316833947F1 /* StreakCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakCalculatorTests.swift; sourceTree = "<group>"; };
-		CFC488DF87974ADCB965239C /* StreakRingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakRingView.swift; sourceTree = "<group>"; };
-		D01832447FD049CA8F55F3E6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		DC9CDD82AA434D8ABE41F1AD /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		DED7E9648F0642178123EF43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DFF18FB9E89E4F89A787F307 /* Sennel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sennel.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3E86F6A1BC644E3A360DCAE /* HealthTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthTimelineView.swift; sourceTree = "<group>"; };
-		E5F21BB9E67E4CCA80B1E0A7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		000000000000000000000001 /* SennelApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SennelApp.swift; sourceTree = "<group>"; };
+		000000000000000000000003 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		000000000000000000000005 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		000000000000000000000007 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		000000000000000000000009 /* GlassCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassCard.swift; sourceTree = "<group>"; };
+		00000000000000000000000B /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		00000000000000000000000D /* StreakRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreakRing.swift; sourceTree = "<group>"; };
+		00000000000000000000000F /* Color+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Sennel.swift"; sourceTree = "<group>"; };
+		000000000000000000000011 /* Typography+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Typography+Sennel.swift"; sourceTree = "<group>"; };
+		000000000000000000000013 /* HealthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthView.swift; sourceTree = "<group>"; };
+		000000000000000000000015 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		000000000000000000000017 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		00000000000000000000001B /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		00000000000000000000001D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		00000000000000000000001F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		000000000000000000000021 /* Sennel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sennel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000000000000000033 /* FlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowLayout.swift; sourceTree = "<group>"; };
+		000000000000000000000035 /* BadgesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgesView.swift; sourceTree = "<group>"; };
+		000000000000000000000037 /* BreathingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreathingView.swift; sourceTree = "<group>"; };
+		000000000000000000000039 /* CravingLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CravingLogView.swift; sourceTree = "<group>"; };
+		00000000000000000000003B /* InsightsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		00000000000000000000003D /* RelapseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelapseView.swift; sourceTree = "<group>"; };
+		00000000000000000000003F /* SymptomLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomLogView.swift; sourceTree = "<group>"; };
+		000000000000000000000041 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		000000000000000000000043 /* CravingEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CravingEntryModel.swift; sourceTree = "<group>"; };
+		000000000000000000000045 /* SymptomSeverityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomSeverityModel.swift; sourceTree = "<group>"; };
+		000000000000000000000047 /* PouchCountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouchCountModel.swift; sourceTree = "<group>"; };
+		000000000000000000000049 /* ModelContainer+Sennel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ModelContainer+Sennel.swift"; sourceTree = "<group>"; };
+		00000000000000000000004C /* ProductIDs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductIDs.swift; sourceTree = "<group>"; };
+		00000000000000000000004E /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		000000000000000000000050 /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		000000000000000000000053 /* Products.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Products.storekit; sourceTree = "<group>"; };
+		872EAC4D2FEF1BAA00585670 /* SennelWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SennelWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		872EAC4F2FEF1BAA00585670 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		872EAC512FEF1BAA00585670 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		87AB44912FEF329C00848FA5 /* LiveActivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveActivityManager.swift; sourceTree = "<group>"; };
+		87AB44932FEF32AB00848FA5 /* SennelScheduleActivityAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SennelScheduleActivityAttributes.swift; sourceTree = "<group>"; };
+		87AB44952FEF32B800848FA5 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		872EAC672FEF1BAC00585670 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 872EAC4C2FEF1BAA00585670 /* SennelWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		872EAC532FEF1BAA00585670 /* SennelWidget */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (872EAC672FEF1BAC00585670 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = SennelWidget; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		BA27D5676AC349A6B748EC11 /* Frameworks */ = {
+		000000000000000000000031 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ED117010BB8E43E9A1633D9D /* Frameworks */ = {
+		872EAC4A2FEF1BAA00585670 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				872EAC522FEF1BAA00585670 /* SwiftUI.framework in Frameworks */,
+				872EAC502FEF1BAA00585670 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0757BFEBE2664BFE9943B2DB = {
+		000000000000000000000022 = {
 			isa = PBXGroup;
 			children = (
-				D4478EF72FC148C29232AC8F /* Sennel */,
-				7870BAED2E684AE698281124 /* SennelTests */,
-				F085997A4BAF4C408A51E367 /* Products */,
+				000000000000000000000023 /* Sennel */,
+				000000000000000000000027,
+				000000000000000000000053 /* Products.storekit */,
+				872EAC532FEF1BAA00585670 /* SennelWidget */,
+				872EAC4E2FEF1BAA00585670 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		144F3DC6421C46D2AC4DE173 /* Models */ = {
+		000000000000000000000023 /* Sennel */ = {
 			isa = PBXGroup;
 			children = (
-				C65D1BB4398D46A7BB92C91E /* PouchLog.swift */,
-				8232CB72333845D2A6716A72 /* UserSettings.swift */,
-				16086F4CC1B14A6AA77AA74C /* RelapseEvent.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		2D6BD825F4724E74A2610FF0 /* HealthTimeline */ = {
-			isa = PBXGroup;
-			children = (
-				E3E86F6A1BC644E3A360DCAE /* HealthTimelineView.swift */,
-			);
-			path = HealthTimeline;
-			sourceTree = "<group>";
-		};
-		31CF0B3CC7524E5DBE85B615 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				195DCCF1BB3E4FD587FC3E04 /* SennelApp.swift */,
-				5FE9B906EBB14DEA952BDF43 /* RootView.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		4194609BDAB043F1903C0616 /* Persistence */ = {
-			isa = PBXGroup;
-			children = (
-				DC9CDD82AA434D8ABE41F1AD /* PersistenceController.swift */,
-			);
-			path = Persistence;
-			sourceTree = "<group>";
-		};
-		53DC6447C28245878B468A24 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				DED7E9648F0642178123EF43 /* Assets.xcassets */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		58505B2F59774FD6843C4A07 /* Paywall */ = {
-			isa = PBXGroup;
-			children = (
-				22CAC1F44513495BAAF6B408 /* PaywallView.swift */,
-				16B8C020BDEF4EB287176841 /* StoreKitService+Products.swift */,
-			);
-			path = Paywall;
-			sourceTree = "<group>";
-		};
-		6F8632DDEF2B4F9FB7C467BE /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				1AAF7309377B499EA5F0B58D /* SettingsView.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		74D3105693EA4614A6FF65F7 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				FFDAD11B887B49358801DEDE /* DesignSystem */,
-				4194609BDAB043F1903C0616 /* Persistence */,
-				F11BAA0D4275435C8F4904F5 /* Services */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		7870BAED2E684AE698281124 /* SennelTests */ = {
-			isa = PBXGroup;
-			children = (
-				C71D660B43444316833947F1 /* StreakCalculatorTests.swift */,
-			);
-			path = SennelTests;
-			sourceTree = "<group>";
-		};
-		CA9875C0BB514D8097F69F2F /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				D01832447FD049CA8F55F3E6 /* HomeView.swift */,
-				E5F21BB9E67E4CCA80B1E0A7 /* HomeViewModel.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		D031D55818B641C8BF1011A6 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				041F98EA67FA4B35BE1E8C01 /* OnboardingView.swift */,
-				06D9CF9A9914473B8B36A38B /* OnboardingViewModel.swift */,
-				9F2E3D4C5B6A47988776655F /* LastPouchStepView.swift */,
-				1E2F3A4B5C6D4798897A6B5C /* DailyGoalStepView.swift */,
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		D4478EF72FC148C29232AC8F /* Sennel */ = {
-			isa = PBXGroup;
-			children = (
-				31CF0B3CC7524E5DBE85B615 /* App */,
-				74D3105693EA4614A6FF65F7 /* Core */,
-				144F3DC6421C46D2AC4DE173 /* Models */,
-				FEBC53332C8049388869346F /* Features */,
-				53DC6447C28245878B468A24 /* Resources */,
+				000000000000000000000001 /* SennelApp.swift */,
+				000000000000000000000003 /* RootView.swift */,
+				000000000000000000000005 /* MainTabView.swift */,
+				000000000000000000000007 /* AppState.swift */,
+				00000000000000000000001F /* Assets.xcassets */,
+				000000000000000000000024 /* Components */,
+				000000000000000000000025 /* DesignSystem */,
+				00000000000000000000004B /* Persistence */,
+				000000000000000000000026 /* Screens */,
+				000000000000000000000052 /* Store */,
+				87AB44912FEF329C00848FA5 /* LiveActivityManager.swift */,
+				87AB44932FEF32AB00848FA5 /* SennelScheduleActivityAttributes.swift */,
+				87AB44952FEF32B800848FA5 /* NotificationManager.swift */,
 			);
 			path = Sennel;
 			sourceTree = "<group>";
 		};
-		F085997A4BAF4C408A51E367 /* Products */ = {
+		000000000000000000000024 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				DFF18FB9E89E4F89A787F307 /* Sennel.app */,
-				874742DCA7E848758244C03A /* SennelTests.xctest */,
+				000000000000000000000033 /* FlowLayout.swift */,
+				000000000000000000000009 /* GlassCard.swift */,
+				00000000000000000000000B /* PrimaryButton.swift */,
+				00000000000000000000000D /* StreakRing.swift */,
 			);
-			name = Products;
+			path = Components;
 			sourceTree = "<group>";
 		};
-		F11BAA0D4275435C8F4904F5 /* Services */ = {
+		000000000000000000000025 /* DesignSystem */ = {
 			isa = PBXGroup;
 			children = (
-				92632A4F83804805B86B15D6 /* StreakCalculator.swift */,
-				3EFE315A3B4E4F17AD6AC4F4 /* NotificationService.swift */,
-				2FADC8009B104E5FAC01A18D /* StoreKitService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		F59537528F9C423AB9789ECF /* IntervalScheduler */ = {
-			isa = PBXGroup;
-			children = (
-				827A48440DAB49DE96B40C6F /* IntervalSchedulerView.swift */,
-			);
-			path = IntervalScheduler;
-			sourceTree = "<group>";
-		};
-		FEBC53332C8049388869346F /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				D031D55818B641C8BF1011A6 /* Onboarding */,
-				CA9875C0BB514D8097F69F2F /* Home */,
-				2D6BD825F4724E74A2610FF0 /* HealthTimeline */,
-				F59537528F9C423AB9789ECF /* IntervalScheduler */,
-				58505B2F59774FD6843C4A07 /* Paywall */,
-				6F8632DDEF2B4F9FB7C467BE /* Settings */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
-		FFDAD11B887B49358801DEDE /* DesignSystem */ = {
-			isa = PBXGroup;
-			children = (
-				794D6966FD9D4C7AB1B340C4 /* Color+Sennel.swift */,
-				39FB34D6D5E9432A8695F0CA /* Font+Sennel.swift */,
-				97D9FB4B2A8246D2A243F9C5 /* Spacing+Sennel.swift */,
-				CFC488DF87974ADCB965239C /* StreakRingView.swift */,
-				1CEE9F731C854A1795E231DD /* GlassCard.swift */,
+				00000000000000000000000F /* Color+Sennel.swift */,
+				000000000000000000000011 /* Typography+Sennel.swift */,
 			);
 			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		000000000000000000000026 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000035 /* BadgesView.swift */,
+				000000000000000000000037 /* BreathingView.swift */,
+				000000000000000000000039 /* CravingLogView.swift */,
+				000000000000000000000013 /* HealthView.swift */,
+				000000000000000000000015 /* HomeView.swift */,
+				00000000000000000000003B /* InsightsView.swift */,
+				000000000000000000000017 /* OnboardingView.swift */,
+				000000000000000000000050 /* PaywallView.swift */,
+				00000000000000000000003D /* RelapseView.swift */,
+				00000000000000000000001B /* ScheduleView.swift */,
+				00000000000000000000001D /* SettingsView.swift */,
+				00000000000000000000003F /* SymptomLogView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		000000000000000000000027 = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000021 /* Sennel.app */,
+				872EAC4D2FEF1BAA00585670 /* SennelWidgetExtension.appex */,
+			);
+			sourceTree = "<group>";
+		};
+		00000000000000000000004B /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				000000000000000000000043 /* CravingEntryModel.swift */,
+				000000000000000000000049 /* ModelContainer+Sennel.swift */,
+				000000000000000000000047 /* PouchCountModel.swift */,
+				000000000000000000000045 /* SymptomSeverityModel.swift */,
+				000000000000000000000041 /* UserProfile.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
+		000000000000000000000052 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				00000000000000000000004C /* ProductIDs.swift */,
+				00000000000000000000004E /* StoreManager.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		872EAC4E2FEF1BAA00585670 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				872EAC4F2FEF1BAA00585670 /* WidgetKit.framework */,
+				872EAC512FEF1BAA00585670 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		23CBACFF376A40E7AA62802B /* SennelTests */ = {
+		000000000000000000000029 /* Sennel */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 685EA5CC64D944B78142C59C /* Build configuration list for PBXNativeTarget "SennelTests" */;
+			buildConfigurationList = 00000000000000000000002B /* Build configuration list for PBXNativeTarget "Sennel" */;
 			buildPhases = (
-				6D98B11C2B46485CAAD99B42 /* Sources */,
-				ED117010BB8E43E9A1633D9D /* Frameworks */,
-				9DE1D631CB4C40DD851192E1 /* Resources */,
+				000000000000000000000030 /* Sources */,
+				000000000000000000000031 /* Frameworks */,
+				000000000000000000000032 /* Resources */,
+				872EAC642FEF1BAC00585670 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				F4C8354BDF644F4CABB64D1B /* PBXTargetDependency */,
-			);
-			name = SennelTests;
-			productName = SennelTests;
-			productReference = 874742DCA7E848758244C03A /* SennelTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		400754809E214843A120F5A0 /* Sennel */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BE9C9296C44B426CA72C8DB8 /* Build configuration list for PBXNativeTarget "Sennel" */;
-			buildPhases = (
-				789C34EC462F457298F5ADFF /* Sources */,
-				BA27D5676AC349A6B748EC11 /* Frameworks */,
-				59E4B37597CF474EB8AC5C6E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
+				872EAC622FEF1BAC00585670 /* PBXTargetDependency */,
 			);
 			name = Sennel;
 			productName = Sennel;
-			productReference = DFF18FB9E89E4F89A787F307 /* Sennel.app */;
+			productReference = 000000000000000000000021 /* Sennel.app */;
 			productType = "com.apple.product-type.application";
+		};
+		872EAC4C2FEF1BAA00585670 /* SennelWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 872EAC682FEF1BAC00585670 /* Build configuration list for PBXNativeTarget "SennelWidgetExtension" */;
+			buildPhases = (
+				872EAC492FEF1BAA00585670 /* Sources */,
+				872EAC4A2FEF1BAA00585670 /* Frameworks */,
+				872EAC4B2FEF1BAA00585670 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				872EAC532FEF1BAA00585670 /* SennelWidget */,
+			);
+			name = SennelWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = SennelWidgetExtension;
+			productReference = 872EAC4D2FEF1BAA00585670 /* SennelWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		3C327477A95845BEA643337F /* Project object */ = {
+		000000000000000000000028 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1620;
-				LastUpgradeCheck = 1620;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
-					23CBACFF376A40E7AA62802B = {
-						CreatedOnToolsVersion = 16.2;
-						TestTargetID = 400754809E214843A120F5A0;
+					000000000000000000000029 = {
+						CreatedOnToolsVersion = 16.0;
 					};
-					400754809E214843A120F5A0 = {
-						CreatedOnToolsVersion = 16.2;
+					872EAC4C2FEF1BAA00585670 = {
+						CreatedOnToolsVersion = 26.2;
 					};
 				};
 			};
-			buildConfigurationList = 257CF811F2DE489B80D214EB /* Build configuration list for PBXProject "Sennel" */;
+			buildConfigurationList = 00000000000000000000002A /* Build configuration list for PBXProject "Sennel" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -332,27 +328,27 @@
 				en,
 				Base,
 			);
-			mainGroup = 0757BFEBE2664BFE9943B2DB;
-			productRefGroup = F085997A4BAF4C408A51E367 /* Products */;
+			mainGroup = 000000000000000000000022;
+			productRefGroup = 000000000000000000000027;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				400754809E214843A120F5A0 /* Sennel */,
-				23CBACFF376A40E7AA62802B /* SennelTests */,
+				000000000000000000000029 /* Sennel */,
+				872EAC4C2FEF1BAA00585670 /* SennelWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		59E4B37597CF474EB8AC5C6E /* Resources */ = {
+		000000000000000000000032 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F4C786750DF4770A6C17F68 /* Assets.xcassets in Resources */,
+				000000000000000000000020 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9DE1D631CB4C40DD851192E1 /* Resources */ = {
+		872EAC4B2FEF1BAA00585670 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -362,220 +358,341 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6D98B11C2B46485CAAD99B42 /* Sources */ = {
+		000000000000000000000030 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BCA4961E36164A4F91996670 /* StreakCalculatorTests.swift in Sources */,
+				000000000000000000000002 /* SennelApp.swift in Sources */,
+				000000000000000000000004 /* RootView.swift in Sources */,
+				000000000000000000000006 /* MainTabView.swift in Sources */,
+				000000000000000000000008 /* AppState.swift in Sources */,
+				000000000000000000000034 /* FlowLayout.swift in Sources */,
+				00000000000000000000000A /* GlassCard.swift in Sources */,
+				00000000000000000000000C /* PrimaryButton.swift in Sources */,
+				00000000000000000000000E /* StreakRing.swift in Sources */,
+				87AB44922FEF329C00848FA5 /* LiveActivityManager.swift in Sources */,
+				000000000000000000000010 /* Color+Sennel.swift in Sources */,
+				000000000000000000000012 /* Typography+Sennel.swift in Sources */,
+				000000000000000000000036 /* BadgesView.swift in Sources */,
+				000000000000000000000038 /* BreathingView.swift in Sources */,
+				00000000000000000000003A /* CravingLogView.swift in Sources */,
+				000000000000000000000014 /* HealthView.swift in Sources */,
+				000000000000000000000016 /* HomeView.swift in Sources */,
+				87AB44942FEF32AB00848FA5 /* SennelScheduleActivityAttributes.swift in Sources */,
+				00000000000000000000003C /* InsightsView.swift in Sources */,
+				000000000000000000000018 /* OnboardingView.swift in Sources */,
+				00000000000000000000003E /* RelapseView.swift in Sources */,
+				00000000000000000000001C /* ScheduleView.swift in Sources */,
+				00000000000000000000001E /* SettingsView.swift in Sources */,
+				87AB44962FEF32B800848FA5 /* NotificationManager.swift in Sources */,
+				000000000000000000000040 /* SymptomLogView.swift in Sources */,
+				000000000000000000000042 /* UserProfile.swift in Sources */,
+				000000000000000000000044 /* CravingEntryModel.swift in Sources */,
+				000000000000000000000046 /* SymptomSeverityModel.swift in Sources */,
+				000000000000000000000048 /* PouchCountModel.swift in Sources */,
+				00000000000000000000004A /* ModelContainer+Sennel.swift in Sources */,
+				00000000000000000000004D /* ProductIDs.swift in Sources */,
+				00000000000000000000004F /* StoreManager.swift in Sources */,
+				000000000000000000000051 /* PaywallView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		789C34EC462F457298F5ADFF /* Sources */ = {
+		872EAC492FEF1BAA00585670 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5BCBCD48C644DCF903CCE62 /* SennelApp.swift in Sources */,
-				DEB4CF04549447A29BF59E07 /* RootView.swift in Sources */,
-				9E8BB5D94B0A4E70962E61E1 /* Color+Sennel.swift in Sources */,
-				545BAD83B43D4BA2A9416573 /* Font+Sennel.swift in Sources */,
-				553A3DF0E6BB4C969A98559E /* Spacing+Sennel.swift in Sources */,
-				A4A7DB1273754BD09555ED29 /* StreakRingView.swift in Sources */,
-				1B0DD1C6F1E8450F8D25A40A /* GlassCard.swift in Sources */,
-				52A949046ACC4BE780B322AA /* PersistenceController.swift in Sources */,
-				1C539981F1B446E185445E79 /* StreakCalculator.swift in Sources */,
-				BB411042D0AD4186B6336B19 /* NotificationService.swift in Sources */,
-				F28CAD4784A4414ABEEE7599 /* StoreKitService.swift in Sources */,
-				96824FA57E22458DAB8C13C4 /* PouchLog.swift in Sources */,
-				E192ABBFB6AC4ECDA55184CC /* UserSettings.swift in Sources */,
-				0251C0BCABAB46188F9A5C60 /* RelapseEvent.swift in Sources */,
-				1436A02C217D4763BBE03CC2 /* OnboardingView.swift in Sources */,
-				32ED5B23D71D40DF892F2B3C /* OnboardingViewModel.swift in Sources */,
-				7A1B3C4D5E6F47A8B9C0D1E2 /* LastPouchStepView.swift in Sources */,
-				3B4C5D6E7F8049A0B1C2D3E4 /* DailyGoalStepView.swift in Sources */,
-				452A15B7745D4487BC2D154A /* HomeView.swift in Sources */,
-				FE109CB019014D38BC743EEF /* HomeViewModel.swift in Sources */,
-				DC57CDF4209244DC8798621A /* HealthTimelineView.swift in Sources */,
-				A58592D5B0E849899992AACA /* IntervalSchedulerView.swift in Sources */,
-				F515F16E27D4420CBFCEEFA9 /* PaywallView.swift in Sources */,
-				D8C72FFAAC794FABB710F7EF /* StoreKitService+Products.swift in Sources */,
-				9F54CF06905D43C4AECFFE8F /* SettingsView.swift in Sources */,
+				874EA2392FEF2942003C5E1B /* PouchCountModel.swift in Sources */,
+				87AB44972FEF334400848FA5 /* SennelScheduleActivityAttributes.swift in Sources */,
+				874EA23B2FEF294E003C5E1B /* UserProfile.swift in Sources */,
+				874EA2372FEF2933003C5E1B /* CravingEntryModel.swift in Sources */,
+				874EA2382FEF293A003C5E1B /* ModelContainer+Sennel.swift in Sources */,
+				874EA23A2FEF2948003C5E1B /* SymptomSeverityModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		F4C8354BDF644F4CABB64D1B /* PBXTargetDependency */ = {
+		872EAC622FEF1BAC00585670 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 400754809E214843A120F5A0 /* Sennel */;
-			targetProxy = 45A65F51A88C4410B363D966 /* PBXContainerItemProxy */;
+			target = 872EAC4C2FEF1BAA00585670 /* SennelWidgetExtension */;
+			targetProxy = 872EAC612FEF1BAC00585670 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		4BD3CBA92AC14994AB0A63B7 /* Release */ = {
+		00000000000000000000002C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		4C6D3CA1AF9B438092E8980F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		8FF7D51D5330427A9B603A08 /* Release */ = {
+		00000000000000000000002D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.najmulmyself.sennel.tests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sennel.app/Sennel";
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		BD0CE52651A2471783CC46AF /* Debug */ = {
+		00000000000000000000002E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = Sennel/Sennel.entitlements;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Sennel;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.najmulmyself.sennel.tests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sennel.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Sennel.app/Sennel";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		CBCA5CDFE0A84686810D0CE7 /* Release */ = {
+		00000000000000000000002F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Sennel/Sennel.entitlements;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9UL73N34UU;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Sennel;
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.najmulmyself.sennel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sennel.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		FC56707757E14FCEB972F711 /* Debug */ = {
+		872EAC652FEF1BAC00585670 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SennelWidget/SennelWidget.entitlements;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9UL73N34UU;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				INFOPLIST_FILE = SennelWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SennelWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.najmulmyself.sennel;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sennel.app.SennelWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
+		};
+		872EAC662FEF1BAC00585670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = SennelWidget/SennelWidget.entitlements;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SennelWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SennelWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sennel.app.SennelWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		257CF811F2DE489B80D214EB /* Build configuration list for PBXProject "Sennel" */ = {
+		00000000000000000000002A /* Build configuration list for PBXProject "Sennel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4C6D3CA1AF9B438092E8980F /* Debug */,
-				4BD3CBA92AC14994AB0A63B7 /* Release */,
+				00000000000000000000002C /* Debug */,
+				00000000000000000000002D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		685EA5CC64D944B78142C59C /* Build configuration list for PBXNativeTarget "SennelTests" */ = {
+		00000000000000000000002B /* Build configuration list for PBXNativeTarget "Sennel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BD0CE52651A2471783CC46AF /* Debug */,
-				8FF7D51D5330427A9B603A08 /* Release */,
+				00000000000000000000002E /* Debug */,
+				00000000000000000000002F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BE9C9296C44B426CA72C8DB8 /* Build configuration list for PBXNativeTarget "Sennel" */ = {
+		872EAC682FEF1BAC00585670 /* Build configuration list for PBXNativeTarget "SennelWidgetExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC56707757E14FCEB972F711 /* Debug */,
-				CBCA5CDFE0A84686810D0CE7 /* Release */,
+				872EAC652FEF1BAC00585670 /* Debug */,
+				872EAC662FEF1BAC00585670 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 3C327477A95845BEA643337F /* Project object */;
+	rootObject = 000000000000000000000028 /* Project object */;
 }

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<x-import component="IOSDevice" from="./ios-frame.jsx" dark="{{ dark }}" hint-size="402px,874px">
+  <div style="--bg:{{ bg }}; --card:{{ card }}; --stage:{{ stage }}; --tp:{{ tp }}; --ts:{{ ts }}; --hair:{{ hair }}; --soft:{{ soft }}; height:100%; box-sizing:border-box; background:var(--bg); padding:58px 22px 30px; display:flex; flex-direction:column; gap:16px; font-family:-apple-system,system-ui,sans-serif; overflow:hidden;">
+
+    <div>
+      <div style="font-size:34px; font-weight:700; letter-spacing:-.01em; color:var(--tp);">Schedule</div>
+      <div style="font-size:15px; color:var(--ts); margin-top:2px;">8 pouches, spread from 8 AM to 10 PM.</div>
+    </div>
+
+    <div style="position:relative; border-radius:28px; padding:24px; overflow:hidden; background:var(--card); border:1px solid var(--hair); box-shadow:0 12px 34px rgba(0,0,0,.06);">
+      <div style="position:absolute; inset:0; background:linear-gradient(160deg, var(--soft), transparent 60%); pointer-events:none;"></div>
+      <div style="position:relative; display:flex; align-items:center; gap:22px;">
+        <div style="position:relative; width:130px; height:130px; flex-shrink:0;">
+          <svg width="130" height="130" viewBox="0 0 130 130">
+            <circle cx="65" cy="65" r="54" fill="none" stroke="var(--hair)" stroke-width="10"/>
+            <circle cx="65" cy="65" r="54" fill="none" stroke="var(--stage)" stroke-width="10" stroke-linecap="round" stroke-dasharray="{{ dash }}" transform="rotate(-90 65 65)"/>
+          </svg>
+          <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px;">
+            <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:26px; line-height:1; color:var(--tp);">1h 12m</div>
+            <div style="font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ts);">left</div>
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:7px;">
+          <div style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--stage);">Next eligible</div>
+          <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:30px; line-height:1; color:var(--tp);">4:30 PM</div>
+          <div style="font-size:14px; color:var(--ts); max-width:150px;">Hold off a little longer — you're doing fine.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--ts); padding:2px 2px 0;">Today's slots</div>
+
+    <div style="flex:1; overflow:hidden; display:flex; flex-direction:column;">
+      <sc-for list="{{ slots }}" as="s" hint-placeholder-count="7">
+        <div style="display:flex; align-items:center; gap:14px; padding:11px 2px;">
+          <div style="width:26px; height:26px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:{{ s.dotBg }}; border:{{ s.dotBorder }};">{{ s.mark }}</div>
+          <div style="flex:1; font-size:16px; font-weight:{{ s.weight }}; color:{{ s.col }};">{{ s.time }}</div>
+          <div style="font-size:13px; font-weight:600; color:{{ s.tagCol }};">{{ s.tag }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:402,&quot;height&quot;:874},&quot;dark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const dark = !!this.props.dark;
+    const stage = dark ? '#2DD4BF' : '#0D9488';
+    const bg = dark ? '#0B1410' : '#FAFAF9';
+    const card = dark ? '#13201C' : '#FFFFFF';
+    const tp = dark ? '#ECFDF5' : '#0F172A';
+    const ts = dark ? '#9CA8A4' : '#64748B';
+    const hair = dark ? 'rgba(255,255,255,0.10)' : 'rgba(15,23,42,0.08)';
+    const soft = dark ? 'rgba(45,212,191,0.16)' : 'rgba(13,148,136,0.10)';
+
+    const C = 2 * Math.PI * 54;
+    const prog = 0.62;
+
+    const check = React.createElement('svg', { width: 13, height: 13, viewBox: '0 0 24 24', fill: 'none' },
+      React.createElement('path', { d: 'M5 13l4 4 10-11', stroke: '#fff', strokeWidth: 3, strokeLinecap: 'round', strokeLinejoin: 'round' }));
+
+    const data = [
+      ['8:00 AM', 'done'], ['9:45 AM', 'done'], ['11:30 AM', 'done'],
+      ['1:15 PM', 'done'], ['3:00 PM', 'done'], ['4:30 PM', 'next'],
+      ['6:15 PM', 'upcoming'], ['8:00 PM', 'upcoming'], ['9:45 PM', 'upcoming'],
+    ];
+    const slots = data.map(([time, st]) => {
+      if (st === 'done') return { time, weight: 500, col: ts, mark: check, dotBg: stage, dotBorder: 'none', tag: 'Logged', tagCol: ts };
+      if (st === 'next') return { time, weight: 700, col: tp, mark: '', dotBg: 'transparent', dotBorder: `2px solid ${stage}`, tag: 'Next', tagCol: stage };
+      return { time, weight: 500, col: ts, mark: '', dotBg: 'transparent', dotBorder: `1.5px solid ${hair}`, tag: '', tagCol: ts };
+    });
+    return { dark, bg, card, stage, tp, ts, hair, soft, slots, dash: `${prog * C} ${C}` };
+  }
+}
+</script>
+</body>
+</html>

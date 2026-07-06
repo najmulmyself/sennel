@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    @keyframes sennelBreathe { 0%,100%{ opacity:1; } 50%{ opacity:.5; } }
+  </style>
+</helmet>
+<x-import component="IOSDevice" from="./ios-frame.jsx" dark="{{ dark }}" hint-size="402px,874px">
+  <div style="--bg:{{ bg }}; --card:{{ card }}; --stage:{{ stage }}; --stageSoft:{{ stageSoft }}; --stageGlow:{{ stageGlow }}; --tp:{{ tp }}; --ts:{{ ts }}; --hair:{{ hair }}; --track:{{ trackCol }}; height:100%; box-sizing:border-box; background:var(--bg); padding:56px 22px 30px; display:flex; flex-direction:column; gap:16px; font-family:-apple-system,system-ui,sans-serif;">
+
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:0 4px;">
+      <div style="display:flex; flex-direction:column; gap:3px;">
+        <div style="font-size:13px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--stage);">{{ stageLabel }}</div>
+        <div style="font-size:15px; color:var(--ts);">Keep going.</div>
+      </div>
+      <div style="width:38px; height:38px; border-radius:50%; background:var(--card); border:1px solid var(--hair); display:flex; align-items:center; justify-content:center; box-shadow:0 1px 3px rgba(0,0,0,.06);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 8a4 4 0 100 8 4 4 0 000-8z" stroke="var(--ts)" stroke-width="1.6"/><path d="M19.4 13a7.9 7.9 0 000-2l2-1.6-2-3.4-2.4 1a8 8 0 00-1.7-1l-.4-2.6H10.9l-.4 2.6a8 8 0 00-1.7 1l-2.4-1-2 3.4L4.6 11a7.9 7.9 0 000 2l-2 1.6 2 3.4 2.4-1a8 8 0 001.7 1l.4 2.6h4.2l.4-2.6a8 8 0 001.7-1l2.4 1 2-3.4-2-1.6z" stroke="var(--ts)" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+
+    <div style="position:relative; border-radius:28px; padding:26px 24px 22px; overflow:hidden; background:var(--card); border:1px solid var(--hair); box-shadow:0 14px 40px var(--stageGlow), 0 2px 8px rgba(0,0,0,.05);">
+      <div style="position:absolute; inset:0; background:linear-gradient(160deg, var(--stageSoft), transparent 62%); pointer-events:none;"></div>
+      <div style="position:absolute; inset:0; border-radius:28px; pointer-events:none; box-shadow:0 0 44px 8px var(--stage); opacity:{{ pulse }}; transition:opacity .55s ease;"></div>
+      <div style="position:absolute; inset:0; border-radius:28px; pointer-events:none; box-shadow:inset 0 1px 0 var(--shine);"></div>
+
+      <div style="position:relative; width:236px; height:236px; margin:2px auto 0;">
+        <svg width="236" height="236" viewBox="0 0 220 220" style="position:absolute; inset:0;">
+          <circle cx="110" cy="110" r="92" fill="none" stroke="var(--track)" stroke-width="13" stroke-linecap="round" stroke-dasharray="{{ dashTrack }}" transform="rotate(135 110 110)"/>
+          <circle cx="110" cy="110" r="92" fill="none" stroke="var(--stage)" stroke-width="13" stroke-linecap="round" stroke-dasharray="{{ dashProg }}" transform="rotate(135 110 110)"/>
+          <circle cx="{{ sX }}" cy="{{ sY }}" r="5.5" fill="var(--stage)" opacity="0.55"/>
+          <circle cx="{{ dotX }}" cy="{{ dotY }}" r="11" fill="var(--card)"/>
+          <circle cx="{{ dotX }}" cy="{{ dotY }}" r="8.5" fill="var(--stage)" style="transform-box:fill-box; transform-origin:center; animation:sennelBreathe 3.4s ease-in-out infinite;"/>
+        </svg>
+        <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;">
+          <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:78px; line-height:.95; letter-spacing:-.02em; color:var(--stage);">{{ daysNum }}</div>
+          <div style="font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ts);">days clean</div>
+        </div>
+      </div>
+
+      <div style="text-align:center; font-size:14px; color:var(--ts); margin-top:6px; font-variant-numeric:tabular-nums;">{{ clock }}</div>
+
+      <div style="height:1px; background:var(--hair); margin:18px 2px 16px;"></div>
+
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:14px;">
+        <div style="display:flex; flex-direction:column; gap:3px;">
+          <div style="font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ts);">Saved</div>
+          <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:30px; line-height:1; color:var(--tp); font-variant-numeric:tabular-nums;">{{ money }}</div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:7px; max-width:150px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; font-size:13px; color:var(--ts);"><span>Today</span><span style="color:var(--tp); font-weight:600;">{{ used }} of {{ limit }}</span></div>
+          <div style="height:8px; border-radius:99px; background:var(--track); overflow:hidden;"><div style="height:100%; border-radius:99px; background:var(--stage); width:{{ barW }}; transition:width .45s cubic-bezier(.2,.8,.2,1);"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <button onClick="{{ log }}" style="border:none; cursor:pointer; width:100%; border-radius:18px; padding:18px; background:var(--stage); color:{{ btnText }}; font-family:-apple-system,system-ui,sans-serif; font-size:17px; font-weight:600; box-shadow:0 8px 22px var(--stageGlow); transition:transform .18s cubic-bezier(.2,.8,.2,1);" style-active="transform:scale(.965);">I just used a pouch</button>
+
+    <div style="display:flex; align-items:center; justify-content:center; gap:8px; font-size:13px; color:var(--ts);">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="var(--stage)" stroke-width="1.8"/><path d="M12 7.5V12l3 2" stroke="var(--stage)" stroke-width="1.8" stroke-linecap="round"/></svg>
+      <span>Next pouch eligible at <span style="color:var(--tp); font-weight:600;">4:30 PM</span></span>
+    </div>
+
+  </div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:402,&quot;height&quot;:874},&quot;dark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;days&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:12,&quot;tsType&quot;:&quot;number&quot;},&quot;startAgoSec&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:1051200,&quot;tsType&quot;:&quot;number&quot;},&quot;progress&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:0.55,&quot;tsType&quot;:&quot;number&quot;},&quot;stage&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;teal4&quot;,&quot;options&quot;:[&quot;slate&quot;,&quot;teal3&quot;,&quot;teal4&quot;,&quot;emerald&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;limit&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:8,&quot;tsType&quot;:&quot;number&quot;},&quot;used&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:3,&quot;tsType&quot;:&quot;number&quot;},&quot;dailySpend&quot;:{&quot;editor&quot;:&quot;float&quot;,&quot;default&quot;:11.4,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  state = { now: Date.now(), start: null, used: 0, pulse: false, seeded: false };
+
+  componentDidMount() {
+    const ago = Number(this.props.startAgoSec ?? 0);
+    this.setState({ start: Date.now() - ago * 1000, used: Number(this.props.used ?? 0), seeded: true });
+    this._t = setInterval(() => this.setState({ now: Date.now() }), 1000);
+  }
+  componentWillUnmount() { clearInterval(this._t); clearTimeout(this._pt); }
+
+  log() {
+    this.setState(s => ({ used: s.used + 1, pulse: true }));
+    clearTimeout(this._pt);
+    this._pt = setTimeout(() => this.setState({ pulse: false }), 650);
+  }
+
+  rgba(hex, a) {
+    const n = parseInt(hex.slice(1), 16);
+    return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`;
+  }
+
+  renderVals() {
+    const p = this.props;
+    const dark = !!p.dark;
+    const stageMap = { slate: '#94A3B8', teal3: '#5EEAD4', teal4: '#2DD4BF', emerald: '#047857' };
+    const labelMap = { slate: 'A fresh start', teal3: 'Warming up', teal4: 'Building', emerald: 'Arrived' };
+    const stageKey = p.stage ?? 'teal4';
+    let stage = stageMap[stageKey] || stageMap.teal4;
+    // emerald is dark; brighten it for dark-mode legibility/accents
+    if (dark && stageKey === 'emerald') stage = '#10B981';
+    if (dark && stageKey === 'slate') stage = '#B0BCC9';
+
+    const bg = dark ? '#0B1410' : '#FAFAF9';
+    const card = dark ? '#13201C' : '#FFFFFF';
+    const tp = dark ? '#ECFDF5' : '#0F172A';
+    const ts = dark ? '#9CA8A4' : '#64748B';
+    const hair = dark ? 'rgba(255,255,255,0.08)' : 'rgba(15,23,42,0.07)';
+    const trackCol = dark ? 'rgba(255,255,255,0.07)' : 'rgba(15,23,42,0.06)';
+
+    const start = this.state.start ?? (Date.now() - Number(p.startAgoSec ?? 0) * 1000);
+    const elapsed = Math.max(0, this.state.now - start);
+    const dnum = Math.floor(elapsed / 86400000);
+    const hh = Math.floor(elapsed / 3600000) % 24;
+    const mm = Math.floor(elapsed / 60000) % 60;
+    const ss = Math.floor(elapsed / 1000) % 60;
+    const clock = `${dnum}d ${hh}h ${mm}m ${String(ss).padStart(2, '0')}s clean`;
+    const spend = Number(p.dailySpend ?? 11.4);
+    const money = '$' + (elapsed / 86400000 * spend).toFixed(2);
+
+    const R = 92, C = 2 * Math.PI * R, track = C * 0.75;
+    const prog = Math.max(0.02, Math.min(1, Number(p.progress ?? 0.5)));
+    const ang = (135 + prog * 270) * Math.PI / 180;
+    const sAng = 135 * Math.PI / 180;
+
+    const limit = Number(p.limit ?? 8);
+    const used = this.state.used;
+
+    return {
+      dark, bg, card, tp, ts, hair, trackCol,
+      stage, stageSoft: this.rgba(stage, dark ? 0.20 : 0.13),
+      stageGlow: this.rgba(stage, dark ? 0.22 : 0.16),
+      shine: dark ? 'rgba(255,255,255,0.05)' : 'rgba(255,255,255,0.8)',
+      stageLabel: labelMap[stageKey] || 'Building',
+      daysNum: String(p.days ?? dnum),
+      clock, money,
+      dashTrack: `${track} ${C - track}`,
+      dashProg: `${prog * track} ${C - prog * track}`,
+      dotX: (110 + R * Math.cos(ang)).toFixed(1),
+      dotY: (110 + R * Math.sin(ang)).toFixed(1),
+      sX: (110 + R * Math.cos(sAng)).toFixed(1),
+      sY: (110 + R * Math.sin(sAng)).toFixed(1),
+      used: String(used), limit: String(limit),
+      barW: Math.min(100, used / limit * 100) + '%',
+      pulse: this.state.pulse ? 0.8 : 0,
+      btnText: dark ? '#04120C' : '#FFFFFF',
+      log: () => this.log(),
+    };
+  }
+}
+</script>
+</body>
+</html>

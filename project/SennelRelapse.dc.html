@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<x-import component="IOSDevice" from="./ios-frame.jsx" dark="{{ dark }}" hint-size="402px,874px">
+  <div style="--bg:{{ bg }}; --card:{{ card }}; --stage:{{ stage }}; --tp:{{ tp }}; --ts:{{ ts }}; --hair:{{ hair }}; --soft:{{ soft }}; height:100%; box-sizing:border-box; background:var(--bg); padding:60px 24px 32px; display:flex; flex-direction:column; gap:20px; font-family:-apple-system,system-ui,sans-serif; overflow:hidden;">
+
+    <div style="display:flex; flex-direction:column; align-items:center; text-align:center; gap:16px; margin-top:10px;">
+      <div style="width:72px; height:72px; border-radius:50%; background:var(--soft); display:flex; align-items:center; justify-content:center;">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.5A4.5 4.5 0 0112 7a4.5 4.5 0 017 3.5C19 15.7 12 20 12 20z" stroke="{{ stage }}" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div style="font-size:27px; font-weight:700; letter-spacing:-.01em; color:var(--tp); line-height:1.2;">It's okay. You're<br>still moving forward.</div>
+        <div style="font-size:16px; color:var(--ts); margin-top:10px; line-height:1.45; max-width:300px;">A slip isn't a failure. Everything you've built so far stays yours.</div>
+      </div>
+    </div>
+
+    <div style="border-radius:22px; background:var(--card); border:1px solid var(--hair); padding:18px 20px; display:flex; align-items:center; justify-content:space-between;">
+      <div style="display:flex; flex-direction:column; gap:3px;">
+        <div style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--ts);">Streak shields</div>
+        <div style="font-size:15px; color:var(--ts);">Protect your streak — 2 left this month</div>
+      </div>
+      <div style="display:flex; gap:7px;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 2.5v5.5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V5.5L12 3z" fill="{{ stage }}"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 2.5v5.5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V5.5L12 3z" fill="{{ stage }}"/></svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 2.5v5.5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V5.5L12 3z" fill="none" stroke="{{ ts }}" stroke-width="1.6" opacity=".5"/></svg>
+      </div>
+    </div>
+
+    <div style="flex:1;"></div>
+
+    <div style="border-radius:22px; background:var(--soft); padding:18px 20px; display:flex; flex-direction:column; gap:13px;">
+      <div style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--ts);">This stays yours</div>
+      <div style="display:flex; justify-content:space-between;">
+        <div><div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:26px; color:var(--tp);">12</div><div style="font-size:13px; color:var(--ts);">days logged</div></div>
+        <div><div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:26px; color:var(--tp);">$137</div><div style="font-size:13px; color:var(--ts);">saved</div></div>
+        <div><div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:26px; color:var(--tp);">7</div><div style="font-size:13px; color:var(--ts);">badges</div></div>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:11px;">
+      <button style="border:none; cursor:pointer; width:100%; border-radius:18px; padding:18px; background:var(--stage); color:{{ btnText }}; font-family:inherit; font-size:17px; font-weight:600; box-shadow:0 8px 22px var(--soft);">Use a shield — keep my 12 days</button>
+      <button style="cursor:pointer; width:100%; border-radius:18px; padding:18px; background:transparent; color:var(--tp); font-family:inherit; font-size:17px; font-weight:600; border:1px solid var(--hair);">Restart, no judgment</button>
+    </div>
+  </div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:402,&quot;height&quot;:874},&quot;dark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const dark = !!this.props.dark;
+    const stage = dark ? '#2DD4BF' : '#0D9488';
+    const bg = dark ? '#0B1410' : '#FAFAF9';
+    const card = dark ? '#13201C' : '#FFFFFF';
+    const tp = dark ? '#ECFDF5' : '#0F172A';
+    const ts = dark ? '#9CA8A4' : '#64748B';
+    const hair = dark ? 'rgba(255,255,255,0.10)' : 'rgba(15,23,42,0.08)';
+    const soft = dark ? 'rgba(45,212,191,0.14)' : 'rgba(13,148,136,0.09)';
+    return { dark, bg, card, stage, tp, ts, hair, soft, btnText: dark ? '#04120C' : '#FFFFFF' };
+  }
+}
+</script>
+</body>
+</html>

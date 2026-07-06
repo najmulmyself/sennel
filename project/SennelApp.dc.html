@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    @keyframes sennelBreathe { 0%,100%{ opacity:1; } 50%{ opacity:.5; } }
+    @keyframes sennelSheetUp { from{ transform:translateY(100%); } to{ transform:translateY(0); } }
+    @keyframes sennelFade { from{ opacity:0; } to{ opacity:1; } }
+  </style>
+  <template id="__bundler_thumbnail">
+    <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+      <rect width="240" height="240" fill="#FAFAF9"/>
+      <circle cx="120" cy="120" r="90" fill="url(#grad)" opacity="0.9"/>
+      <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#2DD4BF;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#047857;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <circle cx="120" cy="120" r="85" fill="none" stroke="#fff" stroke-width="8" stroke-dasharray="200 300" opacity="0.8" transform="rotate(-45 120 120)"/>
+      <circle cx="120" cy="75" r="6" fill="#fff" opacity="0.6"/>
+      <circle cx="155" cy="105" r="4" fill="#fff"/>
+      <text x="120" y="160" font-family="system-ui" font-size="32" font-weight="700" fill="#0D9488" text-anchor="middle">Sennel</text>
+    </svg>
+  </template>
+</helmet>
+<x-import component="IOSDevice" from="./ios-frame.jsx" dark="{{ dark }}" hint-size="402px,874px">
+  <div style="--bg:{{ bg }}; --card:{{ card }}; --stage:{{ stage }}; --tp:{{ tp }}; --ts:{{ ts }}; --hair:{{ hair }}; --soft:{{ soft }}; --track:{{ track }}; position:relative; height:100%; background:var(--bg); font-family:-apple-system,system-ui,sans-serif; overflow:hidden;">
+
+    <!-- ===== HOME ===== -->
+    <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute; inset:0; overflow-y:auto; padding:56px 22px 108px; display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:0 4px;">
+          <div style="display:flex; flex-direction:column; gap:3px;">
+            <div style="font-size:13px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--stage);">Building</div>
+            <div style="font-size:15px; color:var(--ts);">Keep going.</div>
+          </div>
+          <div style="width:38px; height:38px; border-radius:50%; background:var(--card); border:1px solid var(--hair); display:flex; align-items:center; justify-content:center;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 8a4 4 0 100 8 4 4 0 000-8z" stroke="var(--ts)" stroke-width="1.6"/><path d="M19.4 13a7.9 7.9 0 000-2l2-1.6-2-3.4-2.4 1a8 8 0 00-1.7-1l-.4-2.6H10.9l-.4 2.6a8 8 0 00-1.7 1l-2.4-1-2 3.4L4.6 11a7.9 7.9 0 000 2l-2 1.6 2 3.4 2.4-1a8 8 0 001.7 1l.4 2.6h4.2l.4-2.6a8 8 0 001.7-1l2.4 1 2-3.4-2-1.6z" stroke="var(--ts)" stroke-width="1.4" stroke-linejoin="round"/></svg>
+          </div>
+        </div>
+
+        <div style="position:relative; border-radius:28px; padding:26px 24px 22px; overflow:hidden; background:var(--card); border:1px solid var(--hair); box-shadow:0 14px 40px var(--soft), 0 2px 8px rgba(0,0,0,.05);">
+          <div style="position:absolute; inset:0; background:linear-gradient(160deg, var(--soft), transparent 62%); pointer-events:none;"></div>
+          <div style="position:absolute; inset:0; border-radius:28px; pointer-events:none; box-shadow:0 0 44px 8px var(--stage); opacity:{{ pulse }}; transition:opacity .55s ease;"></div>
+
+          <div style="position:relative; width:236px; height:236px; margin:2px auto 0;">
+            <svg width="236" height="236" viewBox="0 0 220 220" style="position:absolute; inset:0;">
+              <circle cx="110" cy="110" r="92" fill="none" stroke="var(--track)" stroke-width="13" stroke-linecap="round" stroke-dasharray="{{ dashTrack }}" transform="rotate(135 110 110)"></circle>
+              <circle cx="110" cy="110" r="92" fill="none" stroke="var(--stage)" stroke-width="13" stroke-linecap="round" stroke-dasharray="{{ dashProg }}" transform="rotate(135 110 110)"></circle>
+              <circle cx="{{ sX }}" cy="{{ sY }}" r="5.5" fill="var(--stage)" opacity="0.55"></circle>
+              <circle cx="{{ dotX }}" cy="{{ dotY }}" r="11" fill="var(--card)"></circle>
+              <circle cx="{{ dotX }}" cy="{{ dotY }}" r="8.5" fill="var(--stage)" style="animation:sennelBreathe 3.4s ease-in-out infinite;"></circle>
+            </svg>
+            <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px;">
+              <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:78px; line-height:.95; letter-spacing:-.02em; color:var(--stage);">{{ daysNum }}</div>
+              <div style="font-size:12px; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--ts);">days clean</div>
+            </div>
+          </div>
+
+          <div style="text-align:center; font-size:14px; color:var(--ts); margin-top:6px; font-variant-numeric:tabular-nums;">{{ clock }}</div>
+          <div style="height:1px; background:var(--hair); margin:18px 2px 16px;"></div>
+          <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:14px;">
+            <div style="display:flex; flex-direction:column; gap:3px;">
+              <div style="font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ts);">Saved</div>
+              <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:30px; line-height:1; color:var(--tp); font-variant-numeric:tabular-nums;">{{ money }}</div>
+            </div>
+            <div style="flex:1; display:flex; flex-direction:column; gap:7px; max-width:150px;">
+              <div style="display:flex; align-items:center; justify-content:space-between; font-size:13px; color:var(--ts);"><span>Today</span><span style="color:var(--tp); font-weight:600;">{{ used }} of 8</span></div>
+              <div style="height:8px; border-radius:99px; background:var(--track); overflow:hidden;"><div style="height:100%; border-radius:99px; background:var(--stage); width:{{ barW }}; transition:width .45s cubic-bezier(.2,.8,.2,1);"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <button onClick="{{ log }}" style="border:none; cursor:pointer; width:100%; border-radius:18px; padding:18px; background:var(--stage); color:{{ btnText }}; font-family:inherit; font-size:17px; font-weight:600; box-shadow:0 8px 22px var(--soft); transition:transform .18s cubic-bezier(.2,.8,.2,1);" style-active="transform:scale(.965);">I just used a pouch</button>
+        <button onClick="{{ openSheet }}" style="border:1px solid var(--hair); cursor:pointer; width:100%; border-radius:16px; padding:14px; background:transparent; color:var(--tp); font-family:inherit; font-size:15px; font-weight:600;">Feeling a craving? Log it →</button>
+      </div>
+    </sc-if>
+
+    <!-- ===== SCHEDULE ===== -->
+    <sc-if value="{{ isSchedule }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute; inset:0; overflow-y:auto; padding:56px 22px 108px; display:flex; flex-direction:column; gap:16px;">
+        <div>
+          <div style="font-size:32px; font-weight:700; letter-spacing:-.01em; color:var(--tp);">Schedule</div>
+          <div style="font-size:15px; color:var(--ts); margin-top:2px;">8 pouches, spread 8 AM – 10 PM.</div>
+        </div>
+        <div style="position:relative; border-radius:28px; padding:24px; overflow:hidden; background:var(--card); border:1px solid var(--hair); box-shadow:0 12px 34px rgba(0,0,0,.06);">
+          <div style="position:absolute; inset:0; background:linear-gradient(160deg, var(--soft), transparent 60%); pointer-events:none;"></div>
+          <div style="position:relative; display:flex; align-items:center; gap:22px;">
+            <div style="position:relative; width:120px; height:120px; flex-shrink:0;">
+              <svg width="120" height="120" viewBox="0 0 130 130"><circle cx="65" cy="65" r="54" fill="none" stroke="var(--hair)" stroke-width="10"></circle><circle cx="65" cy="65" r="54" fill="none" stroke="var(--stage)" stroke-width="10" stroke-linecap="round" stroke-dasharray="{{ schedDash }}" transform="rotate(-90 65 65)"></circle></svg>
+              <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;"><div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:24px; color:var(--tp);">1h 12m</div><div style="font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--ts);">left</div></div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <div style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--stage);">Next eligible</div>
+              <div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:28px; line-height:1; color:var(--tp);">4:30 PM</div>
+              <div style="font-size:14px; color:var(--ts); max-width:140px;">Hold off a little longer — you're doing fine.</div>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--ts); padding:2px;">Today's slots</div>
+        <sc-for list="{{ slots }}" as="s" hint-placeholder-count="9">
+          <div style="display:flex; align-items:center; gap:14px; padding:10px 2px;">
+            <div style="width:26px; height:26px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:{{ s.dotBg }}; border:{{ s.dotBorder }};">{{ s.mark }}</div>
+            <div style="flex:1; font-size:16px; font-weight:{{ s.weight }}; color:{{ s.col }};">{{ s.time }}</div>
+            <div style="font-size:13px; font-weight:600; color:{{ s.tagCol }};">{{ s.tag }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <!-- ===== INSIGHTS ===== -->
+    <sc-if value="{{ isInsights }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute; inset:0; overflow-y:auto; padding:56px 22px 108px; display:flex; flex-direction:column; gap:16px;">
+        <div style="display:flex; align-items:flex-end; justify-content:space-between;">
+          <div>
+            <div style="font-size:32px; font-weight:700; letter-spacing:-.01em; color:var(--tp);">Insights</div>
+            <div style="font-size:15px; color:var(--ts); margin-top:2px;">Last 30 days</div>
+          </div>
+          <div style="display:flex; gap:6px; padding:4px; border-radius:12px; background:var(--track);">
+            <div style="padding:6px 12px; border-radius:9px; font-size:13px; font-weight:600; background:var(--card); color:var(--tp);">30D</div>
+            <div style="padding:6px 12px; border-radius:9px; font-size:13px; font-weight:600; color:var(--ts);">7D</div>
+          </div>
+        </div>
+        <div style="border-radius:24px; background:var(--card); border:1px solid var(--hair); padding:20px;">
+          <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:18px;">
+            <div style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--ts);">Pouches per day</div>
+            <div style="font-size:14px; font-weight:700; color:var(--stage);">↓ 38%</div>
+          </div>
+          <div style="display:flex; align-items:flex-end; gap:5px; height:110px;">
+            <sc-for list="{{ chart }}" as="c" hint-placeholder-count="14">
+              <div style="flex:1; border-radius:4px 4px 2px 2px; background:{{ c.col }}; height:{{ c.h }};"></div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:flex; gap:14px;">
+          <div style="flex:1; border-radius:20px; background:var(--card); border:1px solid var(--hair); padding:16px;"><div style="font-size:13px; color:var(--ts);">Top trigger</div><div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:20px; color:var(--tp); margin-top:4px;">After meals</div></div>
+          <div style="flex:1; border-radius:20px; background:var(--card); border:1px solid var(--hair); padding:16px;"><div style="font-size:13px; color:var(--ts);">Avg craving</div><div style="font-family:'Nunito',sans-serif; font-weight:800; font-size:20px; color:var(--tp); margin-top:4px;">3.2 <span style="font-size:14px; color:var(--ts);">/5</span></div></div>
+        </div>
+        <button onClick="{{ openSheet }}" style="border:none; cursor:pointer; width:100%; border-radius:16px; padding:16px; background:var(--stage); color:{{ btnText }}; font-family:inherit; font-size:16px; font-weight:600; box-shadow:0 8px 22px var(--soft);">Log a craving</button>
+      </div>
+    </sc-if>
+
+    <!-- ===== HEALTH ===== -->
+    <sc-if value="{{ isHealth }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute; inset:0; overflow-y:auto; padding:56px 22px 108px; display:flex; flex-direction:column; gap:14px;">
+        <div>
+          <div style="font-size:32px; font-weight:700; letter-spacing:-.01em; color:var(--tp);">Health</div>
+          <div style="font-size:15px; color:var(--ts); margin-top:2px;">Your body, recovering.</div>
+        </div>
+        <sc-for list="{{ milestones }}" as="m" hint-placeholder-count="7">
+          <div style="display:flex; align-items:center; gap:14px; padding:12px 0; border-bottom:1px solid var(--hair);">
+            <div style="width:38px; height:38px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; background:{{ m.iconBg }}; border:{{ m.iconBorder }};">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 21c5-2 8-6 8-11V5l-8-2-8 2v5c0 5 3 9 8 11z" fill="{{ m.leafFill }}" stroke="{{ m.leafStroke }}" stroke-width="1.4" stroke-linejoin="round"/><path d="M12 6v9M9 9l3 3 3-3" stroke="{{ m.veinStroke }}" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div style="flex:1;"><div style="font-size:16px; font-weight:600; color:var(--tp);">{{ m.title }}</div><div style="font-size:13px; color:var(--ts);">{{ m.detail }}</div></div>
+            <div style="font-size:13px; font-weight:600; color:{{ m.timeCol }};">{{ m.time }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <!-- ===== SETTINGS ===== -->
+    <sc-if value="{{ isSettings }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute; inset:0; overflow-y:auto; padding:56px 0 108px; display:flex; flex-direction:column; gap:18px;">
+        <div style="padding:0 22px;"><div style="font-size:32px; font-weight:700; letter-spacing:-.01em; color:var(--tp);">Settings</div></div>
+        <div style="margin:0 16px; border-radius:20px; background:var(--card); border:1px solid var(--hair); padding:14px 16px; display:flex; align-items:center; gap:14px;">
+          <div style="position:relative; width:48px; height:48px; flex-shrink:0;"><svg width="48" height="48" viewBox="0 0 48 48"><circle cx="24" cy="24" r="19" fill="none" stroke="var(--hair)" stroke-width="5"></circle><circle cx="24" cy="24" r="19" fill="none" stroke="var(--stage)" stroke-width="5" stroke-linecap="round" stroke-dasharray="80 120" transform="rotate(135 24 24)"></circle></svg></div>
+          <div style="flex:1;"><div style="font-size:17px; font-weight:600; color:var(--tp);">12 days clean</div><div style="font-size:14px; color:var(--ts);">$136.84 saved · Building</div></div>
+        </div>
+        <div>
+          <div style="font-size:13px; text-transform:uppercase; color:var(--ts); padding:0 36px 7px;">Goal &amp; habits</div>
+          <div style="margin:0 16px; background:var(--card); border-radius:18px; overflow:hidden; border:1px solid var(--hair);">
+            <sc-for list="{{ settingRows }}" as="r" hint-placeholder-count="3">
+              <div style="display:flex; align-items:center; gap:12px; padding:0 16px; height:50px; border-bottom:1px solid var(--sep);">
+                <div style="width:29px; height:29px; border-radius:8px; flex-shrink:0; background:{{ r.icon }};"></div>
+                <div style="flex:1; font-size:17px; color:var(--tp);">{{ r.label }}</div>
+                <span style="font-size:17px; color:var(--ts);">{{ r.value }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:13px; text-transform:uppercase; color:var(--ts); padding:0 36px 7px;">Appearance</div>
+          <div style="margin:0 16px; background:var(--card); border-radius:18px; overflow:hidden; border:1px solid var(--hair);">
+            <div style="display:flex; align-items:center; gap:12px; padding:0 16px; height:50px;">
+              <div style="width:29px; height:29px; border-radius:8px; background:#64748B; flex-shrink:0;"></div>
+              <div style="flex:1; font-size:17px; color:var(--tp);">Dark mode</div>
+              <div onClick="{{ toggleDark }}" style="cursor:pointer; width:51px; height:31px; border-radius:99px; background:{{ darkToggleBg }}; position:relative;"><div style="position:absolute; top:2px; left:{{ darkKnob }}; width:27px; height:27px; border-radius:50%; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.2); transition:left .2s;"></div></div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; font-size:13px; color:var(--ts);">Sennel · v1.0</div>
+      </div>
+    </sc-if>
+
+    <!-- ===== CRAVING SHEET ===== -->
+    <sc-if value="{{ sheetOpen }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ closeSheet }}" style="position:absolute; inset:0; background:rgba(0,0,0,0.4); animation:sennelFade .2s ease; z-index:20;"></div>
+      <div style="position:absolute; left:0; right:0; bottom:0; z-index:21; border-radius:28px 28px 0 0; background:var(--bg); border-top:1px solid var(--hair); padding:14px 22px 34px; animation:sennelSheetUp .32s cubic-bezier(.2,.8,.2,1); box-shadow:0 -12px 40px rgba(0,0,0,.2);">
+        <div style="width:38px; height:5px; border-radius:99px; background:var(--hair); margin:0 auto 16px;"></div>
+        <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px; margin-bottom:18px;">
+          <div style="min-width:0;"><div style="font-size:26px; font-weight:700; line-height:1.1; color:var(--tp);">Log a craving</div><div style="font-size:15px; color:var(--ts); margin-top:5px;">No judgment — just noticing.</div></div>
+          <div onClick="{{ closeSheet }}" style="cursor:pointer; font-size:16px; font-weight:600; color:var(--stage); flex-shrink:0; padding-top:4px;">Cancel</div>
+        </div>
+        <div style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--ts); margin-bottom:10px;">Intensity</div>
+        <div style="display:flex; align-items:flex-end; gap:10px; height:60px; margin-bottom:18px;">
+          <sc-for list="{{ bars }}" as="b" hint-placeholder-count="5">
+            <div style="flex:1; display:flex; flex-direction:column; align-items:center; gap:8px;"><div style="width:100%; border-radius:8px; background:{{ b.col }}; height:{{ b.h }};"></div><div style="font-size:13px; font-weight:600; color:{{ b.labelCol }};">{{ b.n }}</div></div>
+          </sc-for>
+        </div>
+        <div style="font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--ts); margin-bottom:10px;">What triggered it?</div>
+        <div style="display:flex; flex-wrap:wrap; gap:9px; margin-bottom:22px;">
+          <sc-for list="{{ chips }}" as="c" hint-placeholder-count="6">
+            <div style="padding:10px 16px; border-radius:99px; font-size:15px; font-weight:500; background:{{ c.bg }}; color:{{ c.col }}; border:1px solid {{ c.border }};">{{ c.label }}</div>
+          </sc-for>
+        </div>
+        <button onClick="{{ closeSheet }}" style="border:none; cursor:pointer; width:100%; border-radius:18px; padding:18px; background:var(--stage); color:{{ btnText }}; font-family:inherit; font-size:17px; font-weight:600; box-shadow:0 8px 22px var(--soft);">Save craving</button>
+      </div>
+    </sc-if>
+
+    <!-- ===== GLASS TAB BAR ===== -->
+    <div style="position:absolute; left:0; right:0; bottom:0; z-index:10; background:{{ tabBg }}; backdrop-filter:blur(22px) saturate(180%); -webkit-backdrop-filter:blur(22px) saturate(180%); border-top:1px solid var(--hair); padding:10px 8px 22px; display:flex;">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+        <div onClick="{{ t.go }}" style="flex:1; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:4px;">
+          <div style="width:26px; height:26px; display:flex; align-items:center; justify-content:center;">{{ t.iconEl }}</div>
+          <div style="font-size:10px; font-weight:600; color:{{ t.col }};">{{ t.label }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+  </div>
+</x-import>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:402,&quot;height&quot;:874},&quot;dark&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+class Component extends DCLogic {
+  state = { tab: 0, now: Date.now(), used: 3, pulse: false, sheet: false, dark: false };
+
+  componentDidMount() {
+    this._dark0 = !!this.props.dark;
+    this.setState({ dark: !!this.props.dark });
+    this._start = Date.now() - 12 * 86400000 - 5 * 3600000 - 12 * 60000;
+    this._t = setInterval(() => this.setState({ now: Date.now() }), 1000);
+  }
+  componentWillUnmount() { clearInterval(this._t); clearTimeout(this._pt); }
+
+  go(t) { this.setState({ tab: t }); }
+  log() {
+    this.setState(s => ({ used: s.used + 1, pulse: true }));
+    clearTimeout(this._pt);
+    this._pt = setTimeout(() => this.setState({ pulse: false }), 650);
+  }
+  rgba(hex, a) { const n = parseInt(hex.slice(1), 16); return `rgba(${(n >> 16) & 255},${(n >> 8) & 255},${n & 255},${a})`; }
+
+  icon(name, col) {
+    const s = `stroke="${col}" stroke-width="1.9" fill="none" stroke-linecap="round" stroke-linejoin="round"`;
+    const map = {
+      home: `<path d="M4 11.5L12 4l8 7.5" ${s}/><path d="M6 10v9h12v-9" ${s}/>`,
+      clock: `<circle cx="12" cy="12" r="8.5" ${s}/><path d="M12 7.5V12l3 2" ${s}/>`,
+      chart: `<path d="M5 19V10M12 19V5M19 19v-6" ${s}/>`,
+      heart: `<path d="M12 20s-7-4.3-7-9.5A4.2 4.2 0 0112 7a4.2 4.2 0 017 3.5C19 15.7 12 20 12 20z" ${s}/>`,
+      gear: `<circle cx="12" cy="12" r="3.2" ${s}/><path d="M12 3v2.5M12 18.5V21M3 12h2.5M18.5 12H21M5.6 5.6l1.8 1.8M16.6 16.6l1.8 1.8M18.4 5.6l-1.8 1.8M7.4 16.6l-1.8 1.8" ${s}/>`,
+    };
+    return React.createElement('svg', { width: 26, height: 26, viewBox: '0 0 24 24', fill: 'none', dangerouslySetInnerHTML: { __html: map[name] } });
+  }
+
+  renderVals() {
+    const dark = this.state.dark;
+    const stage = dark ? '#2DD4BF' : '#0D9488';
+    const bg = dark ? '#0B1410' : '#FAFAF9';
+    const card = dark ? '#13201C' : '#FFFFFF';
+    const tp = dark ? '#ECFDF5' : '#0F172A';
+    const ts = dark ? '#9CA8A4' : '#64748B';
+    const hair = dark ? 'rgba(255,255,255,0.10)' : 'rgba(15,23,42,0.08)';
+    const soft = dark ? 'rgba(45,212,191,0.16)' : 'rgba(13,148,136,0.10)';
+    const track = dark ? 'rgba(255,255,255,0.07)' : 'rgba(15,23,42,0.06)';
+    const sep = dark ? 'rgba(255,255,255,0.08)' : 'rgba(60,60,67,0.12)';
+    const btnText = dark ? '#04120C' : '#FFFFFF';
+
+    const tab = this.state.tab;
+
+    // Home timer
+    const elapsed = Math.max(0, this.state.now - this._start);
+    const dnum = Math.floor(elapsed / 86400000);
+    const hh = Math.floor(elapsed / 3600000) % 24;
+    const mm = Math.floor(elapsed / 60000) % 60;
+    const ss = Math.floor(elapsed / 1000) % 60;
+    const clock = `${dnum}d ${hh}h ${mm}m ${String(ss).padStart(2, '0')}s clean`;
+    const money = '$' + (elapsed / 86400000 * 11.4).toFixed(2);
+
+    const R = 92, C = 2 * Math.PI * R, trackArc = C * 0.75, prog = 0.55;
+    const ang = (135 + prog * 270) * Math.PI / 180, sAng = 135 * Math.PI / 180;
+
+    // Schedule
+    const SC = 2 * Math.PI * 54;
+    const check = '✓';
+    const slotData = [['8:00 AM', 'done'], ['9:45 AM', 'done'], ['11:30 AM', 'done'], ['1:15 PM', 'done'], ['3:00 PM', 'done'], ['4:30 PM', 'next'], ['6:15 PM', 'up'], ['8:00 PM', 'up'], ['9:45 PM', 'up']];
+    const slots = slotData.map(([time, st]) => {
+      if (st === 'done') return { time, weight: 500, col: ts, mark: '✓', dotBg: stage, dotBorder: 'none', tag: 'Logged', tagCol: ts };
+      if (st === 'next') return { time, weight: 700, col: tp, mark: '', dotBg: 'transparent', dotBorder: `2px solid ${stage}`, tag: 'Next', tagCol: stage };
+      return { time, weight: 500, col: ts, mark: '', dotBg: 'transparent', dotBorder: `1.5px solid ${hair}`, tag: '', tagCol: ts };
+    });
+
+    // Insights chart
+    const vals = [8, 8, 7, 8, 7, 6, 7, 6, 5, 5, 4, 5, 3, 3];
+    const faint = dark ? 'rgba(45,212,191,0.30)' : 'rgba(13,148,136,0.28)';
+    const chart = vals.map((v, i) => ({ h: Math.round(v / 8 * 100) + '%', col: i >= 11 ? stage : faint }));
+
+    // Health milestones
+    const mData = [['20 minutes', 'Heart rate & blood pressure settle', '20 min', true], ['1 hour', 'Restlessness begins to ease', '1 hr', true], ['1 day', 'Nicotine has left your bloodstream', '1 day', true], ['3 days', 'Breathing feels easier', '3 days', true], ['1 week', 'Taste & smell sharpen', '1 wk', true], ['1 month', 'Gum tissue begins to heal', '1 mo', false], ['3 months', 'Circulation improves', '3 mo', false]];
+    const milestones = mData.map(([title, detail, time, done]) => ({
+      title, detail, time,
+      iconBg: done ? stage : 'transparent',
+      iconBorder: done ? 'none' : `1.5px solid ${hair}`,
+      leafFill: done ? 'rgba(255,255,255,0.9)' : 'transparent',
+      leafStroke: done ? 'rgba(255,255,255,0.9)' : ts,
+      veinStroke: done ? stage : ts,
+      timeCol: done ? stage : ts,
+    }));
+
+    // Settings rows
+    const settingRows = [
+      { label: 'Daily limit', value: '8 pouches', icon: '#0D9488' },
+      { label: 'Daily spend', value: '$11.40', icon: '#14B8A6' },
+      { label: 'Plan', value: 'Taper', icon: '#0EA5A0' },
+    ];
+
+    // Craving sheet
+    const sel = 3;
+    const heights = ['34%', '52%', '72%', '90%', '100%'];
+    const bars = [1, 2, 3, 4, 5].map((n, i) => ({ n: String(n), h: heights[i], col: n <= sel ? stage : track, labelCol: n === sel ? stage : ts }));
+    const chipData = [['After meals', true], ['Coffee', true], ['Stress', false], ['Boredom', false], ['Driving', false], ['Social', false]];
+    const chips = chipData.map(([label, on]) => ({ label, bg: on ? stage : 'transparent', col: on ? btnText : ts, border: on ? stage : hair }));
+
+    // Tabs
+    const names = ['home', 'clock', 'chart', 'heart', 'gear'];
+    const labels = ['Home', 'Schedule', 'Insights', 'Health', 'Settings'];
+    const tabs = names.map((nm, i) => ({
+      iconEl: this.icon(nm, i === tab ? stage : ts),
+      label: labels[i],
+      col: i === tab ? stage : ts,
+      go: () => this.go(i),
+    }));
+
+    return {
+      dark, bg, card, stage, tp, ts, hair, soft, track, sep, btnText,
+      tabBg: dark ? 'rgba(11,20,16,0.78)' : 'rgba(250,250,249,0.78)',
+      isHome: tab === 0, isSchedule: tab === 1, isInsights: tab === 2, isHealth: tab === 3, isSettings: tab === 4,
+      // home
+      daysNum: String(dnum), clock, money,
+      dashTrack: `${trackArc} ${C - trackArc}`, dashProg: `${prog * trackArc} ${C - prog * trackArc}`,
+      dotX: (110 + R * Math.cos(ang)).toFixed(1), dotY: (110 + R * Math.sin(ang)).toFixed(1),
+      sX: (110 + R * Math.cos(sAng)).toFixed(1), sY: (110 + R * Math.sin(sAng)).toFixed(1),
+      used: String(this.state.used), barW: Math.min(100, this.state.used / 8 * 100) + '%',
+      pulse: this.state.pulse ? 0.8 : 0,
+      log: () => this.log(),
+      // schedule
+      schedDash: `${0.62 * SC} ${SC}`, slots,
+      // insights
+      chart,
+      // health
+      milestones,
+      // settings
+      settingRows,
+      toggleDark: () => this.setState(s => ({ dark: !s.dark })),
+      darkToggleBg: dark ? stage : 'rgba(120,120,128,0.3)', darkKnob: dark ? '22px' : '2px',
+      // sheet
+      sheetOpen: this.state.sheet,
+      openSheet: () => this.setState({ sheet: true }),
+      closeSheet: () => this.setState({ sheet: false }),
+      bars, chips,
+      // tabs
+      tabs,
+    };
+  }
+}
+</script>
+</body>
+</html>
